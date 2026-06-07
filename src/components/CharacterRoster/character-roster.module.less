@@ -1,0 +1,99 @@
+/* [PROTOCOL]: Change this header when CharacterRoster styling changes, then check CLAUDE.md.
+ * INPUT: Character roster data and shared tokens.
+ * OUTPUT: CSS module for selectable character roster.
+ * POS: Component-scoped styles only.
+ */
+.roster {
+  display: grid;
+  gap: @crystal-space-2;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: @crystal-space-3;
+  align-items: center;
+  width: 100%;
+  min-height: 96px;
+  padding: @crystal-space-2 @crystal-space-3;
+  color: @crystal-color-text;
+  text-align: left;
+  background:
+    linear-gradient(90deg, rgba(0, 151, 211, 0.18), rgba(2, 11, 19, 0.8) 38%),
+    rgba(4, 12, 20, 0.76);
+  border: 1px solid fade(@crystal-color-border, 38%);
+  border-radius: @crystal-radius-control;
+  cursor: pointer;
+}
+
+.item:hover:not(:disabled),
+.item:focus-visible,
+.selected {
+  border-color: @crystal-color-border;
+  outline: none;
+  box-shadow: @crystal-shadow-focus, @crystal-shadow-inset;
+}
+
+.item:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
+.body {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-2;
+  min-width: 0;
+  color: @crystal-color-cyan;
+  font-weight: 800;
+}
+
+.header strong {
+  min-width: 0;
+  overflow: hidden;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 19px;
+  text-overflow: ellipsis;
+  text-shadow: @crystal-shadow-text;
+  white-space: nowrap;
+}
+
+.role {
+  min-width: 0;
+  overflow: hidden;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  align-self: end;
+  color: @crystal-color-success;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.compact .item {
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  min-height: 76px;
+}
+
+@media (max-width: 620px) {
+  .item {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+
+  .status {
+    grid-column: 2;
+  }
+}

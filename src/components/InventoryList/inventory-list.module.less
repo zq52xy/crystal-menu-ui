@@ -1,0 +1,128 @@
+/* [PROTOCOL]: Change this header when InventoryList styling changes, then check CLAUDE.md.
+ * INPUT: Inventory rows, states, and shared tokens.
+ * OUTPUT: CSS module for dense selectable inventory rows.
+ * POS: Component-scoped styles only.
+ */
+.list {
+  display: grid;
+  gap: @crystal-space-2;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) minmax(76px, auto);
+  gap: @crystal-space-3;
+  align-items: center;
+  width: 100%;
+  min-height: 62px;
+  padding: @crystal-space-2 @crystal-space-3;
+  color: @crystal-color-text;
+  text-align: left;
+  background: linear-gradient(90deg, rgba(0, 151, 211, 0.16), rgba(2, 11, 19, 0.78));
+  border: 1px solid fade(@crystal-color-border, 36%);
+  border-radius: @crystal-radius-control;
+  cursor: pointer;
+}
+
+.item:hover:not(:disabled),
+.item:focus-visible,
+.selected {
+  border-color: @crystal-color-border;
+  outline: none;
+  box-shadow: @crystal-shadow-focus, @crystal-shadow-inset;
+}
+
+.item:disabled {
+  cursor: default;
+  opacity: 0.52;
+}
+
+.selected::before {
+  position: absolute;
+  inset: @crystal-space-2 auto @crystal-space-2 0;
+  width: 3px;
+  content: '';
+  background: @crystal-color-text;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+}
+
+.body {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.topline,
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-2;
+  min-width: 0;
+}
+
+.topline strong,
+.description,
+.meta span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topline strong {
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.quantity,
+.meta,
+.description {
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+}
+
+.quantity,
+.meta b {
+  color: @crystal-color-cyan;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.key {
+  border-color: fade(@crystal-color-gold, 70%);
+}
+
+.rare {
+  border-color: fade(@crystal-color-violet, 70%);
+}
+
+.danger {
+  border-color: fade(@crystal-color-danger, 70%);
+}
+
+.empty {
+  padding: @crystal-space-4;
+  color: @crystal-color-text-muted;
+  text-align: center;
+  border: 1px dashed fade(@crystal-color-border, 30%);
+}
+
+.compact .item {
+  min-height: 48px;
+}
+
+@media (max-width: 620px) {
+  .item {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+
+  .meta {
+    grid-column: 2;
+  }
+}

@@ -1,0 +1,129 @@
+/* [PROTOCOL]: Change this header when CharacterProfile styling changes, then check CLAUDE.md.
+ * INPUT: CharacterProfile data, optional authorized image, and shared tokens.
+ * OUTPUT: CSS module for reference-image-inspired character profile panels.
+ * POS: Component-scoped styles only; no bundled character assets.
+ */
+.profile {
+  position: relative;
+  display: grid;
+  grid-template-columns: 138px minmax(0, 1fr);
+  gap: @crystal-space-4;
+  align-items: stretch;
+  min-height: 178px;
+  padding: @crystal-space-3;
+  color: @crystal-color-text;
+  background:
+    linear-gradient(135deg, rgba(75, 205, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.9), rgba(4, 12, 20, 0.86));
+  border: 1px solid fade(@crystal-color-border, 54%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-inset;
+}
+
+.selected {
+  border-color: @crystal-color-border;
+  box-shadow: @crystal-shadow-focus, @crystal-shadow-inset;
+}
+
+.selected::before {
+  position: absolute;
+  inset: @crystal-space-2 auto @crystal-space-2 0;
+  width: 4px;
+  content: '';
+  background: @crystal-color-text;
+  box-shadow: 8px 0 22px rgba(75, 205, 255, 0.7);
+}
+
+.content {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: @crystal-space-3;
+  min-width: 0;
+}
+
+.header,
+.stat {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-3;
+}
+
+.identity {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.name {
+  min-width: 0;
+  overflow: hidden;
+  font-family: @crystal-font-display;
+  font-size: 26px;
+  text-overflow: ellipsis;
+  text-shadow: @crystal-shadow-text;
+  white-space: nowrap;
+}
+
+.role,
+.meta,
+.stats {
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+}
+
+.meta {
+  display: grid;
+  gap: @crystal-space-1;
+  justify-items: end;
+  color: @crystal-color-cyan;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.resources {
+  display: grid;
+  gap: @crystal-space-1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: @crystal-space-2 @crystal-space-3;
+  margin: 0;
+}
+
+.stat {
+  min-width: 0;
+}
+
+.stat dt {
+  color: @crystal-color-cyan;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stat dd {
+  margin: 0;
+  color: @crystal-color-text;
+  font-weight: 800;
+}
+
+.compact {
+  grid-template-columns: 96px minmax(0, 1fr);
+  min-height: 134px;
+}
+
+.compact .name {
+  font-size: 21px;
+}
+
+@media (max-width: 620px) {
+  .profile {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: @crystal-space-3;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

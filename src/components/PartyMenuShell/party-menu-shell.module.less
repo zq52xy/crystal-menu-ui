@@ -1,0 +1,40 @@
+/* [PROTOCOL]: Change this header when PartyMenuShell styling changes, then check CLAUDE.md.
+ * INPUT: PartyMenuShell pane slots and shared panel primitives.
+ * OUTPUT: Responsive Prototypes-inspired party/menu screen layout.
+ * POS: Layout CSS only; visual atoms belong to child components.
+ */
+.shell {
+  display: grid;
+  gap: @crystal-space-4;
+  width: 100%;
+}
+
+.frame,
+.footerPanel {
+  min-width: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(360px, 1.18fr) minmax(320px, 0.95fr);
+  gap: @crystal-space-4;
+  align-items: start;
+}
+
+.navigation,
+.primary,
+.detail,
+.footer {
+  min-width: 0;
+}
+
+.primary {
+  display: grid;
+  gap: @crystal-space-4;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

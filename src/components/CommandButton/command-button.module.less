@@ -1,0 +1,122 @@
+/* [PROTOCOL]: Change this header when CommandButton styling changes, then check CLAUDE.md.
+ * INPUT: CommandButton state classes and shared tokens.
+ * OUTPUT: CSS module for selectable JRPG command controls.
+ * POS: Component-scoped styles only.
+ */
+.command {
+  position: relative;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+  padding: @crystal-space-2 @crystal-space-3;
+  color: @crystal-color-text;
+  text-align: left;
+  letter-spacing: 0;
+  background:
+    linear-gradient(90deg, rgba(75, 205, 255, 0.12), transparent 48%),
+    @crystal-color-glass;
+  border: 1px solid fade(@crystal-color-border, 36%);
+  border-radius: 2px;
+  box-shadow: @crystal-shadow-inset;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+}
+
+.command:hover:not(.disabled),
+.active {
+  border-color: @crystal-color-cyan;
+  background:
+    linear-gradient(90deg, rgba(75, 205, 255, 0.32), transparent 58%),
+    rgba(12, 23, 34, 0.9);
+}
+
+.command:focus-visible {
+  outline: none;
+  box-shadow: @crystal-shadow-focus, @crystal-shadow-inset;
+}
+
+.selected {
+  color: @crystal-color-text;
+  background:
+    linear-gradient(90deg, rgba(0, 249, 251, 0.28), transparent 58%),
+    rgba(5, 18, 28, 0.94);
+  border-color: @crystal-color-success;
+}
+
+.disabled {
+  color: rgba(248, 251, 255, 0.45);
+  cursor: not-allowed;
+  filter: grayscale(0.45);
+}
+
+.compact {
+  min-height: 30px;
+  padding: @crystal-space-1 @crystal-space-2;
+}
+
+.large {
+  min-height: 48px;
+  padding: @crystal-space-3 @crystal-space-4;
+}
+
+.magic {
+  border-color: fade(@crystal-color-violet, 68%);
+}
+
+.item {
+  border-color: fade(@crystal-color-cyan, 68%);
+}
+
+.danger {
+  border-color: fade(@crystal-color-danger, 74%);
+}
+
+.cursor {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid @crystal-color-cyan;
+  opacity: 0;
+}
+
+.active .cursor,
+.selected .cursor {
+  opacity: 1;
+}
+
+.content {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.label,
+.description,
+.shortcut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label {
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.description {
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+}
+
+.selected .description {
+  color: @crystal-color-text-muted;
+}
+
+.shortcut {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  font-weight: 700;
+}

@@ -1,0 +1,96 @@
+/* [PROTOCOL]: Change this header when MenuPanel styling changes, then check CLAUDE.md.
+ * INPUT: MenuPanel structure and shared tokens.
+ * OUTPUT: CSS module for beveled panel hierarchy.
+ * POS: Component-scoped surface styles only.
+ */
+.panel {
+  position: relative;
+  min-width: 0;
+  color: @crystal-color-text;
+  background:
+    linear-gradient(135deg, rgba(75, 205, 255, 0.18), transparent 34%),
+    linear-gradient(180deg, @crystal-color-panel-top, @crystal-color-panel-bottom);
+  border: 1px solid fade(@crystal-color-border, 72%);
+  border-radius: @crystal-radius-panel;
+  backdrop-filter: blur(12px);
+  box-shadow: @crystal-shadow-panel;
+}
+
+.panel::before {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  content: '';
+  border: 1px solid fade(@crystal-color-border, 28%);
+  border-radius: 2px;
+}
+
+.deep {
+  background:
+    linear-gradient(135deg, rgba(0, 151, 211, 0.3), transparent 42%),
+    linear-gradient(180deg, @crystal-color-panel-deep, rgba(5, 9, 15, 0.92));
+}
+
+.status {
+  background:
+    linear-gradient(135deg, rgba(75, 205, 255, 0.2), transparent 36%),
+    linear-gradient(180deg, rgba(24, 38, 54, 0.84), rgba(6, 16, 28, 0.88));
+}
+
+.compact {
+  font-size: 14px;
+}
+
+.corner {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid @crystal-color-cyan;
+  border-right: 2px solid @crystal-color-cyan;
+  box-shadow: 2px 2px 0 @crystal-color-border-shadow;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: @crystal-space-3 @crystal-space-4 @crystal-space-2;
+  border-bottom: 1px solid fade(@crystal-color-border, 34%);
+}
+
+.title {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-shadow: @crystal-shadow-text;
+}
+
+.subtitle {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+}
+
+.body {
+  position: relative;
+  padding: @crystal-space-4;
+}
+
+.compact .body {
+  padding: @crystal-space-3;
+}
+
+.footer {
+  position: relative;
+  padding: @crystal-space-2 @crystal-space-4 @crystal-space-3;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  border-top: 1px solid fade(@crystal-color-border, 32%);
+}

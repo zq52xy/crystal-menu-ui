@@ -1,0 +1,43 @@
+{
+  "baseUrl": "http://127.0.0.1:5173/",
+  "status": "pass",
+  "results": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "url": "http://127.0.0.1:5173/",
+      "title": "Crystal Menu UI Study",
+      "screenshotPath": "eval/screenshots/desktop-prototypes.png",
+      "hasCrystalMenuText": true,
+      "hasOfficialAssetWarning": false,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "url": "http://127.0.0.1:5173/",
+      "title": "Crystal Menu UI Study",
+      "screenshotPath": "eval/screenshots/mobile-prototypes.png",
+      "hasCrystalMenuText": true,
+      "hasOfficialAssetWarning": false,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "name": "mobile-preview-link",
+      "width": 1440,
+      "height": 900,
+      "path": "?preview=mobile",
+      "url": "http://127.0.0.1:5173/?preview=mobile",
+      "title": "Crystal Menu UI Study",
+      "screenshotPath": "eval/screenshots/mobile-preview-link-prototypes.png",
+      "hasCrystalMenuText": true,
+      "hasOfficialAssetWarning": false,
+      "consoleErrors": [],
+      "pageErrors": []
+    }
+  ]
+}

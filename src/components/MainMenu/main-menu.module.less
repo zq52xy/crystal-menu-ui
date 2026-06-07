@@ -1,0 +1,136 @@
+/* [PROTOCOL]: Change this header when MainMenu styling changes, then check CLAUDE.md.
+ * INPUT: MainMenu selected/disabled state classes and shared tokens.
+ * OUTPUT: CSS module for Prototypes-inspired main menu rows.
+ * POS: Component-scoped styles only; no Figma image assets.
+ */
+.menu {
+  display: grid;
+  gap: 6px;
+  width: min(100%, 486px);
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  padding: 0 26px 0 44px;
+  overflow: hidden;
+  color: @crystal-color-text;
+  text-align: left;
+  letter-spacing: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.item::before {
+  position: absolute;
+  inset: 0 0 0 10px;
+  content: '';
+  background:
+    linear-gradient(90deg, rgba(75, 205, 255, 0.12), rgba(75, 205, 255, 0.03) 45%, transparent),
+    rgba(7, 17, 27, 0.64);
+  border: 1px solid fade(@crystal-color-line, 58%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.mask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 0 3px, rgba(0, 0, 0, 0.12) 3px 100%);
+}
+
+.leftHighlight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 2px;
+  background: fade(@crystal-color-cyan, 54%);
+  box-shadow: 0 0 14px rgba(75, 205, 255, 0.28);
+}
+
+.selectionGlow {
+  position: absolute;
+  inset: 0 10px 0 0;
+  opacity: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent 16%),
+    linear-gradient(90deg, rgba(75, 205, 255, 0.34), rgba(75, 205, 255, 0.05) 48%, transparent);
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 0 100%);
+}
+
+.selected::after {
+  position: absolute;
+  inset: 0 10px 0 10px;
+  pointer-events: none;
+  content: '';
+  border-top: 1px solid @crystal-color-gold;
+  border-bottom: 1px solid @crystal-color-gold;
+  box-shadow:
+    -5px 0 0 rgba(255, 255, 255, 0.82),
+    -3px 0 14px rgba(75, 205, 255, 0.68);
+}
+
+.selected .selectionGlow {
+  opacity: 1;
+}
+
+.pulse .selectionGlow {
+  animation: crystal-menu-pulse 1400ms ease-in-out infinite;
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+  text-shadow: 4px 5px 0 rgba(0, 0, 0, 0.52), 1px 1px 1px rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+}
+
+.disabled {
+  color: rgba(248, 251, 255, 0.36);
+  cursor: not-allowed;
+}
+
+.disabled::before {
+  border-color: rgba(129, 223, 255, 0.22);
+}
+
+@keyframes crystal-menu-pulse {
+  0%,
+  100% {
+    opacity: 0.58;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .item {
+    height: 52px;
+    padding-left: 36px;
+  }
+
+  .item::before {
+    left: 6px;
+  }
+
+  .leftHighlight {
+    left: 6px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+}

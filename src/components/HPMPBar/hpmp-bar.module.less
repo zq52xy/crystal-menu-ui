@@ -1,0 +1,57 @@
+/* [PROTOCOL]: Change this header when HPMPBar styling changes, then check CLAUDE.md.
+ * INPUT: HPMPBar resource tone classes and shared tokens.
+ * OUTPUT: CSS module for compact resource meters.
+ * POS: Component-scoped meter styles only.
+ */
+.resource {
+  display: grid;
+  grid-template-columns: 28px minmax(60px, 1fr) 72px;
+  gap: @crystal-space-2;
+  align-items: center;
+  min-width: 0;
+  color: @crystal-color-text;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.compact {
+  grid-template-columns: 24px minmax(48px, 1fr) 58px;
+  gap: @crystal-space-1;
+  font-size: 11px;
+}
+
+.label,
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.value {
+  color: @crystal-color-text-muted;
+  text-align: right;
+}
+
+.track {
+  position: relative;
+  height: 9px;
+  overflow: hidden;
+  background: rgba(4, 11, 36, 0.78);
+  border: 1px solid @crystal-color-line;
+  border-radius: 0;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  min-width: 2px;
+  border-radius: inherit;
+}
+
+.hp .fill {
+  background: linear-gradient(90deg, #02cae1, #00f9fb);
+}
+
+.mp .fill {
+  background: linear-gradient(90deg, #0097d3, @crystal-color-cyan);
+}

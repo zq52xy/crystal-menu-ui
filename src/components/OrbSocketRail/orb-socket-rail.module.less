@@ -1,0 +1,169 @@
+/* [PROTOCOL]: Change this header when OrbSocketRail styling changes, then check CLAUDE.md.
+ * INPUT: OrbSocketRail socket tones, connection lengths, size, and shared tokens.
+ * OUTPUT: CSS module for a large original orb socket rail.
+ * POS: Component-scoped styles only; no image assets.
+ */
+.rail {
+  --orb-size: 78px;
+  --gem-inset: 11px;
+  --line-height: 4px;
+  --short-link: 22px;
+  --brace-link: 368px;
+  --orb-light: #dffbff;
+  --orb-mid: @crystal-color-success;
+  --orb-deep: #096a76;
+  --orb-shadow: #021a24;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: calc(var(--orb-size) + 100px);
+  padding: 50px 8px;
+  overflow: hidden;
+}
+
+.rail::before {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: var(--line-height);
+  content: '';
+  background: @crystal-color-success;
+  box-shadow:
+    0 0 9px rgba(0, 249, 251, 0.7),
+    0 1px 0 rgba(255, 255, 255, 0.24);
+  transform: translateY(-50%);
+}
+
+.backdrop {
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(129, 223, 255, 0.16), transparent 28%),
+    linear-gradient(180deg, #1c67af 0%, #155ca7 42%, #0f4c96 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -18px 46px rgba(0, 24, 68, 0.2);
+}
+
+.md {
+  --orb-size: 54px;
+  --gem-inset: 8px;
+  --line-height: 3px;
+  --short-link: 26px;
+  --brace-link: 260px;
+  min-height: calc(var(--orb-size) + 34px);
+  padding: 20px 0;
+}
+
+.lg {
+  --orb-size: 78px;
+}
+
+.node {
+  z-index: 1;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.longNode,
+.braceNode {
+  flex: 1 1 auto;
+}
+
+.socketGem {
+  flex: 0 0 auto;
+}
+
+.connector {
+  position: relative;
+  flex: 0 0 var(--short-link);
+  height: var(--orb-size);
+  min-width: 0;
+  margin-inline: -1px;
+}
+
+.shortLink {
+  width: var(--short-link);
+}
+
+.longLink,
+.braceLink {
+  flex: 1 1 var(--brace-link);
+  min-width: 128px;
+}
+
+.connectorLine {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+  left: -1px;
+  height: var(--line-height);
+  content: '';
+  background: @crystal-color-success;
+  box-shadow:
+    0 0 9px rgba(0, 249, 251, 0.78),
+    0 1px 0 rgba(255, 255, 255, 0.26);
+  transform: translateY(-50%);
+}
+
+.connectorBrace {
+  position: absolute;
+  top: 50%;
+  right: 35px;
+  width: min(138px, 72%);
+  height: 27px;
+  transform: translateY(-50%);
+}
+
+.connectorBrace::before,
+.connectorBrace::after {
+  position: absolute;
+  content: '';
+  clip-path: polygon(0 50%, 14px 14%, 100% 14%, 100% 86%, 14px 86%);
+}
+
+.connectorBrace::before {
+  inset: 0;
+  background: rgba(129, 223, 255, 0.64);
+  box-shadow: 0 0 10px rgba(0, 249, 251, 0.34);
+}
+
+.connectorBrace::after {
+  inset: 4px 3px 4px 18px;
+  background: #155ca7;
+}
+
+@media (max-width: 620px) {
+  .rail {
+    --orb-size: 48px;
+    --gem-inset: 8px;
+    --short-link: 18px;
+    min-height: 72px;
+    padding: 12px 5px;
+  }
+
+  .braceLink {
+    min-width: 78px;
+  }
+
+  .connectorBrace {
+    right: 20px;
+    width: min(82px, 76%);
+    height: 20px;
+  }
+
+  .connectorBrace::before {
+    clip-path: polygon(0 50%, 10px 16%, 100% 16%, 100% 84%, 10px 84%);
+  }
+
+  .connectorBrace::after {
+    inset: 3px 3px 3px 13px;
+    clip-path: polygon(0 50%, 8px 16%, 100% 16%, 100% 84%, 8px 84%);
+  }
+}

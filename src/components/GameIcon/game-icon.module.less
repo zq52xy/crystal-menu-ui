@@ -1,0 +1,48 @@
+/* [PROTOCOL]: Change this header when GameIcon styling changes, then check CLAUDE.md.
+ * INPUT: GameIcon props and shared tokens.
+ * OUTPUT: CSS module for original JRPG HUD icons.
+ * POS: Component-scoped styles only; no Figma vector assets.
+ */
+.icon {
+  display: inline-block;
+  flex: none;
+  color: @crystal-color-cyan;
+  filter: drop-shadow(0 0 7px rgba(75, 205, 255, 0.4));
+  vertical-align: middle;
+}
+
+.sm {
+  width: 18px;
+  height: 18px;
+}
+
+.md {
+  width: 26px;
+  height: 26px;
+}
+
+.lg {
+  width: 34px;
+  height: 34px;
+}
+
+.cyan {
+  color: @crystal-color-cyan;
+}
+
+.muted {
+  color: @crystal-color-text-muted;
+  filter: none;
+}
+
+.success {
+  color: @crystal-color-success;
+}
+
+.danger {
+  color: @crystal-color-danger;
+}
+
+.gold {
+  color: @crystal-color-gold;
+}

@@ -1,0 +1,156 @@
+/* [PROTOCOL]: Change this header when LevelInfo styling changes, then check CLAUDE.md.
+ * INPUT: LevelInfo structure and shared tokens.
+ * OUTPUT: CSS module for angular Remake-inspired status display.
+ * POS: Component-scoped styles only; no external image assets.
+ */
+.levelInfo {
+  position: relative;
+  width: min(100%, 360px);
+  min-height: 330px;
+  color: @crystal-color-text;
+}
+
+.triangle {
+  position: absolute;
+  top: 28px;
+  left: 22px;
+  width: 190px;
+  height: 190px;
+  border-top: 3px solid fade(@crystal-color-cyan, 84%);
+  border-left: 3px solid fade(@crystal-color-cyan, 84%);
+  filter: drop-shadow(3px 6px 0 @crystal-color-border-shadow);
+  transform: rotate(-45deg) skew(-6deg, -6deg);
+  transform-origin: 0 0;
+}
+
+.triangle::after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 84px;
+  height: 84px;
+  content: '';
+  border-top: 2px solid fade(@crystal-color-cyan, 44%);
+  border-left: 2px solid fade(@crystal-color-cyan, 44%);
+}
+
+.levelBlock {
+  position: absolute;
+  top: 20px;
+  left: 128px;
+  display: grid;
+  justify-items: center;
+}
+
+.levelLabel {
+  color: @crystal-color-gold;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.levelValue {
+  margin-top: -8px;
+  font-family: @crystal-font-display;
+  font-size: 74px;
+  font-weight: 400;
+  line-height: 0.95;
+  text-shadow: 0 6px 0 @crystal-color-border-shadow;
+}
+
+.expBlock {
+  position: absolute;
+  top: 122px;
+  left: 92px;
+  display: grid;
+  grid-template-columns: 92px auto auto auto;
+  gap: @crystal-space-1;
+  align-items: center;
+}
+
+.expTrack {
+  position: relative;
+  height: 8px;
+  background: #000;
+  border: 1px solid @crystal-color-line;
+}
+
+.expFill {
+  position: absolute;
+  inset: 1px auto 1px 1px;
+  background: linear-gradient(90deg, #02cae1, #00f9fb);
+}
+
+.expValue,
+.resourceValue {
+  font-family: @crystal-font-display;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.expMax,
+.resourceMax {
+  color: @crystal-color-text-muted;
+  font-size: 16px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.expLabel,
+.resourceLabel {
+  color: @crystal-color-cyan;
+  font-size: 18px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.resources {
+  position: absolute;
+  top: 178px;
+  left: 24px;
+  right: 10px;
+}
+
+.resource {
+  position: absolute;
+  top: var(--level-offset);
+  left: 0;
+  display: grid;
+  grid-template-columns: 40px minmax(86px, 1fr) auto auto;
+  gap: @crystal-space-1;
+  align-items: center;
+  width: 100%;
+}
+
+.resource:nth-child(1) {
+  padding-left: 68px;
+}
+
+.resource:nth-child(2) {
+  padding-left: 34px;
+}
+
+.resourceLine {
+  height: 2px;
+  background: linear-gradient(90deg, @crystal-color-cyan, @crystal-color-line);
+  transform: skewX(-28deg);
+  box-shadow: 6px 7px 0 fade(@crystal-color-border-shadow, 58%);
+}
+
+.weaponLevel {
+  position: absolute;
+  top: 282px;
+  left: 78px;
+  max-width: 240px;
+  overflow: hidden;
+  color: @crystal-color-gold;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  text-shadow: @crystal-shadow-text;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .levelInfo {
+    width: 100%;
+    transform: scale(0.86);
+    transform-origin: top left;
+  }
+}

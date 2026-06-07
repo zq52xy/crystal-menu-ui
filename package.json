@@ -1,0 +1,86 @@
+{
+  "name": "crystal-menu-ui",
+  "version": "0.1.0",
+  "description": "AI-ready React component library for original JRPG glass HUD interfaces.",
+  "author": "zq52xy",
+  "homepage": "https://zq52xy.github.io/crystal-menu-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zq52xy/crystal-menu-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zq52xy/crystal-menu-ui/issues"
+  },
+  "type": "module",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./style": "./dist/index.css",
+    "./dist/index.css": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "AI_USAGE.md",
+    "README.md",
+    "PROMPT.md",
+    "DESIGN_PROMPT.md",
+    "docs/ai-user-guide.md",
+    "docs/tokens.md",
+    "skill/SKILL.md"
+  ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build && tsc --project tsconfig.build.json --emitDeclarationOnly",
+    "build:demo": "vite build --config vite.config.demo.ts",
+    "prepublishOnly": "npm run build",
+    "deploy": "npm run build:demo && gh-pages -d demo-dist",
+    "typecheck": "tsc --noEmit",
+    "visual:smoke": "node scripts/visual-smoke.mjs",
+    "audit:docs": "node scripts/audit-docs-coverage.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^5.1.1",
+    "gh-pages": "^6.3.0",
+    "less": "^4.4.2",
+    "playwright": "^1.60.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  },
+  "keywords": [
+    "react",
+    "react-components",
+    "component-library",
+    "design-system",
+    "game-ui",
+    "jrpg",
+    "jrpg-ui",
+    "ui",
+    "typescript",
+    "vite",
+    "ai-ready",
+    "learning"
+  ],
+  "license": "MIT"
+}

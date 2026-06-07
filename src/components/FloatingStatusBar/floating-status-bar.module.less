@@ -1,0 +1,116 @@
+/* [PROTOCOL]: Change this header when FloatingStatusBar styling changes, then check CLAUDE.md.
+ * INPUT: FloatingStatusBar slots and shared tokens.
+ * OUTPUT: CSS module for Prototypes-inspired bottom metadata/action bar.
+ * POS: Component-scoped styles only; icons are CSS-drawn.
+ */
+.bar {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.8fr) minmax(220px, 1.4fr) minmax(90px, auto);
+  gap: @crystal-space-4;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  color: @crystal-color-text;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.metaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-4;
+  min-width: 0;
+}
+
+.metaItem,
+.action {
+  display: inline-flex;
+  gap: @crystal-space-2;
+  align-items: center;
+  min-width: 0;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.clockIcon {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border: 2px solid @crystal-color-cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(75, 205, 255, 0.32);
+}
+
+.clockIcon::before,
+.clockIcon::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  background: @crystal-color-cyan;
+  transform-origin: left center;
+}
+
+.clockIcon::before {
+  width: 5px;
+  height: 2px;
+  transform: translate(-1px, -1px) rotate(0deg);
+}
+
+.clockIcon::after {
+  width: 6px;
+  height: 2px;
+  transform: translate(-1px, -1px) rotate(-72deg);
+}
+
+.currencyIcon {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  color: @crystal-color-bg;
+  font-size: 11px;
+  font-weight: 800;
+  background: linear-gradient(180deg, @crystal-color-cyan, @crystal-color-success);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.hint {
+  min-width: 0;
+  overflow: hidden;
+  color: @crystal-color-text;
+  font-size: 16px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.action {
+  justify-content: end;
+  color: @crystal-color-text;
+}
+
+.triangleButton {
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid @crystal-color-cyan;
+  filter: drop-shadow(0 0 8px rgba(75, 205, 255, 0.48));
+}
+
+@media (max-width: 760px) {
+  .bar {
+    grid-template-columns: 1fr;
+    gap: @crystal-space-2;
+    align-items: start;
+  }
+
+  .hint {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .action {
+    justify-content: start;
+  }
+}

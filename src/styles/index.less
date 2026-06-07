@@ -1,0 +1,29 @@
+/* [PROTOCOL]: Change this header when global style entry changes, then check CLAUDE.md.
+ * INPUT: Reset rules and shared design tokens.
+ * OUTPUT: Package-level CSS side effects imported by src/index.ts.
+ * POS: Global baseline only; component styling stays in CSS modules.
+ */
+@import './reset.less';
+
+:root {
+  color: @crystal-color-text;
+  background: @crystal-color-bg;
+  font-family: @crystal-font-body;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

@@ -1,0 +1,75 @@
+/* [PROTOCOL]: Change this header when BattleMenu styling changes, then check CLAUDE.md.
+ * INPUT: Battle commands, gauges, actor metadata, and shared tokens.
+ * OUTPUT: CSS module for compact battle command shell.
+ * POS: Component-scoped styles only.
+ */
+.menu {
+  display: grid;
+  gap: @crystal-space-3;
+  padding: @crystal-space-3;
+  color: @crystal-color-text;
+  background:
+    linear-gradient(135deg, rgba(75, 205, 255, 0.14), transparent 36%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.9), rgba(2, 11, 19, 0.88));
+  border: 1px solid fade(@crystal-color-border, 52%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-inset;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-3;
+  color: @crystal-color-cyan;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.header strong {
+  min-width: 0;
+  overflow: hidden;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 22px;
+  text-overflow: ellipsis;
+  text-shadow: @crystal-shadow-text;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.commands {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: @crystal-space-2;
+}
+
+.gauges {
+  display: grid;
+  gap: @crystal-space-2;
+}
+
+.gauges span {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: @crystal-space-2;
+  align-items: center;
+}
+
+.gauges b {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.gauges i {
+  display: block;
+  height: 6px;
+  background: linear-gradient(90deg, @crystal-color-cyan, @crystal-color-success);
+  box-shadow: 0 0 10px rgba(75, 205, 255, 0.35);
+}
+
+@media (max-width: 620px) {
+  .commands {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,47 @@
+/* [PROTOCOL]: Change this header when Divider styling changes, then check CLAUDE.md.
+ * INPUT: Divider variant, label, and shared tokens.
+ * OUTPUT: CSS module for original HUD dividers.
+ * POS: Component-scoped styles only.
+ */
+.divider {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+  gap: @crystal-space-2;
+  align-items: center;
+  width: 100%;
+  color: @crystal-color-cyan;
+}
+
+.line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+
+.label {
+  max-width: 100%;
+  overflow: hidden;
+  color: @crystal-color-text;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  text-shadow: @crystal-shadow-text;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.glow .line {
+  height: 2px;
+  box-shadow: 0 0 12px rgba(75, 205, 255, 0.52);
+}
+
+.ornament {
+  grid-template-columns: minmax(24px, 1fr) auto auto minmax(24px, 1fr);
+}
+
+.diamond {
+  width: 12px;
+  height: 12px;
+  border: 1px solid currentColor;
+  box-shadow: 0 0 10px rgba(75, 205, 255, 0.45);
+  transform: rotate(45deg);
+}

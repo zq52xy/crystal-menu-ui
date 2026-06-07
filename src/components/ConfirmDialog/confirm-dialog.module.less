@@ -1,0 +1,179 @@
+/* [PROTOCOL]: Change this header when ConfirmDialog styling changes, then check CLAUDE.md.
+ * INPUT: ConfirmDialog slots and shared tokens.
+ * OUTPUT: CSS module for Prototypes-inspired confirmation dialog.
+ * POS: Component-scoped styles only; no remote assets.
+ */
+.dialog {
+  position: relative;
+  display: grid;
+  gap: @crystal-space-5;
+  width: min(100%, 660px);
+  min-width: 0;
+  padding: @crystal-space-5 @crystal-space-6 @crystal-space-6;
+  color: @crystal-color-text;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(129, 223, 255, 0.34), transparent 44%),
+    linear-gradient(180deg, rgba(14, 89, 186, 0.92), rgba(0, 15, 38, 0.96) 88%);
+  border: 1px solid fade(@crystal-color-border, 78%);
+  border-radius: @crystal-radius-panel;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.48),
+    inset 0 0 0 6px rgba(3, 23, 48, 0.54),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dialog::before,
+.dialog::after {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  content: '';
+  border: 2px solid @crystal-color-cyan;
+  transform: rotate(45deg);
+}
+
+.dialog::before {
+  top: -7px;
+  left: -7px;
+}
+
+.dialog::after {
+  right: -7px;
+  bottom: -7px;
+}
+
+.iconRow {
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) 48px minmax(40px, 1fr);
+  gap: @crystal-space-2;
+  align-items: center;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, fade(@crystal-color-cyan, 70%), transparent);
+}
+
+.icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  justify-self: center;
+  color: @crystal-color-cyan;
+  border: 1px solid @crystal-color-cyan;
+  box-shadow: inset 0 0 0 10px rgba(28, 93, 147, 0.7), 0 0 12px rgba(75, 205, 255, 0.34);
+  transform: rotate(45deg);
+}
+
+.icon span {
+  font-size: 20px;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(75, 205, 255, 0.55);
+  transform: rotate(-45deg);
+}
+
+.copy {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.timestamp {
+  color: @crystal-color-success;
+  font-size: clamp(18px, 4vw, 26px);
+}
+
+.title {
+  overflow-wrap: anywhere;
+  font-size: clamp(20px, 4vw, 27px);
+  font-weight: 500;
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+  overflow-wrap: anywhere;
+  color: #c8c7ca;
+  font-size: clamp(17px, 3.6vw, 24px);
+}
+
+.message {
+  margin: @crystal-space-5 0 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(18px, 3.8vw, 26px);
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.35);
+}
+
+.actions {
+  display: grid;
+  gap: @crystal-space-1;
+  justify-items: center;
+}
+
+.action {
+  position: relative;
+  width: min(100%, 446px);
+  min-height: 40px;
+  color: @crystal-color-text;
+  font: inherit;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(90deg, transparent, rgba(10, 70, 116, 0.32), transparent);
+  border: 0;
+  cursor: pointer;
+}
+
+.action::before,
+.action::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  background: linear-gradient(90deg, transparent, fade(@crystal-color-cyan, 28%), transparent);
+}
+
+.action::before {
+  top: 0;
+}
+
+.action::after {
+  bottom: 0;
+}
+
+.action:hover,
+.action:focus-visible,
+.selected {
+  outline: none;
+  background:
+    radial-gradient(ellipse at 50% 150%, rgba(0, 204, 254, 0.74), transparent 66%),
+    linear-gradient(90deg, transparent, rgba(0, 151, 211, 0.68), transparent);
+}
+
+.selected::before,
+.selected::after {
+  background: linear-gradient(90deg, transparent, @crystal-color-success, transparent);
+}
+
+.warning .icon {
+  color: @crystal-color-gold;
+  border-color: @crystal-color-gold;
+}
+
+.danger .icon {
+  color: @crystal-color-danger;
+  border-color: @crystal-color-danger;
+}
+
+@media (max-width: 560px) {
+  .dialog {
+    gap: @crystal-space-4;
+    padding: @crystal-space-5 @crystal-space-4;
+  }
+
+  .action {
+    font-size: 21px;
+  }
+}

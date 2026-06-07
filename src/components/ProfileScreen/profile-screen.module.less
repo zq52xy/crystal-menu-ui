@@ -1,0 +1,63 @@
+/* [PROTOCOL]: Change this header when ProfileScreen styling changes, then check CLAUDE.md.
+ * INPUT: ProfileScreen layout regions and shared tokens.
+ * OUTPUT: CSS module for complete reference profile screen layout.
+ * POS: Composition styles only; child visuals stay in child components.
+ */
+.screen {
+  display: grid;
+  gap: @crystal-space-4;
+  color: @crystal-color-text;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-4;
+  padding-inline: @crystal-space-1;
+}
+
+.topline strong {
+  font-family: @crystal-font-display;
+  font-size: 22px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.topline span,
+.empty {
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(360px, 1.3fr);
+  gap: @crystal-space-3;
+  align-items: start;
+}
+
+.grid > :nth-child(3),
+.grid > :nth-child(4) {
+  grid-column: 1 / -1;
+}
+
+.footer {
+  padding: @crystal-space-3 @crystal-space-4;
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+  background: rgba(2, 11, 19, 0.5);
+  border: 1px solid fade(@crystal-color-border, 38%);
+  border-radius: @crystal-radius-control;
+}
+
+@media (max-width: 760px) {
+  .topline,
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grid > :nth-child(3),
+  .grid > :nth-child(4) {
+    grid-column: auto;
+  }
+}

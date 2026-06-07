@@ -1,0 +1,60 @@
+/* [PROTOCOL]: Change this header when DialogueBox styling changes, then check CLAUDE.md.
+ * INPUT: DialogueBox tone classes and shared tokens.
+ * OUTPUT: CSS module for dialogue and narration panels.
+ * POS: Component-scoped styles only.
+ */
+.dialogue {
+  position: relative;
+  min-height: 84px;
+  padding: @crystal-space-4 @crystal-space-5;
+  color: @crystal-color-text;
+  background:
+    linear-gradient(135deg, rgba(75, 205, 255, 0.14), transparent 52%),
+    linear-gradient(180deg, @crystal-color-glass, @crystal-color-glass-strong);
+  border: 1px solid fade(@crystal-color-border, 72%);
+  border-radius: @crystal-radius-panel;
+  backdrop-filter: blur(12px);
+  box-shadow: @crystal-shadow-panel;
+}
+
+.speaker {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 2px @crystal-space-2;
+  margin-bottom: @crystal-space-2;
+  overflow: hidden;
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgba(4, 60, 111, 0.62);
+  border: 1px solid fade(@crystal-color-cyan, 44%);
+  border-radius: 2px;
+}
+
+.text {
+  max-width: 72ch;
+  overflow-wrap: anywhere;
+  line-height: 1.55;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+.cursor {
+  position: absolute;
+  right: @crystal-space-4;
+  bottom: @crystal-space-3;
+  width: 0;
+  height: 0;
+  border-top: 7px solid @crystal-color-cyan;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+.system {
+  border-color: @crystal-color-cyan;
+}
+
+.danger {
+  border-color: @crystal-color-danger;
+}

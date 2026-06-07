@@ -1,0 +1,84 @@
+/* [PROTOCOL]: Change this header when PartyStatus styling changes, then check CLAUDE.md.
+ * INPUT: PartyStatus rows and shared tokens.
+ * OUTPUT: CSS module for dense party status layout.
+ * POS: Component-scoped list styles only.
+ */
+.party {
+  display: grid;
+  gap: @crystal-space-2;
+  min-width: 0;
+}
+
+.member {
+  display: grid;
+  grid-template-columns: minmax(112px, 0.9fr) minmax(180px, 1.6fr) 52px;
+  gap: @crystal-space-3;
+  align-items: center;
+  min-width: 0;
+  padding: @crystal-space-2 @crystal-space-3;
+  background:
+    linear-gradient(90deg, rgba(75, 205, 255, 0.08), transparent 54%),
+    rgba(4, 11, 36, 0.28);
+  border: 1px solid fade(@crystal-color-border, 34%);
+  border-radius: 2px;
+}
+
+.active {
+  border-color: @crystal-color-cyan;
+  box-shadow: inset 3px 0 0 @crystal-color-cyan;
+}
+
+.identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: @crystal-space-2;
+  min-width: 0;
+}
+
+.name,
+.level,
+.status {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name {
+  font-weight: 800;
+}
+
+.level {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.meters {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.status {
+  color: @crystal-color-success;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.compact .member {
+  grid-template-columns: minmax(92px, 0.9fr) minmax(140px, 1.5fr) 44px;
+  gap: @crystal-space-2;
+  padding: @crystal-space-1 @crystal-space-2;
+}
+
+@media (max-width: 640px) {
+  .member,
+  .compact .member {
+    grid-template-columns: 1fr;
+  }
+
+  .status {
+    text-align: left;
+  }
+}

@@ -1,0 +1,106 @@
+/* [PROTOCOL]: Change this header when ItemTooltip styling changes, then check CLAUDE.md.
+ * INPUT: Item details, effects, tone, and shared tokens.
+ * OUTPUT: CSS module for compact item detail surface.
+ * POS: Component-scoped styles only.
+ */
+.tooltip {
+  display: grid;
+  gap: @crystal-space-3;
+  padding: @crystal-space-4;
+  color: @crystal-color-text;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(129, 223, 255, 0.16), transparent 42%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.9), rgba(2, 11, 19, 0.86));
+  border: 1px solid fade(@crystal-color-border, 50%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-inset;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: @crystal-space-3;
+  align-items: center;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+}
+
+.identity {
+  display: grid;
+  gap: @crystal-space-1;
+  min-width: 0;
+}
+
+.identity strong,
+.identity span,
+.description {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.identity strong {
+  font-family: @crystal-font-display;
+  font-size: 22px;
+  text-shadow: @crystal-shadow-text;
+  white-space: nowrap;
+}
+
+.identity span,
+.description,
+.footer {
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+}
+
+.quantity {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.description {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.effects {
+  display: grid;
+  gap: @crystal-space-2;
+  margin: 0;
+}
+
+.effect {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-3;
+  padding-block: @crystal-space-1;
+  border-bottom: 1px solid fade(@crystal-color-border, 18%);
+}
+
+.effect dt {
+  color: @crystal-color-cyan;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.effect dd {
+  margin: 0;
+  font-weight: 800;
+}
+
+.footer {
+  padding-top: @crystal-space-2;
+  border-top: 1px solid fade(@crystal-color-border, 22%);
+}
+
+.rare {
+  border-color: fade(@crystal-color-violet, 68%);
+}
+
+.warning {
+  border-color: fade(@crystal-color-danger, 68%);
+}

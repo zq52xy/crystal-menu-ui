@@ -1,0 +1,166 @@
+/* [PROTOCOL]: Change this header when OrbGem styling changes, then check CLAUDE.md.
+ * INPUT: OrbGem tone, size, state, and shared tokens.
+ * OUTPUT: CSS module for a single original gem socket.
+ * POS: Component-scoped styles only; no image assets.
+ */
+.gemFrame {
+  --orb-size: 78px;
+  --gem-inset: 11px;
+  --orb-light: #dffbff;
+  --orb-mid: @crystal-color-success;
+  --orb-deep: #096a76;
+  --orb-shadow: #021a24;
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: var(--orb-size);
+  height: var(--orb-size);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 24%, rgba(221, 255, 255, 0.72), transparent 16%),
+    radial-gradient(circle at 50% 50%, rgba(102, 208, 243, 0.98) 0 52%, #173b61 66%, #092340 76%, rgba(86, 190, 228, 0.88) 91%, #092744 100%);
+  box-shadow:
+    0 0 0 1px rgba(129, 223, 255, 0.2),
+    0 0 18px rgba(75, 205, 255, 0.42),
+    0 6px 12px rgba(0, 10, 34, 0.36),
+    inset 0 4px 6px rgba(255, 255, 255, 0.28),
+    inset 0 -7px 10px rgba(0, 10, 24, 0.58);
+}
+
+.gemFrame::before {
+  position: absolute;
+  inset: 7px;
+  content: '';
+  background: radial-gradient(circle at 50% 50%, #061525 0 56%, #000b14 100%);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 2px 7px rgba(0, 0, 0, 0.88),
+    0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.gemFrame::after {
+  position: absolute;
+  inset: 2px;
+  content: '';
+  border: 2px solid rgba(112, 220, 255, 0.34);
+  border-radius: 50%;
+  box-shadow: inset 0 0 12px rgba(4, 38, 78, 0.62);
+}
+
+.gem {
+  position: absolute;
+  z-index: 1;
+  inset: var(--gem-inset);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.88) 0 6%, transparent 18%),
+    radial-gradient(circle at 66% 28%, rgba(255, 255, 255, 0.34) 0 8%, transparent 20%),
+    radial-gradient(circle at 28% 74%, rgba(0, 0, 0, 0.42) 0 12%, transparent 30%),
+    repeating-radial-gradient(circle at 46% 46%, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 6px),
+    conic-gradient(from 28deg, rgba(255, 255, 255, 0.16), transparent 15%, rgba(0, 0, 0, 0.28) 27%, transparent 42%, rgba(255, 255, 255, 0.2) 58%, transparent 72%, rgba(0, 0, 0, 0.24)),
+    radial-gradient(circle at 48% 48%, var(--orb-light) 0 8%, var(--orb-mid) 36%, var(--orb-deep) 72%, var(--orb-shadow) 100%);
+  border: 2px solid rgba(0, 5, 14, 0.76);
+  border-radius: 50%;
+  box-shadow:
+    inset 4px 4px 8px rgba(255, 255, 255, 0.3),
+    inset -7px -9px 12px rgba(0, 0, 0, 0.66),
+    0 0 9px color-mix(in srgb, var(--orb-mid) 70%, transparent);
+}
+
+.gem::before,
+.gem::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  border-radius: 50%;
+}
+
+.gem::before {
+  background:
+    linear-gradient(115deg, transparent 0 24%, rgba(255, 255, 255, 0.36) 25% 30%, transparent 31% 100%),
+    linear-gradient(18deg, transparent 0 42%, rgba(0, 0, 0, 0.18) 43% 48%, transparent 49% 100%),
+    repeating-linear-gradient(92deg, transparent 0 7px, rgba(255, 255, 255, 0.08) 7px 10px, transparent 10px 17px);
+  opacity: 0.78;
+}
+
+.gem::after {
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 0 0 14px rgba(0, 0, 0, 0.62);
+}
+
+.sm {
+  --orb-size: 38px;
+  --gem-inset: 7px;
+}
+
+.md {
+  --orb-size: 54px;
+  --gem-inset: 8px;
+}
+
+.lg {
+  --orb-size: 78px;
+  --gem-inset: 11px;
+}
+
+.inherit {
+  --orb-size: inherit;
+  --gem-inset: inherit;
+}
+
+.green {
+  --orb-light: #e7ffd8;
+  --orb-mid: #59d977;
+  --orb-deep: #0d672e;
+  --orb-shadow: #021806;
+}
+
+.violet {
+  --orb-light: #f8e5ff;
+  --orb-mid: #bd6bff;
+  --orb-deep: #5b1c9b;
+  --orb-shadow: #170421;
+}
+
+.gold {
+  --orb-light: #fff8b8;
+  --orb-mid: #d9c61b;
+  --orb-deep: #746b05;
+  --orb-shadow: #1f1a00;
+}
+
+.red {
+  --orb-light: #ffdede;
+  --orb-mid: #ed787e;
+  --orb-deep: #93323a;
+  --orb-shadow: #230609;
+}
+
+.cyan {
+  --orb-light: #ddffff;
+  --orb-mid: @crystal-color-success;
+  --orb-deep: #096a76;
+  --orb-shadow: #021a24;
+}
+
+.empty .gem {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(75, 205, 255, 0.12), rgba(2, 11, 19, 0.86) 68%, #01070c 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(129, 223, 255, 0.16),
+    inset 0 0 14px rgba(0, 0, 0, 0.72);
+}
+
+.active {
+  box-shadow:
+    @crystal-shadow-focus,
+    0 0 0 1px rgba(129, 223, 255, 0.2),
+    0 0 22px rgba(75, 205, 255, 0.62),
+    inset 0 4px 6px rgba(255, 255, 255, 0.28),
+    inset 0 -7px 10px rgba(0, 10, 24, 0.58);
+}
+
+.disabled {
+  opacity: 0.52;
+}

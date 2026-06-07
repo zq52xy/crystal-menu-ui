@@ -1,0 +1,72 @@
+/* [PROTOCOL]: Change this header when Loading styling changes, then check CLAUDE.md.
+ * INPUT: Loading size, active state, tip, and shared tokens.
+ * OUTPUT: CSS module for original crystal-ring loading indicator.
+ * POS: Component-scoped styles only.
+ */
+.loading {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: @crystal-space-3;
+  align-items: center;
+  color: @crystal-color-text;
+}
+
+.ring {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  border: 2px solid fade(@crystal-color-border, 30%);
+  border-top-color: @crystal-color-cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(75, 205, 255, 0.32);
+  animation: crystal-spin 1.05s linear infinite;
+}
+
+.ring::after {
+  position: absolute;
+  width: 52%;
+  height: 52%;
+  content: '';
+  border: 1px solid fade(@crystal-color-border, 54%);
+  transform: rotate(45deg);
+}
+
+.core {
+  width: 18%;
+  height: 18%;
+  background: @crystal-color-success;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 249, 251, 0.7);
+}
+
+.sm .ring {
+  width: 22px;
+  height: 22px;
+}
+
+.md .ring {
+  width: 34px;
+  height: 34px;
+}
+
+.lg .ring {
+  width: 48px;
+  height: 48px;
+}
+
+.tip {
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.paused .ring {
+  animation-play-state: paused;
+  opacity: 0.58;
+}
+
+@keyframes crystal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

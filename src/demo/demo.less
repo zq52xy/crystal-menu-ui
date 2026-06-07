@@ -1,0 +1,188 @@
+/* [PROTOCOL]: Change this header when demo layout styling changes, then check CLAUDE.md.
+ * INPUT: Demo page shell and public components.
+ * OUTPUT: Demo-only responsive page layout.
+ * POS: Visual QA surface only; component styles stay in modules.
+ */
+@import '../styles/index.less';
+
+.demo-shell {
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 48px);
+  background:
+    linear-gradient(135deg, transparent 0 13%, rgba(75, 205, 255, 0.13) 13% 13.2%, transparent 13.2% 100%),
+    linear-gradient(180deg, @crystal-color-bg, #2f3034 46%, #11151c);
+}
+
+.demo-stage {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+}
+
+.demo-shell--mobile-preview {
+  padding: 16px;
+}
+
+.demo-shell--mobile-preview .demo-stage {
+  width: min(390px, 100%);
+}
+
+.demo-shell--mobile-preview [class^='crystal-grid-'] {
+  grid-template-columns: 1fr;
+}
+
+.demo-shell--mobile-preview [class^='crystal-bar-'] {
+  grid-template-columns: 1fr;
+  gap: @crystal-space-2;
+  align-items: start;
+}
+
+.demo-shell--mobile-preview [class^='crystal-hint-'] {
+  text-align: left;
+  white-space: normal;
+}
+
+.demo-shell--mobile-preview [class^='crystal-action-'] {
+  justify-content: start;
+}
+
+.demo-shell--mobile-preview .demo-dialog {
+  gap: @crystal-space-3;
+  padding-block: @crystal-space-3;
+}
+
+.demo-dialog {
+  display: grid;
+  gap: @crystal-space-4;
+  justify-items: center;
+  padding-block: @crystal-space-4;
+}
+
+.demo-save-list {
+  display: grid;
+  gap: @crystal-space-2;
+  width: min(100%, 720px);
+}
+
+.demo-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: @crystal-space-2;
+  width: min(100%, 720px);
+}
+
+.demo-profile-screen {
+  width: min(100%, 900px);
+}
+
+.demo-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: @crystal-space-2;
+}
+
+.demo-detail-grid span {
+  display: flex;
+  justify-content: space-between;
+  gap: @crystal-space-2;
+  padding: @crystal-space-2;
+  color: @crystal-color-text;
+  background: rgba(2, 11, 19, 0.5);
+  border: 1px solid fade(@crystal-color-border, 34%);
+  border-radius: @crystal-radius-control;
+}
+
+.demo-detail-grid strong {
+  color: @crystal-color-cyan;
+}
+
+.demo-detail-grid b {
+  font-weight: 800;
+}
+
+.demo-icon-chip {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: @crystal-space-2;
+  align-items: center;
+  min-height: 46px;
+  padding: @crystal-space-2;
+  color: @crystal-color-text;
+  font-size: 13px;
+  background: rgba(2, 11, 19, 0.5);
+  border: 1px solid fade(@crystal-color-border, 34%);
+  border-radius: @crystal-radius-control;
+}
+
+.demo-icon-chip span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demo-system-primitives {
+  display: grid;
+  gap: @crystal-space-4;
+  width: min(100%, 720px);
+  justify-items: stretch;
+}
+
+.demo-orb-showcase {
+  display: grid;
+  gap: @crystal-space-3;
+  width: min(780px, calc(100vw - 96px));
+}
+
+.demo-orb-rail {
+  min-width: 0;
+}
+
+.demo-gem-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-3;
+  align-items: center;
+  padding: @crystal-space-2;
+  background: rgba(2, 11, 19, 0.38);
+  border: 1px solid fade(@crystal-color-border, 28%);
+  border-radius: @crystal-radius-control;
+}
+
+.demo-inventory-system {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+  gap: @crystal-space-3;
+  width: min(100%, 820px);
+  align-items: start;
+}
+
+.demo-shell--mobile-preview .demo-icon-grid,
+.demo-shell--mobile-preview .demo-detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.demo-shell--mobile-preview .demo-inventory-system {
+  grid-template-columns: 1fr;
+}
+
+.demo-shell--mobile-preview .demo-orb-showcase {
+  width: min(100%, calc(100vw - 32px));
+}
+
+@media (max-width: 620px) {
+  .demo-icon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .demo-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .demo-inventory-system {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-orb-showcase {
+    width: min(100%, calc(100vw - 32px));
+  }
+}
