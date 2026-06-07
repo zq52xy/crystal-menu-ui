@@ -30,6 +30,7 @@
     "README.md",
     "PROMPT.md",
     "DESIGN_PROMPT.md",
+    "docs/img",
     "docs/ai-user-guide.md",
     "docs/tokens.md",
     "skill/SKILL.md"
@@ -44,6 +45,7 @@
     "build:demo": "vite build --config vite.config.demo.ts",
     "prepublishOnly": "npm run build",
     "deploy": "npm run build:demo && gh-pages -d demo-dist",
+    "art:readme": "node scripts/generate-readme-art.mjs",
     "typecheck": "tsc --noEmit",
     "visual:smoke": "node scripts/visual-smoke.mjs",
     "audit:docs": "node scripts/audit-docs-coverage.mjs"

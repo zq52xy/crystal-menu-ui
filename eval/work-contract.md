@@ -1,8 +1,8 @@
-# Work Contract: README Format Alignment
+# Work Contract: README Visual Assets
 
 ## Work Target
 
-Rewrite the public README to follow the requested component-library README format: centered header, badges, bilingual intro, important rights boundary, showcase image, bilingual preview bullets, highlights, installation, quick start, AI docs, component table, design tokens, tech stack, local development, contributing, credits, and license.
+Replace the current README screenshot-led opening with original marketing art: one banner header image and two bilingual core-highlight images.
 
 ## Parent Contract
 
@@ -10,21 +10,21 @@ Rewrite the public README to follow the requested component-library README forma
 
 ## Core User Paths
 
-1. GitHub visitors can understand the package value above the fold.
-2. Readers can find PC and mobile online preview links immediately.
-3. Readers can identify the source Figma component library.
-4. AI users can find AI usage docs, prompts, and token docs.
-5. Component consumers can see the 24-component map and design tokens without opening source code.
-6. Public wording stays neutral and does not present external repositories as benchmarks.
+1. GitHub visitors see a polished banner before the preview links.
+2. English readers can scan the feature one-pager quickly.
+3. Chinese readers can scan the Chinese feature one-pager quickly.
+4. The images communicate component count, AI docs, tokens, original visuals, preview, and rights boundary.
+5. The assets remain original and do not use official screenshots, logos, characters, fonts, extracted UI cuts, or remote Figma assets.
 
 ## Done Definition
 
-- README uses the requested reference-style section order and mixed English/Chinese structure.
-- README includes badges, important boundary block, showcase image, dual preview lists, highlights table, installation, quick start, AI docs, components, tokens, tech stack, local development, contributing, credits, and license.
-- README says the source is the Figma component library.
-- Public method/attribution docs do not expose external repository names.
-- README image paths exist.
-- Docs audit and typecheck pass.
+- `docs/img/banner.png` exists and is referenced by README.
+- `docs/img/feature-onepager.png` exists and is referenced by README.
+- `docs/img/feature-onepager-zh.png` exists and is referenced by README.
+- A repeatable generator script exists.
+- README no longer uses the demo screenshot as the top showcase banner.
+- Scripts/docs module maps are updated.
+- Typecheck, docs audit, README image-path check, and package dry-run pass.
 - Evidence report is updated.
 
 ## Invariants
@@ -32,20 +32,19 @@ Rewrite the public README to follow the requested component-library README forma
 - Keep public naming neutral.
 - Do not imply official affiliation.
 - Do not use official screenshots, icons, textures, exact vector paths, fonts, or remote Figma assets.
-- Do not add fake package repository metadata to `package.json`.
-- If Pages URLs are not live yet, say they become active after deployment.
+- Keep image text readable at GitHub README scale.
+- Generated assets must be committed as ordinary repo assets, not build outputs.
 
 ## Gates
 
 - Read `quality-eval-kit/SKILL.md`.
 - Read `quality-eval-kit/templates/MANIFEST.md`.
 - Reuse existing `eval/visual-contract.md`.
-- Fetch and inspect the requested README format from the provided GitHub repository.
-- Rewrite README without copying project-specific claims from the reference.
-- Check README image paths.
-- Check public docs for external repository names.
+- Generate original assets under `docs/img/`.
+- Inspect generated images visually.
 - Run `npm run typecheck`.
 - Run `npm run audit:docs`.
+- Run `npm pack --dry-run --json`.
 - Write evidence report after implementation.
 
 ## Evidence Required
@@ -54,8 +53,8 @@ Rewrite the public README to follow the requested component-library README forma
 
 ## Human Review
 
-User should confirm whether the final public repository slug stays `crystal-menu-ui`; if it changes, update the GitHub Pages, npm, and stars badge links.
+User should review the banner and feature images for launch taste before treating them as final social-preview material.
 
 ## Baseline Policy
 
-No visual baseline may be refreshed to hide a regression. This work changes public documentation format only.
+No visual baseline may be refreshed to hide a regression. README marketing images are public assets, not test baselines.

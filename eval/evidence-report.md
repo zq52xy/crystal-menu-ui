@@ -1,8 +1,8 @@
-# Evidence Report: README Format Alignment
+# Evidence Report: README Visual Assets
 
 ## Summary
 
-Rewrote the public README to follow the requested reference-style component-library format while preserving this repository's own facts, source Figma framing, rights boundary, AI docs, component map, tokens, and preview links. Outcome: pass.
+Generated original README marketing art and replaced the previous screenshot-led opening with a dedicated banner plus English and Chinese core-highlight images. Outcome: pass.
 
 ## Contract
 
@@ -16,86 +16,74 @@ Work contract: `eval/work-contract.md`
 - Date context: 2026-06-08 Asia/Shanghai
 - Node: v24.12.0
 - npm: 11.6.2
-- Vite: 7.3.5
-- Git: not a repository at this path
+- Renderer: Playwright Chromium through `scripts/generate-readme-art.mjs`
 
 ## Inputs
 
 - User request:
-  - README format should fully follow the provided component-library reference.
-  - Continue the rewrite.
-- Reference inspected:
-  - user-provided component-library README format.
-  - raw README headings and key sections: centered header, badges, bilingual intro, important boundary, showcase image, Preview / 预览, Highlights / 核心卖点, Installation / 安装, Quick Start / 快速开始, For AI Users / AI 用户指南, Components, Design Tokens, Tech Stack, Local Development, Contributing, Credits, License.
+  - replace the weak opening image,
+  - generate a banner header image,
+  - create dedicated English and Chinese core-selling-point images.
 
 ## Implementation
 
-- Rewrote `README.md` into mixed English/Chinese section format.
-- Added centered badge header with npm, downloads, stars, license, components, React, TypeScript, Vite, AI, Figma, and bilingual badges.
-- Added IMPORTANT rights-boundary block in English and Chinese.
-- Added showcase image and two-column Highlights table.
-- Added Preview / 预览 bullets:
-  - PC online preview
-  - mobile online preview
-  - component docs
-  - showcase
-  - source Figma component library
-- Added reference-style sections:
-  - `Installation / 安装`
-  - `Quick Start / 快速开始`
-  - `For AI Users / AI 用户指南`
-  - `AI Documentation Files / AI 文档`
-  - `Components (24) / 组件`
-  - `Design Tokens / 设计变量`
-  - `Tech Stack / 技术栈`
-  - `Local Development / 本地开发`
-  - `Contributing / 贡献`
-  - `Credits / 致谢`
-  - `License / 许可证`
-- Neutralized public method-source wording in:
-  - `ATTRIBUTION.md`
-  - `CLAUDE.md`
+- Added repeatable art generator:
+  - `scripts/generate-readme-art.mjs`
+- Added npm script:
+  - `npm run art:readme`
+- Generated original PNG assets:
+  - `docs/img/banner.png`
+  - `docs/img/feature-onepager.png`
+  - `docs/img/feature-onepager-zh.png`
+- Updated README:
+  - top showcase now uses `docs/img/banner.png`
+  - Highlights table now uses the English and Chinese one-pagers
+- Updated module maps:
+  - `scripts/CLAUDE.md`
+  - `docs/CLAUDE.md`
+- Updated package files:
+  - `package.json` includes `docs/img`
+
+## Visual Review
+
+Opened all generated assets for visual inspection:
+
+- `banner.png`: dark glass HUD banner with menu/status/orb rail composition, no official elements.
+- `feature-onepager.png`: English core highlights are readable at README scale.
+- `feature-onepager-zh.png`: Chinese core highlights render correctly and remain readable.
 
 ## Checks Run
 
 - Read `quality-eval-kit/SKILL.md`.
 - Read `quality-eval-kit/templates/MANIFEST.md`.
-- Read `ce-work` host shim and authoritative plugin skill.
-- Fetched and inspected the requested GitHub README format.
-- Checked README image paths:
-  - `eval/screenshots/desktop-prototypes.png`: exists.
-  - `eval/screenshots/orb-gem-and-rail-panel.png`: exists.
-- Checked public docs for old external repository names: no matches.
+- Read `ce-work` host shim.
+- Ran `npm run art:readme`: pass.
 - Ran `npm run typecheck`: pass.
 - Ran `npm run audit:docs`: pass; 24 exported components documented.
+- Checked README image paths:
+  - `docs/img/banner.png`: exists, 687299 bytes.
+  - `docs/img/feature-onepager.png`: exists, 556945 bytes.
+  - `docs/img/feature-onepager-zh.png`: exists, 552317 bytes.
 - Ran `npm pack --dry-run --json`: pass.
 
 ## Package Evidence
 
-`npm pack --dry-run --json` confirms these docs remain included:
+`npm pack --dry-run --json` confirms these public files are included:
 
-- `README.md` 13998 bytes
-- `AI_USAGE.md` 14506 bytes
-- `docs/ai-user-guide.md` 3970 bytes
-- `docs/tokens.md` 2485 bytes
+- `README.md` 13966 bytes
+- `docs/img/banner.png` 687299 bytes
+- `docs/img/feature-onepager.png` 556945 bytes
+- `docs/img/feature-onepager-zh.png` 552317 bytes
+- `package.json` 2235 bytes
 
-## Outputs
+## Rights Boundary
 
-- Public README:
-  - `README.md`
-- Public method boundary:
-  - `ATTRIBUTION.md`
-- Project map:
-  - `CLAUDE.md`
+The images are generated from local HTML/CSS and abstract UI geometry. They do not use official screenshots, character art, logos, official fonts, extracted UI cuts, exact source-vector paths, or remote Figma assets.
 
 ## Human Review
 
-User should confirm whether the public GitHub repository and npm package will use `crystal-menu-ui`. If not, update the npm badge, GitHub stars badge, GitHub Pages preview links, and local development clone command.
-
-## Baseline Decision
-
-No visual baseline was refreshed. This work changes public documentation format only.
+User should review whether the banner should become the GitHub social preview image.
 
 ## Final Status
 
-Pass. README now follows the requested reference-style format and keeps the project framed around the source Figma component library.
+Pass. README now has a dedicated banner and bilingual core-highlight images.

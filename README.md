@@ -38,7 +38,7 @@ An original React UI component library for JRPG-style glass HUD interfaces.
 >
 > MIT 许可仅覆盖**本项目代码**，不授予任何第三方商标、游戏 IP、官方美术、名称或专有视觉资产的使用权。任何复用，尤其是商业用途，都需要使用者自行完成 IP 和商标风险审查。
 
-![Showcase](eval/screenshots/desktop-prototypes.png)
+![Crystal Menu UI banner](docs/img/banner.png)
 
 ### 🔗 Preview
 
@@ -66,8 +66,8 @@ An original React UI component library for JRPG-style glass HUD interfaces.
 
 <table>
 <tr>
-<td width="50%"><img src="eval/screenshots/desktop-prototypes.png" alt="Crystal Menu UI desktop showcase" /></td>
-<td width="50%"><img src="eval/screenshots/orb-gem-and-rail-panel.png" alt="Orb gem and socket rail showcase" /></td>
+<td width="50%"><img src="docs/img/feature-onepager.png" alt="Core highlights in English" /></td>
+<td width="50%"><img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" /></td>
 </tr>
 </table>
 
