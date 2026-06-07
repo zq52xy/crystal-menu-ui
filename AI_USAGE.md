@@ -1,6 +1,8 @@
 # AI Usage: JRPG Remake Glass HUD Study Kit
 
-Use this library as a learning-only JRPG menu component system. Do not claim affiliation with any game publisher or use official assets.
+Use this library as a learning-only JRPG menu component system inspired by Final Fantasy-style UI studies. Do not claim affiliation with any game publisher or use official assets.
+
+Search/discovery aliases: `Final Fantasy UI study`, `Final Fantasy-inspired JRPG menu components`, `Final Fantasy Remake UI reference`, `最终幻想 UI 学习`, `最终幻想风格菜单组件`, `最终幻想 Remake 界面参考`. Treat these as reference and search labels only, never as official brand claims.
 
 > FOR AI CODE ASSISTANTS: This file is the canonical machine-readable reference for generating code with `crystal-menu-ui`. Prefer this file over README prose. Do not invent components, props, token names, official assets, or brand claims.
 
@@ -32,6 +34,7 @@ react-dom  >= 18.0.0
 - Do not use official screenshots, logos, characters, fonts, music, icons, textures, extracted UI cuts, or remote Figma assets.
 - Do not claim affiliation with any publisher or franchise.
 - Do not say the public package is an exact clone; describe it as visual-language parity and original implementation.
+- You may use `Final Fantasy` / `最终幻想` only as a study/search reference phrase paired with the unofficial boundary.
 
 ## 2. Design Tokens
 

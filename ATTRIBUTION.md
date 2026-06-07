@@ -15,4 +15,6 @@ The package must not include official assets, extracted screenshots, exact vecto
 
 ## Public Naming
 
-Use neutral names such as `crystal-menu-ui`, `fantasy-rpg-ui-study`, or `jrpg-menu-ui`. Keep direct game names as private study references only.
+Use neutral package names such as `crystal-menu-ui`, `fantasy-rpg-ui-study`, or `jrpg-menu-ui`.
+
+Direct game names such as `Final Fantasy` / `最终幻想` may appear only as descriptive search and study-reference phrases, for example `Final Fantasy UI study` or `最终幻想风格菜单组件`, and must stay paired with the unofficial, learning-only boundary.

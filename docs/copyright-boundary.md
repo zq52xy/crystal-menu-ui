@@ -10,6 +10,7 @@ This is a learning project. It may study public references, but published artifa
 - Create original colors, tokens, borders, shadows, and ornaments inspired by classic JRPG menus.
 - Implement original React components.
 - Use neutral names such as `jrpg-menu-ui` or `crystal-menu-ui`.
+- Use descriptive search/reference phrases such as `Final Fantasy UI study`, `Final Fantasy-inspired JRPG menu components`, `最终幻想 UI 学习`, and `最终幻想风格菜单组件` when they are paired with the unofficial learning boundary.
 - Keep private reference screenshots outside the published package.
 
 ## Not Allowed in Published Package
@@ -18,6 +19,7 @@ This is a learning project. It may study public references, but published artifa
 - Official logos, marks, character art, icons, music, sound effects, fonts, or textures.
 - Package names that imply affiliation.
 - README claims that the package recreates or contains Final Fantasy assets.
+- Metadata that presents `Final Fantasy` / `最终幻想` as an official package owner, endorsement, or license source.
 
 ## Review Gate
 

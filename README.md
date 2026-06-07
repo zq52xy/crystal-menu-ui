@@ -17,10 +17,10 @@
 
 </div>
 
-An original React UI component library for JRPG-style glass HUD interfaces.
+An original React UI component library for Final Fantasy-inspired JRPG-style glass HUD interfaces.
 24 components with cyan linework, dark glass panels, orb/socket controls, AI-consumable docs, and public design tokens.
 
-一套原创 React UI 组件库，用来构建 JRPG 风格的玻璃 HUD 界面。
+一套受最终幻想界面研究启发的原创 React UI 组件库，用来构建 JRPG 风格的玻璃 HUD 界面。
 24 个组件，包含青色线框、深色玻璃面板、宝石插槽控件、AI 可消费文档和公开设计变量。
 
 > [!IMPORTANT]
@@ -37,6 +37,15 @@ An original React UI component library for JRPG-style glass HUD interfaces.
 > 本包**不分发**官方截图、logo、角色、字体、音乐、图标、贴图、切图、精确矢量路径或远程 Figma 资产。代码是原创 React + Less 实现，只从来源 Figma 组件库中研究通用界面语言。
 >
 > MIT 许可仅覆盖**本项目代码**，不授予任何第三方商标、游戏 IP、官方美术、名称或专有视觉资产的使用权。任何复用，尤其是商业用途，都需要使用者自行完成 IP 和商标风险审查。
+
+### Search Keywords / 搜索关键词
+
+- **English:** Final Fantasy UI study, Final Fantasy-inspired JRPG menu components, Final Fantasy Remake UI reference, JRPG glass HUD React components.
+- **中文：** 最终幻想 UI 学习、最终幻想风格菜单组件、最终幻想 Remake 界面参考、JRPG 玻璃 HUD React 组件。
+
+> These keywords describe learning, reference, and search intent only. They are not official product names, affiliation claims, or asset licenses.
+>
+> 以上关键词仅用于说明学习参考和搜索意图，不代表官方产品名、授权关系或素材许可。
 
 ![Crystal Menu UI banner](docs/img/banner.png)
 

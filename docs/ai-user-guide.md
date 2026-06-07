@@ -6,6 +6,7 @@ This guide is for AI coding assistants and prompt-based app builders using `crys
 
 Use this guide when the task is:
 
+- search for Final Fantasy / 最终幻想 style UI study references,
 - generate a JRPG glass HUD screen,
 - assemble a menu/profile/equipment/inventory/battle UI,
 - choose which component to use,
@@ -13,6 +14,8 @@ Use this guide when the task is:
 - use the design tokens correctly.
 
 For exact prop shapes, use `AI_USAGE.md` as the canonical machine-readable API reference.
+
+Search keywords: `Final Fantasy UI study`, `Final Fantasy-inspired JRPG menu components`, `Final Fantasy Remake UI reference`, `最终幻想 UI 学习`, `最终幻想风格菜单组件`, `最终幻想 Remake 界面参考`. These labels describe learning/reference intent only and must stay paired with the unofficial asset boundary.
 
 ## Setup
 
@@ -114,6 +117,7 @@ export function ArchivePanel() {
 ## Hard No
 
 - Do not claim official affiliation.
+- Do not use `Final Fantasy` / `最终幻想` as a package ownership, endorsement, or asset-license claim.
 - Do not use official screenshots, character art, logos, fonts, music, icons, textures, or extracted UI cuts.
 - Do not copy exact Figma vector paths.
 - Do not invent unsupported props.

@@ -1,8 +1,8 @@
-# Work Contract: README Visual Assets
+# Work Contract: Final Fantasy Search Keywords
 
 ## Work Target
 
-Replace the current README screenshot-led opening with component-rendered marketing art: one banner header image and two bilingual core-highlight images.
+Add bilingual `Final Fantasy` / `最终幻想` search keywords and supporting content while preserving the unofficial learning-only boundary.
 
 ## Parent Contract
 
@@ -10,23 +10,19 @@ Replace the current README screenshot-led opening with component-rendered market
 
 ## Core User Paths
 
-1. GitHub visitors see a polished banner before the preview links.
-2. English readers can scan the feature one-pager quickly.
-3. Chinese readers can scan the Chinese feature one-pager quickly.
-4. The images communicate component count, AI docs, tokens, original visuals, preview, and rights boundary.
-5. The images visually match the component library because they are rendered from the same Vite/React component entry.
-6. The assets remain original and do not use official screenshots, logos, characters, fonts, extracted UI cuts, or remote Figma assets.
+1. GitHub visitors can find the project through `Final Fantasy` / `最终幻想` style UI search terms.
+2. npm metadata contains English and Chinese discovery keywords.
+3. AI assistants can understand that these terms are search/reference aliases only.
+4. Public docs keep the package name neutral and do not imply official affiliation.
+5. Rights-boundary docs explicitly allow descriptive search phrases and forbid official ownership/license claims.
 
 ## Done Definition
 
-- `docs/img/banner.png` exists and is referenced by README.
-- `docs/img/feature-onepager.png` exists and is referenced by README.
-- `docs/img/feature-onepager-zh.png` exists and is referenced by README.
-- A repeatable generator script exists.
-- The generator screenshots `readme-art.html` through Vite instead of maintaining a parallel hand-drawn HTML style.
-- README no longer uses the demo screenshot as the top showcase banner.
-- Scripts/docs module maps are updated.
-- Typecheck, docs audit, README image-path check, and package dry-run pass.
+- `package.json` includes Final Fantasy / 最终幻想 discovery keywords.
+- README includes a bilingual Search Keywords section.
+- `AI_USAGE.md` and `docs/ai-user-guide.md` include search aliases and guardrails.
+- `ATTRIBUTION.md` and `docs/copyright-boundary.md` define allowed and forbidden direct-name usage.
+- Typecheck, docs audit, package dry-run, and keyword grep pass.
 - Evidence report is updated.
 
 ## Invariants
@@ -34,20 +30,18 @@ Replace the current README screenshot-led opening with component-rendered market
 - Keep public naming neutral.
 - Do not imply official affiliation.
 - Do not use official screenshots, icons, textures, exact vector paths, fonts, or remote Figma assets.
-- Keep image text readable at GitHub README scale.
-- README art must call public components and shared tokens for the visible UI portions.
-- Generated assets must be committed as ordinary repo assets, not build outputs.
+- Do not describe the package as official, endorsed, licensed, or containing Final Fantasy assets.
+- Direct game names must appear as study/search phrases only.
 
 ## Gates
 
 - Read `quality-eval-kit/SKILL.md`.
 - Read `quality-eval-kit/templates/MANIFEST.md`.
 - Reuse existing `eval/visual-contract.md`.
-- Generate original assets under `docs/img/` from a local Vite page.
-- Inspect generated images visually.
 - Run `npm run typecheck`.
 - Run `npm run audit:docs`.
 - Run `npm pack --dry-run --json`.
+- Grep for `Final Fantasy` / `最终幻想` usage and confirm the disclaimer remains.
 - Write evidence report after implementation.
 
 ## Evidence Required
@@ -56,8 +50,8 @@ Replace the current README screenshot-led opening with component-rendered market
 
 ## Human Review
 
-User should review the banner and feature images for launch taste before treating them as final social-preview material.
+User should review whether the SEO value is worth the remaining trademark-search risk before promoting the repository widely.
 
 ## Baseline Policy
 
-No visual baseline may be refreshed to hide a regression. README marketing images are public assets, not test baselines.
+Do not weaken attribution or rights-boundary wording to make the keywords more aggressive.

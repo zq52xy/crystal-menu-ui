@@ -1,7 +1,7 @@
 {
   "name": "crystal-menu-ui",
   "version": "0.1.0",
-  "description": "AI-ready React component library for original JRPG glass HUD interfaces.",
+  "description": "Unofficial AI-ready React component library for original JRPG glass HUD interfaces inspired by Final Fantasy-style UI studies.",
   "author": "zq52xy",
   "homepage": "https://zq52xy.github.io/crystal-menu-ui/",
   "repository": {
@@ -78,6 +78,13 @@
     "game-ui",
     "jrpg",
     "jrpg-ui",
+    "final-fantasy",
+    "final-fantasy-ui",
+    "final-fantasy-inspired",
+    "final-fantasy-remake-ui",
+    "最终幻想",
+    "最终幻想-ui",
+    "最终幻想组件库",
     "ui",
     "typescript",
     "vite",
