@@ -15,7 +15,7 @@ Product, source-method, rights-boundary, and Figma reference documentation for t
 - `figma-coverage-matrix.md`: Figma surface-to-component coverage audit.
 - `source-repo-gap-audit.md`: public-readiness launch-signal audit without external repository names.
 - `star-growth-strategy.md`: public launch and ethical GitHub star growth plan.
-- `img/`: generated README marketing images, including banner and bilingual feature one-pagers.
+- `img/`: generated README marketing images, including Vite component-rendered banner and bilingual feature one-pagers.
 
 ## Boundaries
 

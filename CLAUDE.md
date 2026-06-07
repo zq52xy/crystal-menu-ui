@@ -17,6 +17,7 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 - `eval/`: visual contract, work contract, and evidence report.
 - `skill/`: local AI-assistant instruction draft.
 - root docs: AI usage, generation prompt, visual design prompt, and README.
+- `readme-art.html`: local Vite entry for component-rendered README screenshots.
 - `src/`: React component source, styles, and demo.
 - `scripts/`: repeatable QA helpers.
 

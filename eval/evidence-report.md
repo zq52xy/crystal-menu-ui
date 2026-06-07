@@ -2,7 +2,7 @@
 
 ## Summary
 
-Generated original README marketing art and replaced the previous screenshot-led opening with a dedicated banner plus English and Chinese core-highlight images. Outcome: pass.
+Generated component-rendered README marketing art and replaced the previous screenshot-led opening with a dedicated banner plus English and Chinese core-highlight images. Outcome: pass.
 
 ## Contract
 
@@ -16,19 +16,25 @@ Work contract: `eval/work-contract.md`
 - Date context: 2026-06-08 Asia/Shanghai
 - Node: v24.12.0
 - npm: 11.6.2
-- Renderer: Playwright Chromium through `scripts/generate-readme-art.mjs`
+- Renderer: Vite dev server plus Playwright Chromium through `scripts/generate-readme-art.mjs`
 
 ## Inputs
 
 - User request:
   - replace the weak opening image,
   - generate a banner header image,
-  - create dedicated English and Chinese core-selling-point images.
+  - create dedicated English and Chinese core-selling-point images,
+  - keep the images visually consistent with the actual component style.
 
 ## Implementation
 
 - Added repeatable art generator:
   - `scripts/generate-readme-art.mjs`
+- Added local Vite screenshot entry:
+  - `readme-art.html`
+  - `src/demo/readme-art-main.tsx`
+  - `src/demo/ReadmeArt.tsx`
+  - `src/demo/readme-art.less`
 - Added npm script:
   - `npm run art:readme`
 - Generated original PNG assets:
@@ -39,6 +45,8 @@ Work contract: `eval/work-contract.md`
   - top showcase now uses `docs/img/banner.png`
   - Highlights table now uses the English and Chinese one-pagers
 - Updated module maps:
+  - `CLAUDE.md`
+  - `src/demo/CLAUDE.md`
   - `scripts/CLAUDE.md`
   - `docs/CLAUDE.md`
 - Updated package files:
@@ -48,9 +56,9 @@ Work contract: `eval/work-contract.md`
 
 Opened all generated assets for visual inspection:
 
-- `banner.png`: dark glass HUD banner with menu/status/orb rail composition, no official elements.
-- `feature-onepager.png`: English core highlights are readable at README scale.
-- `feature-onepager-zh.png`: Chinese core highlights render correctly and remain readable.
+- `banner.png`: rendered from `PartyMenuShell`, `MenuPanel`, `MainMenu`, `PartyStatus`, `EquipmentPanel`, and `BattleMenu`, no official elements.
+- `feature-onepager.png`: English core highlights are rendered with `MenuPanel`, `GameIcon`, `SaveSlot`, `InventoryList`, and `OrbSocketRail`, readable at README scale.
+- `feature-onepager-zh.png`: Chinese core highlights render correctly with the same component set and remain readable.
 
 ## Checks Run
 
@@ -61,9 +69,9 @@ Opened all generated assets for visual inspection:
 - Ran `npm run typecheck`: pass.
 - Ran `npm run audit:docs`: pass; 24 exported components documented.
 - Checked README image paths:
-  - `docs/img/banner.png`: exists, 687299 bytes.
-  - `docs/img/feature-onepager.png`: exists, 556945 bytes.
-  - `docs/img/feature-onepager-zh.png`: exists, 552317 bytes.
+  - `docs/img/banner.png`: exists, 369272 bytes.
+  - `docs/img/feature-onepager.png`: exists, 456669 bytes.
+  - `docs/img/feature-onepager-zh.png`: exists, 476946 bytes.
 - Ran `npm pack --dry-run --json`: pass.
 
 ## Package Evidence
@@ -71,14 +79,14 @@ Opened all generated assets for visual inspection:
 `npm pack --dry-run --json` confirms these public files are included:
 
 - `README.md` 13966 bytes
-- `docs/img/banner.png` 687299 bytes
-- `docs/img/feature-onepager.png` 556945 bytes
-- `docs/img/feature-onepager-zh.png` 552317 bytes
+- `docs/img/banner.png` 369272 bytes
+- `docs/img/feature-onepager.png` 456669 bytes
+- `docs/img/feature-onepager-zh.png` 476946 bytes
 - `package.json` 2235 bytes
 
 ## Rights Boundary
 
-The images are generated from local HTML/CSS and abstract UI geometry. They do not use official screenshots, character art, logos, official fonts, extracted UI cuts, exact source-vector paths, or remote Figma assets.
+The images are generated from local Vite/React component compositions and shared Less tokens. They do not use official screenshots, character art, logos, official fonts, extracted UI cuts, exact source-vector paths, or remote Figma assets.
 
 ## Human Review
 
@@ -86,4 +94,4 @@ User should review whether the banner should become the GitHub social preview im
 
 ## Final Status
 
-Pass. README now has a dedicated banner and bilingual core-highlight images.
+Pass. README now has a dedicated component-rendered banner and bilingual core-highlight images.

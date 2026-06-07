@@ -1,0 +1,199 @@
+/* [PROTOCOL]: Change this header when README art layout styling changes, then check CLAUDE.md.
+ * INPUT: Rendered public components and shared Less tokens.
+ * OUTPUT: Fixed-size screenshot artboards for README images.
+ * POS: Demo-only composition styles; component internals remain sourced from component CSS modules.
+ */
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: @crystal-color-bg;
+}
+
+.readme-artboard {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: @crystal-color-text;
+  background:
+    radial-gradient(circle at 77% 20%, rgba(0, 249, 251, 0.22), transparent 26%),
+    linear-gradient(180deg, #242a34 0%, #141923 68%, #080d14 100%);
+}
+
+.readme-artboard *,
+.readme-artboard *::before,
+.readme-artboard *::after {
+  animation: none !important;
+}
+
+.readme-artboard__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.4;
+  background:
+    linear-gradient(90deg, rgba(129, 223, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(129, 223, 255, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.readme-artboard__rift {
+  position: absolute;
+  z-index: -1;
+  width: 980px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, fade(@crystal-color-cyan, 72%), transparent);
+  filter: drop-shadow(0 0 16px rgba(75, 205, 255, 0.42));
+  transform: rotate(-48deg);
+}
+
+.readme-artboard__rift--a {
+  top: 420px;
+  left: -230px;
+}
+
+.readme-artboard__rift--b {
+  top: 120px;
+  right: -310px;
+  opacity: 0.54;
+}
+
+.readme-art__eyebrow {
+  color: @crystal-color-success;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.readme-art__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.readme-art__chips span {
+  padding: 10px 15px;
+  color: @crystal-color-text;
+  font-size: 18px;
+  font-weight: 750;
+  background: fade(@crystal-color-glass-strong, 74%);
+  border: 1px solid fade(@crystal-color-border, 56%);
+  border-radius: @crystal-radius-control;
+}
+
+.readme-artboard--banner {
+  display: grid;
+  grid-template-columns: minmax(0, 690px) 670px;
+  gap: 40px;
+  width: 1600px;
+  height: 720px;
+  padding: 66px 74px;
+  align-items: center;
+}
+
+.readme-banner__copy h1,
+.readme-feature__header h1 {
+  margin: 12px 0 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-weight: 760;
+  letter-spacing: 0;
+  text-shadow: 3px 4px 0 @crystal-color-border-shadow;
+}
+
+.readme-banner__copy h1 {
+  font-size: 70px;
+  line-height: 0.98;
+  white-space: nowrap;
+}
+
+.readme-banner__copy p {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #d9f6ff;
+  font-size: 25px;
+  line-height: 1.35;
+}
+
+.readme-banner__screen {
+  display: grid;
+  gap: 16px;
+  width: 670px;
+  min-width: 0;
+  justify-self: end;
+  transform: translate(-190px, 2px);
+}
+
+.readme-banner-shell {
+  width: 930px;
+  justify-self: end;
+  transform: scale(0.72);
+  transform-origin: right top;
+}
+
+.readme-artboard--feature {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 22px;
+  width: 1200px;
+  height: 720px;
+  padding: 48px 54px 42px;
+}
+
+.readme-feature__header {
+  max-width: 860px;
+}
+
+.readme-feature__header h1 {
+  font-size: 54px;
+  line-height: 1.02;
+}
+
+.readme-feature__header p {
+  margin: 10px 0 0;
+  color: #d9f6ff;
+  font-size: 21px;
+  line-height: 1.34;
+}
+
+.readme-feature__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.readme-feature-card__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.readme-feature__grid p {
+  min-height: 74px;
+  margin: 0;
+  color: #c8eaf3;
+  font-size: 16px;
+  line-height: 1.36;
+}
+
+.readme-feature__proof {
+  display: grid;
+  grid-template-columns: 1.2fr 0.92fr 1.1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.readme-feature__proof > * {
+  min-width: 0;
+}
+
+.readme-feature__proof > [role='list'] {
+  min-height: 112px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
