@@ -2,7 +2,7 @@
 
 ## Summary
 
-Prepared the local repository for GitHub publishing, connected it to `zq52xy/crystal-menu-ui`, and verified the publishable package before pushing.
+Published the local repository to `zq52xy/crystal-menu-ui`, deployed the Vite demo to GitHub Pages, and verified the public repository plus preview URLs.
 
 ## Environment
 
@@ -33,6 +33,15 @@ Prepared the local repository for GitHub publishing, connected it to `zq52xy/cry
 - Ran `npm run build`: pass.
 - Ran `npm run build:demo`: pass.
 - Ran `npm pack --dry-run --json`: pass.
+- Pushed `main` to GitHub: pass.
+- Ran `npm run deploy`: pass; `gh-pages` published.
+- Verified public repository URL with `curl`: HTTP 200.
+- Verified GitHub Pages PC URL with `curl`: HTTP 200.
+- Verified GitHub Pages mobile preview URL with `curl`: HTTP 200.
+- Verified Pages HTML contains:
+  - `<title>Crystal Menu UI Study</title>`
+  - `assets/index-4IlbiwjI.js`
+  - `assets/index-B0QZ9NWJ.css`
 
 ## Local Publish Prep Completed
 
@@ -50,6 +59,10 @@ Prepared the local repository for GitHub publishing, connected it to `zq52xy/cry
   - package `repository`
   - package `bugs`
 - Staged source, docs, screenshots, scripts, package files, contracts, and evidence.
+- Created publish merge commit:
+  - `91f9b489aff2f2d5b5428d76e95e8f6018c29de0`
+- Published demo branch:
+  - `gh-pages` at `69006ef32f4f5c1719ff3b2c47908c6975f40107`
 
 ## Package Evidence
 
@@ -72,10 +85,14 @@ The remote repository was not empty. It contained:
 
 The local publish branch preserves that remote history by merging it before pushing, while keeping the full local README as the repository README.
 
-## Next Step
-
-Push `main`, deploy Pages with `npm run deploy`, then verify:
+## Published URLs
 
 - `https://github.com/zq52xy/crystal-menu-ui`
 - `https://zq52xy.github.io/crystal-menu-ui/`
 - `https://zq52xy.github.io/crystal-menu-ui/?preview=mobile`
+
+## Remaining Manual Polish
+
+- Add repository topics in GitHub settings.
+- Add repository social preview image.
+- Create release `v0.1.0` when ready.
