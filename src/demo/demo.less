@@ -210,6 +210,21 @@
     radial-gradient(ellipse 110% 80% at 50% 100%, fade(@equip-bg-deep, 95%), transparent 75%),
     linear-gradient(180deg, #0a1c44 0%, #061436 50%, #03081e 100%);
   overflow: hidden;
+  /* Force EVERY text element inside the bright room to render through
+   * the Optima-led display stack. The source method's equipment surface
+   * uses Optima for both titles and body copy — body Inter looks like
+   * a placeholder by comparison. Fall back along the same stack. */
+  font-family: @crystal-font-display;
+}
+
+.demo-bright-room *:not(i):not(b):not(strong) {
+  font-family: inherit;
+}
+
+.demo-bright-room b,
+.demo-bright-room strong,
+.demo-bright-room i {
+  font-family: @crystal-font-display;
 }
 
 .demo-bright-room__corner {
