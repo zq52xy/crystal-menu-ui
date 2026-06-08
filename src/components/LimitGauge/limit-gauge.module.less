@@ -1,0 +1,197 @@
+/* [PROTOCOL]: Change this header when LimitGauge styling changes, then check CLAUDE.md.
+ * INPUT: LimitGauge tone/size/state classes and shared tokens.
+ * OUTPUT: CSS module for segmented limit gauge with ready pulse.
+ * POS: Component-scoped styles only.
+ */
+.gauge {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: @crystal-space-2;
+  align-items: center;
+  padding: 6px 10px;
+  color: @crystal-color-text;
+  background: linear-gradient(180deg, rgba(20, 38, 52, 0.85), rgba(2, 11, 19, 0.92));
+  border: 1px solid fade(@crystal-color-border, 36%);
+  border-radius: @crystal-radius-control;
+  box-shadow: @crystal-shadow-inset;
+}
+
+.level {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: @crystal-color-gold;
+  font-family: @crystal-font-display;
+  font-size: 22px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.label {
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.track {
+  position: relative;
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  background: rgba(4, 11, 36, 0.85);
+  border: 1px solid fade(@crystal-color-cyan, 32%);
+  border-radius: 1px;
+}
+
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--limit-fill, 0%);
+  background: linear-gradient(90deg, #ffd166, @crystal-color-gold 60%, #ffeaa3);
+  box-shadow: inset 0 0 0 1px rgba(255, 220, 110, 0.3),
+    0 0 10px rgba(255, 209, 102, 0.45);
+  transition: width 320ms cubic-bezier(0.2, 0.8, 0.1, 1);
+}
+
+.fill::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 52%);
+  pointer-events: none;
+}
+
+.ticks {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent calc(var(--limit-segment, 10%) - 1px),
+    rgba(8, 24, 36, 0.85) calc(var(--limit-segment, 10%) - 1px),
+    rgba(8, 24, 36, 0.85) var(--limit-segment, 10%)
+  );
+  pointer-events: none;
+}
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0) 65%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  background-position: -120% 0;
+  animation: limit-shine 1.6s linear infinite;
+  pointer-events: none;
+}
+
+.readyTag {
+  padding: 2px 8px;
+  color: #281600;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ffe68a, @crystal-color-gold);
+  border: 1px solid rgba(255, 220, 110, 0.6);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+  animation: limit-ready-pulse 1.2s ease-in-out infinite;
+}
+
+.crimson .fill {
+  background: linear-gradient(90deg, #ff7c55, @crystal-color-danger 60%, #ff9c8a);
+  box-shadow: inset 0 0 0 1px rgba(240, 97, 97, 0.3),
+    0 0 10px rgba(240, 97, 97, 0.4);
+}
+
+.crimson .readyTag {
+  color: @crystal-color-text;
+  background: linear-gradient(120deg, #ff8b6f, @crystal-color-danger);
+  box-shadow: 0 0 10px rgba(240, 97, 97, 0.55);
+}
+
+.cyan .fill {
+  background: linear-gradient(90deg, #4bcdff, @crystal-color-success);
+  box-shadow: inset 0 0 0 1px rgba(0, 249, 251, 0.3),
+    0 0 10px rgba(75, 205, 255, 0.45);
+}
+
+.cyan .readyTag {
+  color: @crystal-color-bg;
+  background: linear-gradient(120deg, #aaf3ff, @crystal-color-cyan);
+  box-shadow: 0 0 10px rgba(75, 205, 255, 0.55);
+}
+
+.sm .track {
+  height: 6px;
+}
+.sm .level {
+  width: 22px;
+  height: 22px;
+  font-size: 16px;
+}
+.sm .label {
+  font-size: 9px;
+}
+.lg .track {
+  height: 14px;
+}
+.lg .level {
+  width: 36px;
+  height: 36px;
+  font-size: 28px;
+}
+.lg .label {
+  font-size: 12px;
+}
+
+.ready .track {
+  border-color: fade(@crystal-color-gold, 60%);
+  box-shadow: 0 0 16px rgba(255, 209, 102, 0.3);
+}
+
+@keyframes limit-shine {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 220% 0;
+  }
+}
+
+@keyframes limit-ready-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.04);
+    filter: brightness(1.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill,
+  .shine,
+  .readyTag {
+    transition: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,242 @@
+/* [PROTOCOL]: Change this header when ChapterEndCard styling changes, then check CLAUDE.md.
+ * INPUT: ChapterEndCard structure classes and shared tokens.
+ * OUTPUT: CSS module for cinematic chapter-end ledger card.
+ * POS: Component-scoped styles only.
+ */
+.card {
+  position: relative;
+  display: grid;
+  gap: @crystal-space-4;
+  padding: @crystal-space-6;
+  color: @crystal-color-text;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(160, 236, 234, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.94), rgba(2, 11, 19, 0.96));
+  border: 1px solid fade(@crystal-color-border, 32%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-panel, @crystal-shadow-inset;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: @crystal-space-3;
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  padding: 3px 12px;
+  color: @crystal-color-bg;
+  background: linear-gradient(120deg, #aaf3ff, @crystal-color-cyan);
+}
+
+.chapter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.chapterLabel {
+  font-size: 10px;
+  letter-spacing: 0.4em;
+}
+
+.chapterValue {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.titleRow {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+  gap: @crystal-space-3;
+  align-items: center;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, fade(@crystal-color-cyan, 80%), transparent);
+}
+
+.title {
+  margin: 0;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: clamp(24px, 3.4vw, 36px);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: @crystal-shadow-text;
+}
+
+.subtitle {
+  margin: 0;
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stats {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: @crystal-space-3 @crystal-space-4;
+  background: rgba(4, 11, 36, 0.55);
+  border: 1px solid fade(@crystal-color-cyan, 24%);
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(40px, 1fr) auto;
+  align-items: baseline;
+  gap: @crystal-space-2;
+}
+
+.statLabel {
+  margin: 0;
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.statLeader {
+  height: 1px;
+  background: repeating-linear-gradient(
+    90deg,
+    fade(@crystal-color-line, 60%) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.statValue {
+  margin: 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.statHighlight .statLabel {
+  color: @crystal-color-gold;
+}
+
+.statHighlight .statValue {
+  color: @crystal-color-gold;
+  text-shadow: 0 2px 0 @crystal-color-border-shadow,
+    0 0 10px rgba(160, 236, 234, 0.55);
+}
+
+.rewards {
+  display: grid;
+  gap: 8px;
+}
+
+.rewardsHeading {
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.rewardList {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rewardItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: @crystal-space-3;
+  padding: 6px 12px;
+  background: rgba(4, 11, 36, 0.45);
+  border: 1px solid fade(@crystal-color-line, 60%);
+  border-radius: 1px;
+}
+
+.rewardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: @crystal-color-cyan;
+}
+
+.rewardLabel {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.rewardAmount {
+  color: @crystal-color-gold;
+  font-family: @crystal-font-display;
+  font-size: 16px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.footer {
+  margin: 0;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.entering {
+  animation: chapter-end-rise 720ms cubic-bezier(0.18, 0.78, 0.22, 1) both;
+}
+
+.entering .title {
+  animation: chapter-end-title 900ms cubic-bezier(0.18, 0.78, 0.22, 1) 60ms both;
+}
+
+@keyframes chapter-end-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chapter-end-title {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.18em;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entering,
+  .entering .title {
+    animation: none;
+  }
+}

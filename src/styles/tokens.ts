@@ -24,7 +24,8 @@ export const crystalTokens = {
   },
   font: {
     body: 'Inter, "Segoe UI", Arial, sans-serif',
-    display: 'Georgia, "Times New Roman", serif',
+    display:
+      '"Optima", "Optima Nova", "Linotype Optima", Optima-Regular, "URW Classico", "Charter", Georgia, "Times New Roman", serif',
   },
   radius: {
     panel: 6,

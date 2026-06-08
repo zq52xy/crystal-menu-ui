@@ -1,0 +1,299 @@
+/* [PROTOCOL]: Change this header when MateriaGrowthTree styling changes, then check CLAUDE.md.
+ * INPUT: MateriaGrowthTree tone classes, ring/ability state classes, and shared tokens.
+ * OUTPUT: CSS module for materia growth panel.
+ * POS: Component-scoped styles only.
+ */
+.tree {
+  --orb-color: #5cd87a;
+  --orb-color-deep: #1f5b32;
+
+  display: grid;
+  gap: @crystal-space-3;
+  padding: @crystal-space-4;
+  color: @crystal-color-text;
+  background:
+    radial-gradient(circle at 16% 28%, rgba(92, 216, 122, 0.18), transparent 55%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.92), rgba(2, 11, 19, 0.96));
+  border: 1px solid fade(@crystal-color-border, 32%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-inset;
+}
+
+.violet {
+  --orb-color: #b196ff;
+  --orb-color-deep: #382a7a;
+}
+
+.gold {
+  --orb-color: #ffd166;
+  --orb-color-deep: #75501a;
+}
+
+.red {
+  --orb-color: #ff7c7c;
+  --orb-color-deep: #5c1f1f;
+}
+
+.cyan {
+  --orb-color: @crystal-color-cyan;
+  --orb-color-deep: #0b3a55;
+}
+
+.header {
+  display: grid;
+  gap: 4px;
+}
+
+.kicker {
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.name {
+  margin: 0;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.coreRow {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: @crystal-space-4;
+  align-items: center;
+}
+
+.orb {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+}
+
+.orbCore {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.55), transparent 38%),
+    radial-gradient(circle at 60% 60%, var(--orb-color), var(--orb-color-deep) 70%);
+  box-shadow:
+    inset 0 0 18px rgba(0, 0, 0, 0.45),
+    0 0 18px var(--orb-color);
+}
+
+.orbHalo {
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px solid fade(@crystal-color-cyan, 38%);
+}
+
+.orbProgress {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--orb-color) 0deg,
+    var(--orb-color) calc(var(--orb-progress, 0%) * 3.6),
+    rgba(8, 14, 24, 0.6) calc(var(--orb-progress, 0%) * 3.6),
+    rgba(8, 14, 24, 0.6) 360deg
+  );
+  mask: radial-gradient(circle, transparent 38px, #000 39px, #000 46px, transparent 47px);
+  -webkit-mask: radial-gradient(circle, transparent 38px, #000 39px, #000 46px, transparent 47px);
+  filter: drop-shadow(0 0 6px var(--orb-color));
+}
+
+.orbLevel {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  z-index: 1;
+  text-align: center;
+}
+
+.orbLevelLabel {
+  color: @crystal-color-cyan;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.orbLevelValue {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 26px;
+  line-height: 1;
+  text-shadow: @crystal-shadow-text;
+}
+
+.metrics {
+  display: grid;
+  gap: 6px;
+}
+
+.metricRow {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: baseline;
+  gap: @crystal-space-2;
+  padding-bottom: 4px;
+  border-bottom: 1px solid fade(@crystal-color-line, 60%);
+}
+
+.metricLabel {
+  color: @crystal-color-cyan;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.metricValue {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.metricMax {
+  margin-left: 4px;
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+}
+
+.ring {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 8px;
+  background: rgba(4, 11, 36, 0.55);
+  border: 1px solid fade(@crystal-color-cyan, 24%);
+}
+
+.ringPip {
+  flex: 1 1 18px;
+  position: relative;
+  height: 8px;
+  overflow: hidden;
+  background: rgba(4, 11, 36, 0.85);
+}
+
+.ringPip::after {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--ring-progress, 100%);
+  content: '';
+  background: linear-gradient(90deg, var(--orb-color), rgba(255, 255, 255, 0.35));
+  box-shadow: 0 0 6px var(--orb-color);
+  transition: width 320ms cubic-bezier(0.2, 0.8, 0.1, 1);
+}
+
+.ring-locked::after {
+  width: 0%;
+}
+
+.ring-progress::after {
+  background: linear-gradient(90deg, var(--orb-color), rgba(255, 255, 255, 0.65));
+}
+
+.abilityList {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.abilityItem {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: @crystal-space-3;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(4, 11, 36, 0.45);
+  border: 1px solid fade(@crystal-color-line, 50%);
+  border-radius: 1px;
+}
+
+.abilityPip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: @crystal-color-bg;
+  background: var(--orb-color);
+  font-family: @crystal-font-display;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+  box-shadow:
+    inset 0 0 6px rgba(0, 0, 0, 0.35),
+    0 0 6px var(--orb-color);
+}
+
+.abilityBody {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.abilityLabel {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.abilityDescription {
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.abilityStatus {
+  color: @crystal-color-cyan;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.ability-locked {
+  opacity: 0.55;
+  filter: grayscale(0.5);
+}
+
+.ability-locked .abilityPip {
+  background: rgba(60, 76, 96, 0.7);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.ability-ready {
+  border-color: var(--orb-color);
+  box-shadow: 0 0 12px fade(@crystal-color-gold, 35%);
+}
+
+.ability-ready .abilityStatus {
+  color: @crystal-color-gold;
+}
+
+.ability-unlocked .abilityStatus {
+  color: @crystal-color-success;
+}
+
+.footer {
+  margin: 0;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}

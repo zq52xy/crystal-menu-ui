@@ -1,0 +1,222 @@
+/* [PROTOCOL]: Change this header when ChapterIntroCard styling changes, then check CLAUDE.md.
+ * INPUT: ChapterIntroCard structure classes and shared tokens.
+ * OUTPUT: CSS module for cinematic chapter title card.
+ * POS: Component-scoped styles only.
+ */
+.card {
+  position: relative;
+  display: grid;
+  gap: @crystal-space-4;
+  padding: @crystal-space-6 @crystal-space-6 (@crystal-space-6 + 4px);
+  color: @crystal-color-text;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(75, 205, 255, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(20, 38, 52, 0.92), rgba(2, 11, 19, 0.96));
+  border: 1px solid fade(@crystal-color-border, 32%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-panel, @crystal-shadow-inset;
+  overflow: hidden;
+}
+
+.frame {
+  position: absolute;
+  inset: 8px;
+  pointer-events: none;
+  border: 1px solid fade(@crystal-color-cyan, 18%);
+  clip-path: polygon(
+    16px 0,
+    100% 0,
+    100% calc(100% - 16px),
+    calc(100% - 16px) 100%,
+    0 100%,
+    0 16px
+  );
+}
+
+.kickerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: @crystal-space-3;
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  padding: 2px 10px;
+  color: @crystal-color-bg;
+  background: @crystal-color-cyan;
+  border-radius: 1px;
+}
+
+.chapter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.chapterLabel {
+  color: @crystal-color-cyan;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+}
+
+.chapterValue {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.titleRow {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+  gap: @crystal-space-3;
+  align-items: center;
+}
+
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, fade(@crystal-color-cyan, 80%), transparent);
+}
+
+.title {
+  margin: 0;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: @crystal-shadow-text;
+}
+
+.subtitle {
+  margin: 0;
+  color: @crystal-color-text-muted;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.location {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  background: rgba(4, 11, 36, 0.65);
+  border: 1px solid fade(@crystal-color-cyan, 36%);
+}
+
+.locationMark {
+  width: 6px;
+  height: 6px;
+  background: @crystal-color-gold;
+  transform: rotate(45deg);
+  box-shadow: 0 0 6px @crystal-color-gold;
+}
+
+.locationText {
+  text-shadow: @crystal-shadow-text;
+}
+
+.dossier {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.dossierRow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) auto minmax(0, 1.4fr);
+  align-items: baseline;
+  gap: @crystal-space-3;
+}
+
+.dossierRow::before {
+  content: '';
+  height: 1px;
+  background: fade(@crystal-color-line, 70%);
+}
+
+.dossierLabel {
+  margin: 0;
+  color: @crystal-color-cyan;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.dossierValue {
+  margin: 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.entering {
+  animation: chapter-rise 720ms cubic-bezier(0.18, 0.78, 0.22, 1) both;
+}
+
+.entering .title {
+  animation: chapter-title 900ms cubic-bezier(0.18, 0.78, 0.22, 1) both;
+}
+
+.entering .rule {
+  animation: chapter-rule 900ms ease-out 200ms both;
+}
+
+@keyframes chapter-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chapter-title {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.18em;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.04em;
+  }
+}
+
+@keyframes chapter-rule {
+  0% {
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entering,
+  .entering .title,
+  .entering .rule {
+    animation: none;
+  }
+}

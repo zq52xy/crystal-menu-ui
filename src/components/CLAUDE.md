@@ -30,6 +30,12 @@ Reusable React components for the original JRPG blue menu UI study kit.
 - `InventoryList/`: dense selectable item list.
 - `ItemTooltip/`: compact item detail surface.
 - `BattleMenu/`: compact battle command shell.
+- `DamageNumber/`: floating combat damage indicator with rise-and-fade animation.
+- `LimitGauge/`: segmented limit gauge with ready pulse for limit-break readiness.
+- `ChapterIntroCard/`: cinematic chapter-opening title card with rule-line typography.
+- `ChapterEndCard/`: cinematic chapter-results card with ledger stats and rewards.
+- `MateriaGrowthTree/`: materia AP/level panel with orb core, segmented level ring, and ability list.
+- `WeaponUpgradeMatrix/`: SP-grid weapon upgrade matrix with node connections and selection.
 
 ## Boundaries
 

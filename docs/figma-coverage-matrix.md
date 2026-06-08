@@ -24,6 +24,11 @@ Current Figma MCP status: access to the requested node `1:3` failed in this pass
 | Inventory list | `InventoryList` | Covered as source-roadmap extension |
 | Item detail tooltip | `ItemTooltip` | Covered as source-roadmap extension |
 | Battle command shell | `BattleMenu` | Covered as source-roadmap extension |
+| Floating combat damage numbers | `DamageNumber` | Covered as source-roadmap extension |
+| Limit-break gauge readiness | `LimitGauge` | Covered as source-roadmap extension |
+| Chapter title / chapter end card | `ChapterIntroCard`, `ChapterEndCard` | Covered as source-roadmap extension |
+| Materia growth / AP progress | `MateriaGrowthTree` | Covered as source-roadmap extension |
+| Weapon SP upgrade matrix | `WeaponUpgradeMatrix` | Covered as source-roadmap extension |
 | Separators/loading primitives | `Divider`, `Loading` | Covered |
 
 ## Exactness Judgment
