@@ -421,6 +421,26 @@
   padding: 0 !important;
 }
 
+/* Force the FloatingStatusBar inside the bright room to lose its
+ * glass background so it reads as "HUD on the bright canvas" rather
+ * than "panel inside a panel". */
+.demo-bright-room [class*="bar_"] {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid @equip-line-soft !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 14px 4px 4px !important;
+}
+
+.demo-bright-room [class*="hint_"] {
+  color: @equip-text !important;
+}
+
+.demo-bright-room [class*="meta_"] {
+  color: @equip-text !important;
+}
+
 .demo-bright-room [class*="grid_"] {
   grid-template-columns: 130px minmax(640px, 1fr) 320px !important;
   gap: @crystal-space-4 !important;
@@ -672,6 +692,7 @@
   color: @equip-text;
   font-size: 14px;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   background: transparent;
 }
 

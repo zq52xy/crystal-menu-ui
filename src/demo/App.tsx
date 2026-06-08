@@ -56,6 +56,35 @@ const localPortraits = import.meta.glob<{ default: string }>(
 const LOCAL_PORTRAIT_SRC: string | undefined =
   (Object.values(localPortraits)[0] as unknown as string) ?? undefined;
 
+// ============================================================
+// Local-only Optima font file. Same gitignored path. When the
+// file is present we inject an @font-face rule at runtime so
+// the display token "Optima" resolves to the bundled binary;
+// when it's missing the CSS stack falls through to URW Classico
+// → Charter → Georgia. Public package never ships the binary.
+// ============================================================
+const localFonts = import.meta.glob<{ default: string }>(
+  './local-assets/optima.ttf',
+  { eager: true, query: '?url', import: 'default' },
+);
+const LOCAL_OPTIMA_SRC: string | undefined =
+  (Object.values(localFonts)[0] as unknown as string) ?? undefined;
+
+if (typeof document !== 'undefined' && LOCAL_OPTIMA_SRC) {
+  const styleEl = document.createElement('style');
+  styleEl.dataset.source = 'crystal-menu-ui-demo-local-optima';
+  styleEl.textContent = `
+    @font-face {
+      font-family: 'Optima';
+      src: url('${LOCAL_OPTIMA_SRC}') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  `;
+  document.head.appendChild(styleEl);
+}
+
 const party: PartyMember[] = [
   { id: 'ari', name: 'Ari', level: 32, hp: 1420, maxHp: 1600, mp: 214, maxMp: 260, active: true },
   { id: 'cairn', name: 'Cairn', level: 34, hp: 2115, maxHp: 2360, mp: 86, maxMp: 120 },
