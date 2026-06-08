@@ -29,4 +29,6 @@ scripts/preview-cloud-pane.mjs
 scripts/debug-hud.mjs
 scripts/debug-fonts.mjs
 scripts/debug-borders.mjs
+scripts/debug-confirm-dialog.mjs
+scripts/preview-confirm-and-save.mjs
 
