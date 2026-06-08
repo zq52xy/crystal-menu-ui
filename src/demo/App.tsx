@@ -44,11 +44,17 @@ import {
 
 // ============================================================
 // Local-only authorized portrait (third-party reference image).
-// Default off. To preview locally, drop a portrait file into
-// src/demo/local-assets/ and flip this to that import URL.
-// The local-assets directory is gitignored — files stay on disk only.
+// Vite globs src/demo/local-assets/portrait.png if present; the
+// local-assets directory is gitignored, so the public repo never
+// ships a portrait. When the file is missing the demo falls back
+// to the original placeholder shape rendered by CharacterPortrait.
 // ============================================================
-const LOCAL_PORTRAIT_SRC: string | undefined = undefined;
+const localPortraits = import.meta.glob<{ default: string }>(
+  './local-assets/portrait.png',
+  { eager: true, query: '?url', import: 'default' },
+);
+const LOCAL_PORTRAIT_SRC: string | undefined =
+  (Object.values(localPortraits)[0] as unknown as string) ?? undefined;
 
 const party: PartyMember[] = [
   { id: 'ari', name: 'Ari', level: 32, hp: 1420, maxHp: 1600, mp: 214, maxMp: 260, active: true },
@@ -484,9 +490,19 @@ export const App = () => (
           </p>
         </MenuPanel>
 
+        <div className="demo-bright-room" aria-label="Equipment Screen surface">
+          <span className="demo-bright-room__corner demo-bright-room__corner--tl" aria-hidden="true" />
+          <span className="demo-bright-room__corner demo-bright-room__corner--tr" aria-hidden="true" />
+          <span className="demo-bright-room__corner demo-bright-room__corner--bl" aria-hidden="true" />
+          <span className="demo-bright-room__corner demo-bright-room__corner--br" aria-hidden="true" />
+          <span className="demo-bright-room__rule demo-bright-room__rule--top" aria-hidden="true" />
+          <span className="demo-bright-room__rule demo-bright-room__rule--bottom" aria-hidden="true" />
+          <span className="demo-bright-room__sidetag demo-bright-room__sidetag--left" aria-hidden="true">Party</span>
+          <span className="demo-bright-room__sidetag demo-bright-room__sidetag--right" aria-hidden="true">Cloud<i>Strife</i></span>
+
         <PartyMenuShell
-          title="Equipment Screen"
-          subtitle="Prototypes-style three-row equipment layout"
+          title={undefined}
+          subtitle={undefined}
           aria-label="Equipment Screen demo"
           className="demo-equipment-shell"
           navigation={{
@@ -618,6 +634,7 @@ export const App = () => (
             />
           }
         />
+        </div>
 
         <MenuPanel title="Chapter Title" variant="deep" density="compact">
           <ChapterIntroCard

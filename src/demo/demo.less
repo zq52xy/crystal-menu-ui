@@ -14,7 +14,7 @@
 }
 
 .demo-stage {
-  width: min(1040px, 100%);
+  width: min(1320px, 100%);
   margin: 0 auto;
 }
 
@@ -185,41 +185,227 @@
 }
 
 /* ============================================================
- * Equipment Screen — composes PartyMenuShell to recreate the
- * Prototypes-style three-column equipment / attributes / character
- * layout from the original FFVII Remake-inspired source method.
+ * Equipment Screen — bright blue glass room with corner brackets
+ * and a wide, three-column composition that mirrors the source
+ * method's flagship equipment surface. Wraps PartyMenuShell with
+ * a higher-saturation blue background and forces inner panels to
+ * become near-transparent so the glow shows through.
  * ============================================================ */
-.demo-equipment-shell {
-  width: min(100%, 1100px);
+@equip-bg-deep: #0a1f4f;
+@equip-bg-mid: #1a3a8c;
+@equip-bg-rim: #2455b8;
+@equip-line: #7ec3ff;
+@equip-line-soft: rgba(126, 195, 255, 0.45);
+@equip-text: #eef6ff;
+@equip-text-muted: #9bc7ff;
+
+.demo-bright-room {
+  position: relative;
+  width: min(100%, 1440px);
   margin: @crystal-space-5 auto 0;
+  padding: 56px 84px 64px;
+  color: @equip-text;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 38%, fade(@equip-bg-mid, 92%), transparent 70%),
+    radial-gradient(ellipse 110% 80% at 50% 100%, fade(@equip-bg-deep, 95%), transparent 75%),
+    linear-gradient(180deg, #0a1c44 0%, #061436 50%, #03081e 100%);
+  overflow: hidden;
+}
+
+.demo-bright-room__corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+}
+
+.demo-bright-room__corner::before,
+.demo-bright-room__corner::after {
+  position: absolute;
+  background: @equip-line;
+  box-shadow: 0 0 8px fade(@equip-line, 60%);
+  content: '';
+}
+
+.demo-bright-room__corner::before {
+  width: 100%;
+  height: 1px;
+}
+
+.demo-bright-room__corner::after {
+  width: 1px;
+  height: 100%;
+}
+
+.demo-bright-room__corner--tl {
+  top: 12px;
+  left: 12px;
+}
+.demo-bright-room__corner--tl::before {
+  top: 0;
+  left: 0;
+}
+.demo-bright-room__corner--tl::after {
+  top: 0;
+  left: 0;
+}
+
+.demo-bright-room__corner--tr {
+  top: 12px;
+  right: 12px;
+}
+.demo-bright-room__corner--tr::before {
+  top: 0;
+  right: 0;
+}
+.demo-bright-room__corner--tr::after {
+  top: 0;
+  right: 0;
+}
+
+.demo-bright-room__corner--bl {
+  bottom: 12px;
+  left: 12px;
+}
+.demo-bright-room__corner--bl::before {
+  bottom: 0;
+  left: 0;
+}
+.demo-bright-room__corner--bl::after {
+  bottom: 0;
+  left: 0;
+}
+
+.demo-bright-room__corner--br {
+  bottom: 12px;
+  right: 12px;
+}
+.demo-bright-room__corner--br::before {
+  bottom: 0;
+  right: 0;
+}
+.demo-bright-room__corner--br::after {
+  bottom: 0;
+  right: 0;
+}
+
+.demo-bright-room__rule {
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, @equip-line-soft 20%, @equip-line-soft 80%, transparent);
+  pointer-events: none;
+}
+
+.demo-bright-room__rule--top {
+  top: 30px;
+}
+
+.demo-bright-room__rule--bottom {
+  bottom: 30px;
+}
+
+.demo-bright-room__sidetag {
+  position: absolute;
+  top: 50%;
+  font-family: @crystal-font-display;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 0 #021333;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  color: @equip-text;
+  pointer-events: none;
+}
+
+.demo-bright-room__sidetag--left {
+  left: 24px;
+}
+
+.demo-bright-room__sidetag--right {
+  right: 24px;
+  text-align: right;
+}
+
+.demo-bright-room__sidetag--right i {
+  display: block;
+  font-size: 18px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: @equip-text-muted;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-equipment-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 24px 60px 0;
+  width: ~"calc(100% - 120px)";
+}
+
+/* Force the wrapped MenuPanels (PartyMenuShell renders MenuPanel internally)
+   to become near-transparent so the bright-room background shows through.
+   We target by descendant + first-level structure, since module class names
+   are hashed but their structure is stable. */
+.demo-bright-room :is(article, section, header, div) > [class*="panel_"],
+.demo-bright-room [class*="panel_"] {
+  background: transparent !important;
+  border-color: @equip-line-soft !important;
+  box-shadow: none !important;
+}
+
+.demo-bright-room [class*="frame_"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.demo-bright-room [class*="header_"] {
+  display: none;
+}
+
+.demo-bright-room [class*="footerPanel_"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.demo-bright-room [class*="grid_"] {
+  grid-template-columns: 130px minmax(640px, 1fr) 320px !important;
+  gap: @crystal-space-4 !important;
 }
 
 .demo-equip-stack {
   display: grid;
-  gap: @crystal-space-3;
+  gap: @crystal-space-5;
 }
 
 .demo-equip-row {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: 38px minmax(0, 1fr);
   gap: @crystal-space-3;
   align-items: start;
-  padding: @crystal-space-2 @crystal-space-3;
-  background: linear-gradient(180deg, rgba(20, 38, 52, 0.62), rgba(2, 11, 19, 0.78));
-  border: 1px solid fade(@crystal-color-border, 24%);
+  padding: 0;
+  background: transparent;
+  border: 0;
 }
 
 .demo-equip-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-top: 4px;
-  color: @crystal-color-cyan;
-  background: rgba(4, 11, 36, 0.6);
-  border: 1px solid fade(@crystal-color-cyan, 36%);
+  width: 30px;
+  height: 30px;
+  margin-top: 6px;
+  color: @equip-line;
+  background: transparent;
+  border: 1.5px solid @equip-line;
   transform: rotate(45deg);
+  box-shadow: 0 0 8px fade(@equip-line, 50%);
 }
 
 .demo-equip-icon > * {
@@ -234,75 +420,88 @@
 
 .demo-equip-head {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: @crystal-space-3;
+  gap: @crystal-space-4;
+  padding-bottom: 6px;
+  border-bottom: 1px solid @equip-line-soft;
 }
 
 .demo-equip-name {
   margin: 0;
-  color: @crystal-color-text;
+  color: @equip-text;
   font-family: @crystal-font-display;
   font-weight: 400;
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  text-shadow: @crystal-shadow-text;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-shadow: 0 3px 0 #021333;
 }
 
 .demo-equip-rail {
   display: inline-flex;
   align-items: center;
   gap: @crystal-space-2;
+  justify-self: end;
 }
 
 .demo-equip-trailing {
   display: inline-flex;
   align-items: center;
-  padding-left: @crystal-space-2;
-  border-left: 1px solid fade(@crystal-color-line, 60%);
+  padding-left: @crystal-space-3;
+  border-left: 1px solid @equip-line-soft;
 }
 
 .demo-equip-stats {
   display: flex;
   flex-wrap: wrap;
-  gap: @crystal-space-3;
+  gap: @crystal-space-4;
   align-items: center;
 }
 
 .demo-equip-stat {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  color: @crystal-color-cyan;
-  font-size: 14px;
+  gap: 6px;
+  color: @equip-line;
+  font-size: 15px;
 }
 
 .demo-equip-stat b {
-  color: @crystal-color-text;
+  color: @equip-text;
   font-family: @crystal-font-display;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  text-shadow: @crystal-shadow-text;
+  text-shadow: 0 2px 0 #021333;
 }
 
 .demo-equip-desc {
   margin: 0;
-  color: @crystal-color-cyan;
-  font-size: 12px;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
+  color: @equip-line;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.demo-bright-room .demo-attr-section-label {
+  display: block;
+  color: @equip-text-muted;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 6px;
 }
 
 .demo-attr-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: @crystal-space-4;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: @crystal-space-5;
+  padding-top: 4px;
 }
 
 .demo-attr-list {
   display: grid;
-  gap: 4px;
+  gap: 2px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -313,38 +512,37 @@
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: @crystal-space-2;
-  padding-bottom: 2px;
-  border-bottom: 1px dashed fade(@crystal-color-line, 50%);
+  padding: 4px 0;
 }
 
 .demo-attr-label {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: @crystal-color-text;
-  font-size: 14px;
+  gap: 10px;
+  color: @equip-text;
+  font-size: 16px;
 }
 
 .demo-attr-label > span {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .demo-attr-value {
-  color: @crystal-color-text;
+  color: @equip-text;
   font-family: @crystal-font-display;
   font-size: 18px;
-  text-shadow: @crystal-shadow-text;
+  text-shadow: 0 2px 0 #021333;
 }
 
 .demo-affinity {
   display: grid;
-  gap: 6px;
+  gap: 4px;
   align-content: start;
 }
 
 .demo-affinity-title {
-  margin: 0;
-  color: @crystal-color-cyan;
+  margin: 0 0 8px;
+  color: @equip-text;
   font-family: @crystal-font-display;
   font-weight: 400;
   font-size: 18px;
@@ -352,53 +550,94 @@
 }
 
 .demo-affinity-sub {
-  margin: 0 0 4px;
-  color: @crystal-color-text;
+  margin: 0 0 4px 12px;
+  color: @equip-text;
   font-family: @crystal-font-display;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .demo-affinity-list {
   display: grid;
-  gap: 2px;
-  margin: 0;
+  gap: 1px;
+  margin: 0 0 0 24px;
   padding: 0;
   list-style: none;
 }
 
 .demo-affinity-row {
-  padding: 6px 10px;
-  color: @crystal-color-text;
+  padding: 5px 12px;
+  color: @equip-text;
   font-size: 14px;
   letter-spacing: 0.02em;
   background: transparent;
-  border-bottom: 1px dashed fade(@crystal-color-line, 35%);
 }
 
 .demo-affinity-row--selected {
-  color: @crystal-color-bg;
-  background: linear-gradient(90deg, fade(@crystal-color-cyan, 90%), fade(@crystal-color-cyan, 60%));
-  border-bottom-color: transparent;
+  color: @equip-text;
+  background: linear-gradient(90deg, fade(@equip-line, 38%), fade(@equip-line, 12%));
+  border-left: 2px solid @equip-line;
+  padding-left: 10px;
 }
 
 .demo-character-pane {
-  display: grid;
-  gap: @crystal-space-3;
-  justify-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 480px;
+  padding-top: 12px;
 }
 
 .demo-character-portrait {
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.55));
 }
 
-.demo-shell--mobile-preview .demo-equipment-shell {
+.demo-character-portrait img {
   width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.demo-character-pane :global(.crystal-character-portrait) {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Position LevelInfo as an overlay at the bottom-right of the character pane,
+ * matching the source method's diagonal stat shelf. */
+.demo-character-pane > :last-child {
+  position: absolute;
+  right: -16px;
+  bottom: -8px;
+  width: 270px;
+  z-index: 2;
+}
+
+.demo-shell--mobile-preview .demo-bright-room {
+  width: 100%;
+  padding: 32px 24px;
+}
+
+.demo-shell--mobile-preview .demo-bright-room__sidetag {
+  display: none;
 }
 
 .demo-shell--mobile-preview .demo-attr-grid {
   grid-template-columns: 1fr;
+}
+
+.demo-shell--mobile-preview .demo-character-pane > :last-child {
+  position: static;
+  width: 100%;
 }
 
 .demo-shell--mobile-preview .demo-icon-grid,
