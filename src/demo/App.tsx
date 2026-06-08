@@ -499,6 +499,13 @@ export const App = () => (
           <span className="demo-bright-room__rule demo-bright-room__rule--bottom" aria-hidden="true" />
           <span className="demo-bright-room__sidetag demo-bright-room__sidetag--left" aria-hidden="true">Party</span>
           <span className="demo-bright-room__sidetag demo-bright-room__sidetag--right" aria-hidden="true">Cloud<i>Strife</i></span>
+          <div className="demo-bright-room__hudtop" aria-hidden="true">
+            <span className="demo-bright-room__hud-trig">L2</span>
+            <span className="demo-bright-room__hud-arrow">«</span>
+            <span className="demo-bright-room__hud-current">Cloud</span>
+            <span className="demo-bright-room__hud-arrow">»</span>
+            <span className="demo-bright-room__hud-trig">R2</span>
+          </div>
 
         <PartyMenuShell
           title={undefined}
@@ -506,14 +513,17 @@ export const App = () => (
           aria-label="Equipment Screen demo"
           className="demo-equipment-shell"
           navigation={{
-            title: 'Party',
+            title: undefined,
+            ariaLabel: 'Party roster',
             content: (
-              <MainMenu
-                selectedId="cloud"
-                options={[
-                  { id: 'cloud', label: 'Cloud' },
-                ]}
-              />
+              <ul className="demo-equip-roster">
+                <li className="demo-equip-roster__row demo-equip-roster__row--selected">
+                  <span className="demo-equip-roster__name">Cloud</span>
+                  <span className="demo-equip-roster__leader" aria-label="Leader">
+                    Leader
+                  </span>
+                </li>
+              </ul>
             ),
           }}
           primary={[
@@ -604,13 +614,20 @@ export const App = () => (
             ariaLabel: 'Character profile',
             content: (
               <div className="demo-character-pane">
-                <CharacterPortrait
-                  size="lg"
-                  src={LOCAL_PORTRAIT_SRC}
-                  alt={LOCAL_PORTRAIT_SRC ? 'Authorized portrait' : undefined}
-                  label={undefined}
-                  className="demo-character-portrait"
-                />
+                {LOCAL_PORTRAIT_SRC ? (
+                  <img
+                    src={LOCAL_PORTRAIT_SRC}
+                    alt="Authorized portrait"
+                    className="demo-character-portrait-img"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <CharacterPortrait
+                    size="lg"
+                    label={undefined}
+                    className="demo-character-portrait"
+                  />
+                )}
                 <LevelInfo
                   level={13}
                   exp={1139}

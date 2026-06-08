@@ -306,6 +306,53 @@
   bottom: 30px;
 }
 
+.demo-bright-room__hudtop {
+  position: absolute;
+  top: 6px;
+  right: 50%;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 10px;
+  color: @equip-text;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  background: rgba(6, 20, 54, 0.85);
+  border: 1px solid @equip-line-soft;
+  transform: translateX(50%);
+  pointer-events: none;
+}
+
+.demo-bright-room__hud-trig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 18px;
+  padding: 0 6px;
+  color: @equip-bg-deep;
+  font-family: @crystal-font-display;
+  font-size: 11px;
+  font-weight: 700;
+  background: @equip-text;
+  border-radius: 9px;
+}
+
+.demo-bright-room__hud-arrow {
+  color: @equip-text-muted;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.demo-bright-room__hud-current {
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 0 #021333;
+}
+
 .demo-bright-room__sidetag {
   position: absolute;
   top: 50%;
@@ -483,6 +530,61 @@
   letter-spacing: 0.01em;
 }
 
+.demo-equip-roster {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-equip-roster__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: @crystal-space-2;
+  padding: 12px 14px;
+  background: rgba(126, 195, 255, 0.18);
+  border: 1px solid rgba(126, 195, 255, 0.55);
+}
+
+.demo-equip-roster__row::before {
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 10px;
+  height: 22px;
+  content: '';
+  background: @equip-line;
+  transform: translateY(-50%) skewX(-12deg);
+  box-shadow: 0 0 8px fade(@equip-line, 60%);
+}
+
+.demo-equip-roster__name {
+  flex: 1;
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-equip-roster__leader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  color: @equip-bg-deep;
+  font-family: @crystal-font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ffe68a, #ffc24c);
+  border-radius: 1px;
+  transform: skewX(-12deg);
+}
+
 .demo-bright-room .demo-attr-section-label {
   display: block;
   color: @equip-text-muted;
@@ -582,44 +684,72 @@
 
 .demo-character-pane {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  min-height: 480px;
-  padding-top: 12px;
+  display: block;
+  min-height: 580px;
+  padding-top: 0;
+}
+
+/* Glowing diamond shard behind the portrait — recreates the bright
+ * sword-glow underlay seen in the source-method equipment screen. */
+.demo-character-pane::before {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  bottom: -20px;
+  left: 0;
+  content: '';
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 60%, rgba(126, 195, 255, 0.4), transparent 70%),
+    linear-gradient(135deg, transparent 45%, rgba(126, 195, 255, 0.18) 50%, transparent 55%);
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .demo-character-portrait {
-  width: 100%;
-  max-width: 320px;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  bottom: 0;
+  left: 0;
+  width: auto !important;
+  min-height: 0 !important;
+  max-width: none !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+  z-index: 1;
 }
 
-.demo-character-portrait img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
+/* When LOCAL_PORTRAIT_SRC is set the demo renders a raw <img> instead
+ * of CharacterPortrait, so we can full-bleed the image to the pane
+ * without fighting the component's internal min-height and ::after. */
+.demo-character-portrait-img {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  bottom: 0;
+  height: ~"calc(100% + 16px)";
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+  z-index: 1;
+  pointer-events: none;
 }
 
-.demo-character-pane :global(.crystal-character-portrait) {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-/* Position LevelInfo as an overlay at the bottom-right of the character pane,
- * matching the source method's diagonal stat shelf. */
+/* LevelInfo overlay — fixed at the bottom-right with translucent
+ * background so the diagonal stat shelf reads against the portrait. */
 .demo-character-pane > :last-child {
   position: absolute;
-  right: -16px;
-  bottom: -8px;
-  width: 270px;
-  z-index: 2;
+  right: -8px;
+  bottom: -12px;
+  width: 280px;
+  z-index: 3;
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 20, 54, 0.55) 60%);
+  padding: 10px 0 6px;
 }
 
 .demo-shell--mobile-preview .demo-bright-room {

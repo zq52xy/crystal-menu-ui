@@ -22,4 +22,6 @@ eval/screenshots/preview-*.png
 
 # Local-only preview helpers (not part of the public package).
 scripts/preview-new-components.mjs
+scripts/preview-hud-area.mjs
+scripts/debug-hud.mjs
 
