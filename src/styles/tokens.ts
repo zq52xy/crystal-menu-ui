@@ -23,7 +23,8 @@ export const crystalTokens = {
     glassStrong: 'rgba(18, 23, 31, 0.88)',
   },
   font: {
-    body: 'Inter, "Segoe UI", Arial, sans-serif',
+    body:
+      '"Optima", "Optima Nova", "Linotype Optima", Optima-Regular, "URW Classico", "Charter", Inter, "Segoe UI", Georgia, serif',
     display:
       '"Optima", "Optima Nova", "Linotype Optima", Optima-Regular, "URW Classico", "Charter", Georgia, "Times New Roman", serif',
   },
