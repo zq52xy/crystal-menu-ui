@@ -24,5 +24,7 @@ eval/screenshots/preview-*.png
 scripts/preview-new-components.mjs
 scripts/preview-hud-area.mjs
 scripts/preview-typography-zoom.mjs
+scripts/preview-top-commands.mjs
 scripts/debug-hud.mjs
+scripts/debug-fonts.mjs
 

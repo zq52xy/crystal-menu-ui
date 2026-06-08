@@ -73,11 +73,22 @@ const LOCAL_OPTIMA_SRC: string | undefined =
 if (typeof document !== 'undefined' && LOCAL_OPTIMA_SRC) {
   const styleEl = document.createElement('style');
   styleEl.dataset.source = 'crystal-menu-ui-demo-local-optima';
+  // Map both regular and bold to the same TTF — the binary only ships
+  // a 400 weight, but covering 700 explicitly stops the browser from
+  // falling back to Inter/Georgia when a panel title uses bold.
+  // Browsers will synthesize the bold weight from the regular file.
   styleEl.textContent = `
     @font-face {
       font-family: 'Optima';
       src: url('${LOCAL_OPTIMA_SRC}') format('truetype');
       font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Optima';
+      src: url('${LOCAL_OPTIMA_SRC}') format('truetype');
+      font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
