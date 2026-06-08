@@ -21,4 +21,4 @@ Direct game names such as `Final Fantasy` / `最终幻想` may appear only as de
 
 ## Fonts
 
-The package does not bundle or self-host any commercial font file. The display token references `Optima` (Linotype/Monotype) as the first preference in a CSS fallback chain that ends at `Georgia`, so apps that already have Optima installed system-wide use it, and apps that do not are served Georgia instead. The `Optima` reference is a stack hint only; it is not a redistribution. Consuming applications are responsible for their own font licensing if they choose to bundle or self-host Optima.
+The package does not bundle or self-host any commercial font file. Both the display and body tokens reference `Optima` (Linotype/Monotype) as the first preference in a CSS fallback chain. Apps that already have Optima installed system-wide use it; apps that do not fall through to URW Classico → Charter → Inter (body) / Georgia (display). The `Optima` reference is a stack hint only — never a binary redistribution. Consuming applications are responsible for their own font licensing if they choose to bundle or self-host Optima.

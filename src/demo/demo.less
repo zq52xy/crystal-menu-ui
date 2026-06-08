@@ -754,8 +754,8 @@
 
 /* Glowing diamond shard behind the portrait — recreates the bright
  * sword-glow underlay seen in the source-method equipment screen.
- * Layered: two radial halos + an angled bright streak that reads as
- * a tilted blade-glow tucked behind the character. */
+ * Layered: soft radial halos only, mask-faded at every edge so the
+ * shard reads as ambient light rather than a bordered rectangle. */
 .demo-character-pane::before {
   position: absolute;
   top: 12%;
@@ -764,10 +764,11 @@
   left: -12px;
   content: '';
   background:
-    radial-gradient(ellipse 60% 38% at 52% 56%, rgba(170, 220, 255, 0.55), transparent 70%),
-    radial-gradient(ellipse 100% 70% at 50% 80%, rgba(126, 195, 255, 0.32), transparent 75%),
-    linear-gradient(125deg, transparent 42%, rgba(170, 220, 255, 0.36) 50%, transparent 58%);
-  filter: blur(3px);
+    radial-gradient(ellipse 60% 38% at 52% 56%, rgba(170, 220, 255, 0.5), transparent 78%),
+    radial-gradient(ellipse 100% 70% at 50% 80%, rgba(126, 195, 255, 0.28), transparent 82%);
+  filter: blur(6px);
+  mask: radial-gradient(ellipse 80% 70% at 50% 55%, black 30%, transparent 92%);
+  -webkit-mask: radial-gradient(ellipse 80% 70% at 50% 55%, black 30%, transparent 92%);
   pointer-events: none;
   z-index: 0;
 }
@@ -780,8 +781,8 @@
   width: 70%;
   height: 36%;
   content: '';
-  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(126, 195, 255, 0.4), transparent 70%);
-  filter: blur(8px);
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(126, 195, 255, 0.4), transparent 75%);
+  filter: blur(12px);
   pointer-events: none;
   z-index: 0;
 }
@@ -863,6 +864,13 @@
 
 .demo-shell--mobile-preview .demo-orb-showcase {
   width: min(100%, calc(100vw - 32px));
+}
+
+.demo-materia-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: @crystal-space-3;
+  width: min(100%, 880px);
 }
 
 .demo-shell--mobile-preview .demo-materia-row {
