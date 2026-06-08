@@ -4,6 +4,7 @@
 // POS: Demo-only composition; no official assets.
 import {
   BattleMenu,
+  CharacterPortrait,
   ChapterEndCard,
   ChapterIntroCard,
   ConfirmDialog,
@@ -18,7 +19,6 @@ import {
   LimitGauge,
   Loading,
   MainMenu,
-  MateriaGrowthTree,
   MenuPanel,
   OrbGem,
   OrbSocketRail,
@@ -26,7 +26,6 @@ import {
   PartyStatus,
   ProfileScreen,
   SaveSlot,
-  WeaponUpgradeMatrix,
   type CharacterProfileStat,
   type CharacterRosterItem,
   type BattleCommand,
@@ -38,13 +37,18 @@ import {
   type GameIconName,
   type InventoryItem,
   type ItemTooltipEffect,
-  type MateriaGrowthAbility,
   type OrbSocket,
   type OrbSlot,
   type PartyMember,
-  type WeaponMatrixConnection,
-  type WeaponMatrixNode,
 } from '../index';
+
+// ============================================================
+// Local-only authorized portrait (third-party reference image).
+// Default off. To preview locally, drop a portrait file into
+// src/demo/local-assets/ and flip this to that import URL.
+// The local-assets directory is gitignored — files stay on disk only.
+// ============================================================
+const LOCAL_PORTRAIT_SRC: string | undefined = undefined;
 
 const party: PartyMember[] = [
   { id: 'ari', name: 'Ari', level: 32, hp: 1420, maxHp: 1600, mp: 214, maxMp: 260, active: true },
@@ -213,34 +217,84 @@ const chapterEndRewards: ChapterEndReward[] = [
   { id: 'sp', label: 'SP', amount: '+ 6' },
 ];
 
-const materiaAbilities: MateriaGrowthAbility[] = [
-  { id: 'arc-1', level: 1, label: 'Arc Surge', description: 'Single target arc damage', status: 'unlocked' },
-  { id: 'arc-2', level: 2, label: 'Arc Burst', description: 'Small radius arc damage', status: 'unlocked' },
-  { id: 'arc-3', level: 3, label: 'Arc Cascade', description: 'Chain arc to nearby targets', status: 'ready' },
-  { id: 'arc-4', level: 4, label: 'Arc Spire', description: 'Concentrated arc column', status: 'locked' },
-  { id: 'arc-5', level: 5, label: 'Mastered Arc', description: 'Cycle all arc commands', status: 'locked' },
+// ============================================================
+// Equipment Screen section data (Prototypes-style three-row layout).
+// ============================================================
+interface EquipmentRow {
+  id: string;
+  name: string;
+  icon: GameIconName;
+  description: string;
+  stats: Array<{ icon: GameIconName; value: number }>;
+  slots?: OrbSlot[];
+  trailingOrb?: OrbSlot;
+}
+
+const equipmentRows: EquipmentRow[] = [
+  {
+    id: 'weapon',
+    name: 'Iron Blade',
+    icon: 'sword',
+    description: 'A greatsword cast from carefully selected iron ore.',
+    stats: [
+      { icon: 'attack', value: 29 },
+      { icon: 'magicAttack', value: 31 },
+      { icon: 'defense', value: 5 },
+      { icon: 'magicDefense', value: 0 },
+    ],
+    slots: [
+      { id: 'w1', tone: 'cyan', linkedAfter: true },
+      { id: 'w2', tone: 'violet', linkedAfter: true },
+      { id: 'w3', tone: 'gold' },
+    ],
+    trailingOrb: { id: 'wt', tone: 'cyan' },
+  },
+  {
+    id: 'armor',
+    name: 'Iron Bangle',
+    icon: 'bangle',
+    description: 'An armband crafted from iron. A sophisticated accoutrement with a reasonable price tag.',
+    stats: [
+      { icon: 'attack', value: 0 },
+      { icon: 'magicAttack', value: 0 },
+      { icon: 'defense', value: 16 },
+      { icon: 'magicDefense', value: 16 },
+    ],
+    slots: [{ id: 'a1', empty: true }],
+    trailingOrb: { id: 'at', tone: 'cyan' },
+  },
+  {
+    id: 'accessory',
+    name: 'Power Wristguards',
+    icon: 'necklace',
+    description: 'Wristguards capable of drawing out power latent in the wearer’s body.',
+    stats: [
+      { icon: 'attack', value: 0 },
+      { icon: 'magicAttack', value: 0 },
+      { icon: 'defense', value: 0 },
+      { icon: 'magicDefense', value: 0 },
+    ],
+  },
 ];
 
-const weaponMatrixNodes: WeaponMatrixNode[] = [
-  { id: 'core', col: 1, row: 2, label: 'Core', kind: 'core', status: 'unlocked', effect: 'Base node' },
-  { id: 'atk-a', col: 2, row: 1, label: 'ATK', kind: 'attack', status: 'unlocked', cost: 1, effect: 'ATK +6' },
-  { id: 'atk-b', col: 3, row: 1, label: 'ATK+', kind: 'attack', status: 'available', cost: 2, effect: 'ATK +10', description: 'Boosts physical damage on light weapons.' },
-  { id: 'mag-a', col: 2, row: 3, label: 'MAG', kind: 'magic', status: 'unlocked', cost: 1, effect: 'Magic +4' },
-  { id: 'mag-b', col: 3, row: 3, label: 'MAG+', kind: 'magic', status: 'locked', cost: 2, effect: 'Magic +8' },
-  { id: 'sup-a', col: 4, row: 2, label: 'SUP', kind: 'support', status: 'available', cost: 2, effect: 'MP recovery on hit' },
-  { id: 'unique', col: 5, row: 2, label: 'UNIQ', kind: 'unique', status: 'locked', cost: 4, effect: 'Unique action: Arc Lance', description: 'Unlocks a unique active ability tied to this weapon.' },
-  { id: 'fin', col: 6, row: 2, label: 'FIN', kind: 'unique', status: 'locked', cost: 6, effect: 'Final empowerment' },
+const characterStats: Array<{ icon: GameIconName; label: string; value: number }> = [
+  { icon: 'attack', label: 'Attack', value: 99 },
+  { icon: 'magicAttack', label: 'Magic Attack', value: 89 },
+  { icon: 'defense', label: 'Defense', value: 46 },
+  { icon: 'magicDefense', label: 'Magic Defense', value: 38 },
+  { icon: 'strength', label: 'Strength', value: 35 },
+  { icon: 'magic', label: 'Magic', value: 29 },
+  { icon: 'vitality', label: 'Vitality', value: 25 },
+  { icon: 'spirit', label: 'Spirit', value: 22 },
+  { icon: 'luck', label: 'Luck', value: 25 },
+  { icon: 'speed', label: 'Speed', value: 18 },
 ];
 
-const weaponMatrixConnections: WeaponMatrixConnection[] = [
-  { from: 'core', to: 'atk-a', active: true },
-  { from: 'atk-a', to: 'atk-b' },
-  { from: 'core', to: 'mag-a', active: true },
-  { from: 'mag-a', to: 'mag-b' },
-  { from: 'atk-b', to: 'sup-a' },
-  { from: 'mag-b', to: 'sup-a' },
-  { from: 'sup-a', to: 'unique' },
-  { from: 'unique', to: 'fin' },
+const affinityRows: Array<{ label: string; selected?: boolean }> = [
+  { label: 'Lesser Resistances' },
+  { label: 'Greater Resistances' },
+  { label: 'Immunities', selected: true },
+  { label: 'Absorbed Elements' },
 ];
 
 const getShellClassName = () => {
@@ -430,54 +484,140 @@ export const App = () => (
           </p>
         </MenuPanel>
 
-        <MenuPanel title="Materia Growth" variant="deep" density="compact">
-          <div className="demo-materia-row">
-            <MateriaGrowthTree
-              name="Arc Materia"
-              kicker="Magic Materia"
-              tone="cyan"
-              level={2}
-              maxLevel={5}
-              ap={1820}
-              apToNext={2400}
-              totalAp={5440}
-              abilities={materiaAbilities}
-              footer="Equip the host weapon to keep earning AP from defeated enemies."
+        <PartyMenuShell
+          title="Equipment Screen"
+          subtitle="Prototypes-style three-row equipment layout"
+          aria-label="Equipment Screen demo"
+          className="demo-equipment-shell"
+          navigation={{
+            title: 'Party',
+            content: (
+              <MainMenu
+                selectedId="cloud"
+                options={[
+                  { id: 'cloud', label: 'Cloud' },
+                ]}
+              />
+            ),
+          }}
+          primary={[
+            {
+              title: 'Equipment',
+              variant: 'status',
+              ariaLabel: 'Equipped gear',
+              content: (
+                <div className="demo-equip-stack">
+                  {equipmentRows.map((row) => (
+                    <article key={row.id} className="demo-equip-row">
+                      <span className="demo-equip-icon" aria-hidden="true">
+                        <GameIcon name={row.icon} size="md" />
+                      </span>
+                      <div className="demo-equip-body">
+                        <header className="demo-equip-head">
+                          <h4 className="demo-equip-name">{row.name}</h4>
+                          {row.slots ? (
+                            <span className="demo-equip-rail">
+                              <OrbSocketRail
+                                size="md"
+                                ariaLabel={`${row.name} sockets`}
+                                sockets={row.slots.map((slot) => ({
+                                  id: slot.id,
+                                  tone: slot.empty ? 'empty' : (slot.tone as OrbSocket['tone']) ?? 'cyan',
+                                  linkedAfter: slot.linkedAfter ? 'short' : undefined,
+                                }))}
+                              />
+                              {row.trailingOrb ? (
+                                <span className="demo-equip-trailing">
+                                  <OrbGem tone={row.trailingOrb.tone ?? 'cyan'} size="sm" />
+                                </span>
+                              ) : null}
+                            </span>
+                          ) : null}
+                        </header>
+                        <div className="demo-equip-stats">
+                          {row.stats.map((stat, index) => (
+                            <span key={index} className="demo-equip-stat">
+                              <GameIcon name={stat.icon} size="sm" />
+                              <b>{stat.value}</b>
+                            </span>
+                          ))}
+                        </div>
+                        <p className="demo-equip-desc">{row.description}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ),
+            },
+            {
+              title: 'Attributes',
+              ariaLabel: 'Attribute summary',
+              content: (
+                <div className="demo-attr-grid">
+                  <ul className="demo-attr-list">
+                    {characterStats.map((stat) => (
+                      <li key={stat.label} className="demo-attr-row">
+                        <span className="demo-attr-label">
+                          <GameIcon name={stat.icon} size="sm" />
+                          <span>{stat.label}</span>
+                        </span>
+                        <strong className="demo-attr-value">{stat.value}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="demo-affinity">
+                    <h5 className="demo-affinity-title">Affinities</h5>
+                    <h6 className="demo-affinity-sub">Resistances</h6>
+                    <ul className="demo-affinity-list">
+                      {affinityRows.map((row) => (
+                        <li
+                          key={row.label}
+                          className={`demo-affinity-row${row.selected ? ' demo-affinity-row--selected' : ''}`}
+                        >
+                          {row.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ),
+            },
+          ]}
+          detail={{
+            title: 'Cloud Strife',
+            ariaLabel: 'Character profile',
+            content: (
+              <div className="demo-character-pane">
+                <CharacterPortrait
+                  size="lg"
+                  src={LOCAL_PORTRAIT_SRC}
+                  alt={LOCAL_PORTRAIT_SRC ? 'Authorized portrait' : undefined}
+                  label={undefined}
+                  className="demo-character-portrait"
+                />
+                <LevelInfo
+                  level={13}
+                  exp={1139}
+                  maxExp={1199}
+                  weaponLevel="Weapon Level 2"
+                  resources={[
+                    { label: 'HP', value: 1310, max: 1720 },
+                    { label: 'MP', value: 13, max: 39 },
+                    { label: 'SP', value: 7, max: 10 },
+                  ]}
+                />
+              </div>
+            ),
+          }}
+          footer={
+            <FloatingStatusBar
+              playtime="005:38:46"
+              currency="2,468"
+              hint="Select a character whose attributes you wish to view."
+              actionLabel="Toggle Page"
             />
-            <MateriaGrowthTree
-              name="Aegis Materia"
-              kicker="Support Materia"
-              tone="gold"
-              level={4}
-              maxLevel={5}
-              ap={3240}
-              apToNext={3600}
-              totalAp={9120}
-              abilities={[
-                { id: 'aegis-1', level: 1, label: 'Aegis I', description: 'Reflect 8% of physical damage', status: 'unlocked' },
-                { id: 'aegis-2', level: 2, label: 'Aegis II', description: 'Reflect 14% of physical damage', status: 'unlocked' },
-                { id: 'aegis-3', level: 3, label: 'Aegis III', description: 'Reflect 22% of physical damage', status: 'unlocked' },
-                { id: 'aegis-4', level: 4, label: 'Aegis IV', description: 'Reflect physical and minor magic', status: 'ready' },
-                { id: 'aegis-5', level: 5, label: 'Aegis Mastery', description: 'Full reflect and party halo', status: 'locked' },
-              ]}
-              footer="Aegis is one level away from mastery."
-            />
-          </div>
-        </MenuPanel>
-
-        <MenuPanel title="Weapon Upgrade Matrix" variant="deep" density="compact">
-          <WeaponUpgradeMatrix
-            weaponName="Astra Saber"
-            weaponLevel="Weapon Level 2"
-            sp={4}
-            spMax={12}
-            columns={6}
-            rows={4}
-            nodes={weaponMatrixNodes}
-            connections={weaponMatrixConnections}
-            selectedNodeId="atk-b"
-          />
-        </MenuPanel>
+          }
+        />
 
         <MenuPanel title="Chapter Title" variant="deep" density="compact">
           <ChapterIntroCard

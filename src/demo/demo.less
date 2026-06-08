@@ -184,11 +184,221 @@
   text-align: center;
 }
 
-.demo-materia-row {
+/* ============================================================
+ * Equipment Screen — composes PartyMenuShell to recreate the
+ * Prototypes-style three-column equipment / attributes / character
+ * layout from the original FFVII Remake-inspired source method.
+ * ============================================================ */
+.demo-equipment-shell {
+  width: min(100%, 1100px);
+  margin: @crystal-space-5 auto 0;
+}
+
+.demo-equip-stack {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: @crystal-space-3;
-  width: min(100%, 880px);
+}
+
+.demo-equip-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: @crystal-space-3;
+  align-items: start;
+  padding: @crystal-space-2 @crystal-space-3;
+  background: linear-gradient(180deg, rgba(20, 38, 52, 0.62), rgba(2, 11, 19, 0.78));
+  border: 1px solid fade(@crystal-color-border, 24%);
+}
+
+.demo-equip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 4px;
+  color: @crystal-color-cyan;
+  background: rgba(4, 11, 36, 0.6);
+  border: 1px solid fade(@crystal-color-cyan, 36%);
+  transform: rotate(45deg);
+}
+
+.demo-equip-icon > * {
+  transform: rotate(-45deg);
+}
+
+.demo-equip-body {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.demo-equip-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: @crystal-space-3;
+}
+
+.demo-equip-name {
+  margin: 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  text-shadow: @crystal-shadow-text;
+}
+
+.demo-equip-rail {
+  display: inline-flex;
+  align-items: center;
+  gap: @crystal-space-2;
+}
+
+.demo-equip-trailing {
+  display: inline-flex;
+  align-items: center;
+  padding-left: @crystal-space-2;
+  border-left: 1px solid fade(@crystal-color-line, 60%);
+}
+
+.demo-equip-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-3;
+  align-items: center;
+}
+
+.demo-equip-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: @crystal-color-cyan;
+  font-size: 14px;
+}
+
+.demo-equip-stat b {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 16px;
+  font-weight: 400;
+  text-shadow: @crystal-shadow-text;
+}
+
+.demo-equip-desc {
+  margin: 0;
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.demo-attr-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: @crystal-space-4;
+}
+
+.demo-attr-list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-attr-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: @crystal-space-2;
+  padding-bottom: 2px;
+  border-bottom: 1px dashed fade(@crystal-color-line, 50%);
+}
+
+.demo-attr-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: @crystal-color-text;
+  font-size: 14px;
+}
+
+.demo-attr-label > span {
+  letter-spacing: 0.02em;
+}
+
+.demo-attr-value {
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  text-shadow: @crystal-shadow-text;
+}
+
+.demo-affinity {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.demo-affinity-title {
+  margin: 0;
+  color: @crystal-color-cyan;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.demo-affinity-sub {
+  margin: 0 0 4px;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.demo-affinity-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-affinity-row {
+  padding: 6px 10px;
+  color: @crystal-color-text;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border-bottom: 1px dashed fade(@crystal-color-line, 35%);
+}
+
+.demo-affinity-row--selected {
+  color: @crystal-color-bg;
+  background: linear-gradient(90deg, fade(@crystal-color-cyan, 90%), fade(@crystal-color-cyan, 60%));
+  border-bottom-color: transparent;
+}
+
+.demo-character-pane {
+  display: grid;
+  gap: @crystal-space-3;
+  justify-items: center;
+}
+
+.demo-character-portrait {
+  width: 100%;
+  max-width: 220px;
+}
+
+.demo-shell--mobile-preview .demo-equipment-shell {
+  width: 100%;
+}
+
+.demo-shell--mobile-preview .demo-attr-grid {
+  grid-template-columns: 1fr;
 }
 
 .demo-shell--mobile-preview .demo-icon-grid,
