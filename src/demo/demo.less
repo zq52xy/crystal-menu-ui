@@ -411,35 +411,50 @@
    to become near-transparent so the bright-room background shows through.
    We target by descendant + first-level structure, since module class names
    are hashed but their structure is stable. */
-.demo-bright-room :is(article, section, header, div) > [class*="panel_"],
-.demo-bright-room [class*="panel_"] {
+/* CSS Module hashes the class names with a HYPHEN, e.g.
+ * .crystal-panel-egiVN, .crystal-corner-FY77X. Selectors must use
+ * [class*="crystal-panel-"] (NOT panel_). All overrides below target
+ * the hyphen form. */
+.demo-bright-room [class*="crystal-panel-"] {
   background: transparent !important;
-  border-color: @equip-line-soft !important;
+  border: 0 !important;
   box-shadow: none !important;
 }
 
-.demo-bright-room [class*="frame_"] {
+/* Kill the MenuPanel's inner double-frame pseudo and corner-bracket
+ * span so each pane reads as a transparent slot in the bright room
+ * rather than a panel-inside-a-panel. */
+.demo-bright-room [class*="crystal-panel-"]::before {
+  display: none !important;
+}
+
+.demo-bright-room [class*="crystal-corner-"] {
+  display: none !important;
+}
+
+.demo-bright-room [class*="crystal-frame-"] {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
 
-.demo-bright-room [class*="header_"] {
-  display: none;
+/* Keep the panel title visible but drop its bottom rule so it floats on
+ * the bright room rather than reading as a panel chrome divider. */
+.demo-bright-room [class*="crystal-header-"] {
+  padding: 0 0 6px !important;
+  border: 0 !important;
 }
 
-.demo-bright-room [class*="footerPanel_"] {
+.demo-bright-room [class*="crystal-footerPanel-"] {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
   padding: 0 !important;
 }
 
-/* Force the FloatingStatusBar inside the bright room to lose its
- * glass background so it reads as "HUD on the bright canvas" rather
- * than "panel inside a panel". */
-.demo-bright-room [class*="bar_"] {
+/* FloatingStatusBar's outer container uses crystal-bar-* class. */
+.demo-bright-room [class*="crystal-bar-"] {
   background: transparent !important;
   border: 0 !important;
   border-top: 1px solid @equip-line-soft !important;
@@ -448,15 +463,15 @@
   padding: 14px 4px 4px !important;
 }
 
-.demo-bright-room [class*="hint_"] {
+.demo-bright-room [class*="crystal-hint-"] {
   color: @equip-text !important;
 }
 
-.demo-bright-room [class*="meta_"] {
+.demo-bright-room [class*="crystal-meta-"] {
   color: @equip-text !important;
 }
 
-.demo-bright-room [class*="grid_"] {
+.demo-bright-room [class*="crystal-grid-"] {
   grid-template-columns: 130px minmax(640px, 1fr) 320px !important;
   gap: @crystal-space-4 !important;
 }
@@ -476,18 +491,29 @@
   border: 0;
 }
 
+/* Equipment row icon — double-diamond reading: an outer cyan diamond
+ * frame plus the inner glyph on a darker fill, with a soft glow. */
 .demo-equip-icon {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   margin-top: 6px;
   color: @equip-line;
-  background: transparent;
+  background: rgba(8, 26, 60, 0.7);
   border: 1.5px solid @equip-line;
   transform: rotate(45deg);
-  box-shadow: 0 0 8px fade(@equip-line, 50%);
+  box-shadow: 0 0 12px fade(@equip-line, 60%), inset 0 0 8px rgba(126, 195, 255, 0.18);
+}
+
+.demo-equip-icon::before {
+  position: absolute;
+  inset: -7px;
+  content: '';
+  border: 1px solid fade(@equip-line, 55%);
+  pointer-events: none;
 }
 
 .demo-equip-icon > * {
@@ -524,6 +550,8 @@
   display: inline-flex;
   align-items: center;
   gap: @crystal-space-2;
+  margin-left: auto;
+  padding-left: @crystal-space-5;
   justify-self: end;
 }
 
@@ -703,9 +731,9 @@
 }
 
 .demo-affinity-row {
-  padding: 5px 12px;
+  padding: 4px 10px 4px 14px;
   color: @equip-text;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 0.02em;
   white-space: nowrap;
   background: transparent;
@@ -713,9 +741,8 @@
 
 .demo-affinity-row--selected {
   color: @equip-text;
-  background: linear-gradient(90deg, fade(@equip-line, 38%), fade(@equip-line, 12%));
-  border-left: 2px solid @equip-line;
-  padding-left: 10px;
+  background: linear-gradient(90deg, fade(@equip-line, 50%), fade(@equip-line, 8%));
+  padding-left: 14px;
 }
 
 .demo-character-pane {
@@ -726,18 +753,35 @@
 }
 
 /* Glowing diamond shard behind the portrait — recreates the bright
- * sword-glow underlay seen in the source-method equipment screen. */
+ * sword-glow underlay seen in the source-method equipment screen.
+ * Layered: two radial halos + an angled bright streak that reads as
+ * a tilted blade-glow tucked behind the character. */
 .demo-character-pane::before {
   position: absolute;
-  top: 8%;
-  right: 0;
-  bottom: -20px;
-  left: 0;
+  top: 12%;
+  right: -12px;
+  bottom: -32px;
+  left: -12px;
   content: '';
   background:
-    radial-gradient(ellipse 70% 50% at 50% 60%, rgba(126, 195, 255, 0.4), transparent 70%),
-    linear-gradient(135deg, transparent 45%, rgba(126, 195, 255, 0.18) 50%, transparent 55%);
-  filter: blur(2px);
+    radial-gradient(ellipse 60% 38% at 52% 56%, rgba(170, 220, 255, 0.55), transparent 70%),
+    radial-gradient(ellipse 100% 70% at 50% 80%, rgba(126, 195, 255, 0.32), transparent 75%),
+    linear-gradient(125deg, transparent 42%, rgba(170, 220, 255, 0.36) 50%, transparent 58%);
+  filter: blur(3px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Secondary glow ring directly behind the head/shoulder area. */
+.demo-character-pane::after {
+  position: absolute;
+  top: 18%;
+  right: 14%;
+  width: 70%;
+  height: 36%;
+  content: '';
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(126, 195, 255, 0.4), transparent 70%);
+  filter: blur(8px);
   pointer-events: none;
   z-index: 0;
 }
@@ -763,11 +807,12 @@
  * without fighting the component's internal min-height and ::after. */
 .demo-character-portrait-img {
   position: absolute;
-  top: -16px;
-  right: -16px;
-  bottom: 0;
-  height: ~"calc(100% + 16px)";
-  width: auto;
+  top: -32px;
+  right: -32px;
+  bottom: -16px;
+  left: -8px;
+  height: ~"calc(100% + 48px)";
+  width: ~"calc(100% + 40px)";
   max-width: none;
   object-fit: contain;
   object-position: right bottom;
@@ -777,15 +822,16 @@
 }
 
 /* LevelInfo overlay — fixed at the bottom-right with translucent
- * background so the diagonal stat shelf reads against the portrait. */
+ * background so the diagonal stat shelf reads against the portrait.
+ * Pinned higher so the "13" big-number sits in the middle of the
+ * portrait and the EXP/HP/MP/SP shelf hangs into the lower body. */
 .demo-character-pane > :last-child {
   position: absolute;
-  right: -8px;
-  bottom: -12px;
+  right: -16px;
+  bottom: 4px;
   width: 280px;
   z-index: 3;
-  background: linear-gradient(180deg, transparent 0%, rgba(6, 20, 54, 0.55) 60%);
-  padding: 10px 0 6px;
+  padding: 0;
 }
 
 .demo-shell--mobile-preview .demo-bright-room {

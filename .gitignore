@@ -25,6 +25,8 @@ scripts/preview-new-components.mjs
 scripts/preview-hud-area.mjs
 scripts/preview-typography-zoom.mjs
 scripts/preview-top-commands.mjs
+scripts/preview-cloud-pane.mjs
 scripts/debug-hud.mjs
 scripts/debug-fonts.mjs
+scripts/debug-borders.mjs
 
