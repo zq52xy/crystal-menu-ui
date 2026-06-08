@@ -31,5 +31,6 @@ scripts/debug-fonts.mjs
 scripts/debug-borders.mjs
 scripts/debug-confirm-dialog.mjs
 scripts/debug-all-fonts.mjs
+scripts/debug-rail-bg.mjs
 scripts/preview-confirm-and-save.mjs
 

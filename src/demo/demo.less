@@ -476,6 +476,19 @@
   gap: @crystal-space-4 !important;
 }
 
+/* Tone the OrbGem outer halo down inside the bright room — the
+ * library default ships a strong cyan ring + bloom for OrbGem on
+ * dark glass, but on the bright blue room that ring reads as a
+ * floating capsule. Soften the box-shadow so each gem reads as a
+ * standalone bead instead of a button. */
+.demo-bright-room [class*="crystal-gemFrame-"] {
+  box-shadow:
+    0 0 0 1px rgba(129, 223, 255, 0.18),
+    0 4px 8px rgba(0, 10, 34, 0.32),
+    inset 0 4px 6px rgba(255, 255, 255, 0.22),
+    inset 0 -7px 10px rgba(0, 10, 24, 0.5) !important;
+}
+
 .demo-equip-stack {
   display: grid;
   gap: @crystal-space-5;
@@ -605,29 +618,32 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: @crystal-space-2;
-  padding: 12px 14px;
-  background: rgba(126, 195, 255, 0.18);
-  border: 1px solid rgba(126, 195, 255, 0.55);
+  gap: @crystal-space-3;
+  height: 48px;
+  padding: 0 14px 0 22px;
+  background: linear-gradient(90deg, rgba(126, 195, 255, 0.32), rgba(126, 195, 255, 0.14) 60%, transparent);
+  border: 0;
+  overflow: visible;
 }
 
+/* Inner left highlight bar — sits flush inside the row (not -8px outside)
+ * so the whole roster aligns with the Equipment column gridline. */
 .demo-equip-roster__row::before {
   position: absolute;
-  top: 50%;
-  left: -8px;
-  width: 10px;
-  height: 22px;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
   content: '';
   background: @equip-line;
-  transform: translateY(-50%) skewX(-12deg);
-  box-shadow: 0 0 8px fade(@equip-line, 60%);
+  box-shadow: 0 0 10px fade(@equip-line, 70%);
 }
 
 .demo-equip-roster__name {
   flex: 1;
   color: @equip-text;
   font-family: @crystal-font-display;
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: 0.02em;
   text-shadow: 0 2px 0 #021333;
 }
@@ -636,16 +652,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 8px;
+  padding: 3px 10px;
   color: @equip-bg-deep;
   font-family: @crystal-font-display;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   background: linear-gradient(120deg, #ffe68a, #ffc24c);
-  border-radius: 1px;
-  transform: skewX(-12deg);
+  box-shadow: 0 2px 6px rgba(255, 194, 76, 0.4);
 }
 
 .demo-bright-room .demo-attr-section-label {
@@ -809,9 +824,9 @@
 .demo-character-portrait-img {
   position: absolute;
   top: -32px;
-  right: -32px;
+  right: 0;
   bottom: -16px;
-  left: -8px;
+  left: -40px;
   height: ~"calc(100% + 48px)";
   width: ~"calc(100% + 40px)";
   max-width: none;
