@@ -26,6 +26,34 @@ import { crystalTokens } from 'crystal-menu-ui';
 | `space` | 4px-based spacing scale |
 | `shadow` | panel, focus, inset, and text shadows |
 
+## Font Stacks
+
+Both `font.display` and `font.body` are now led by `Optima` so the entire surface speaks one humanist serif — matching the source-method's flagship equipment screen aesthetic. Consumer apps that have Optima installed pick it up everywhere; apps without Optima fall through to a sans-serif (`Inter`/`Segoe UI`) for body and a serif (`Georgia`) for display, so the typeface character stays close on every platform.
+
+The library does **not** ship or self-host any Optima font file.
+
+### Display stack
+
+```
+"Optima", "Optima Nova", "Linotype Optima", Optima-Regular,
+"URW Classico", "Charter", Georgia, "Times New Roman", serif
+```
+
+### Body stack
+
+```
+"Optima", "Optima Nova", "Linotype Optima", Optima-Regular,
+"URW Classico", "Charter", Inter, "Segoe UI", Georgia, serif
+```
+
+The body stack ends in a sans-serif (`Inter`/`Segoe UI`) instead of `Georgia` so platforms without Optima get a clean reading face for dense status rows, descriptions, and meta lines.
+
+### Platform notes
+
+- macOS / iOS ship Optima system-wide.
+- Windows / Linux fall through to URW Classico (open, metric-compatible) → Charter → Inter (body) or Georgia (display).
+- Optima is a trademarked/licensed face owned by Linotype/Monotype. This library is unofficial learning material; consuming applications are responsible for their own font licensing if they bundle or self-host Optima.
+
 ## Core Color Tokens
 
 | Token | Value | Use |

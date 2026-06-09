@@ -53,7 +53,7 @@ An original React UI component library for Final Fantasy-inspired JRPG-style gla
 
 - **Online Preview (PC):** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
 - **Online Preview (Mobile):** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile)
-- **Component Docs:** [All 24 components](#components-24--组件) — component map, code examples, and props contract
+- **Component Docs:** [All 30 components](#components-30--组件) — component map, code examples, and props contract
 - **Showcase:** [Real-world UI examples](#highlights--核心卖点) — menu screens, HUD panels, archive slots, inventory surfaces, and orb/socket rails
 - **Source Figma:** [Figma component library](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1)
 
@@ -61,7 +61,7 @@ An original React UI component library for Final Fantasy-inspired JRPG-style gla
 
 - **在线预览（PC）：** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
 - **在线预览（Mobile）：** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile)
-- **组件文档：** [全部 24 个组件](#components-24--组件)——组件地图、代码示例和 Props 契约
+- **组件文档：** [全部 30 个组件](#components-30--组件)——组件地图、代码示例和 Props 契约
 - **效果展示：** [真实界面示例](#highlights--核心卖点)——菜单屏、HUD 面板、存档列表、物品界面和宝石插槽轨道
 - **来源 Figma：** [Figma 组件库](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1)
 
@@ -182,16 +182,18 @@ This package is structured for AI-assisted app generation. Use the existing comp
 
 ---
 
-## Components (24) / 组件
+## Components (30) / 组件
 
 | Category | Count | Components |
 |----------|-------|------------|
 | **Shell / Panels** | 3 | `MenuPanel`, `PartyMenuShell`, `ProfileScreen` |
 | **Commands / Dialogs** | 5 | `CommandButton`, `MainMenu`, `DialogueBox`, `ConfirmDialog`, `BattleMenu` |
-| **Status / HUD** | 4 | `PartyStatus`, `HPMPBar`, `LevelInfo`, `FloatingStatusBar` |
-| **Equipment / Orbs** | 3 | `EquipmentPanel`, `OrbGem`, `OrbSocketRail` |
+| **Status / HUD** | 5 | `PartyStatus`, `HPMPBar`, `LevelInfo`, `FloatingStatusBar`, `LimitGauge` |
+| **Combat / Feedback** | 1 | `DamageNumber` |
+| **Equipment / Orbs** | 5 | `EquipmentPanel`, `OrbGem`, `OrbSocketRail`, `MateriaGrowthTree`, `WeaponUpgradeMatrix` |
 | **Characters** | 3 | `CharacterProfile`, `CharacterPortrait`, `CharacterRoster` |
 | **Inventory** | 2 | `InventoryList`, `ItemTooltip` |
+| **Chapter / Cinematic** | 2 | `ChapterIntroCard`, `ChapterEndCard` |
 | **Archive / System** | 4 | `SaveSlot`, `GameIcon`, `Divider`, `Loading` |
 
 > 📖 Component contract with examples and props: **[AI_USAGE.md](AI_USAGE.md)**

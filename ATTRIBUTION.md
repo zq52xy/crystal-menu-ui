@@ -18,3 +18,7 @@ The package must not include official assets, extracted screenshots, exact vecto
 Use neutral package names such as `crystal-menu-ui`, `fantasy-rpg-ui-study`, or `jrpg-menu-ui`.
 
 Direct game names such as `Final Fantasy` / `最终幻想` may appear only as descriptive search and study-reference phrases, for example `Final Fantasy UI study` or `最终幻想风格菜单组件`, and must stay paired with the unofficial, learning-only boundary.
+
+## Fonts
+
+The package does not bundle or self-host any commercial font file. Both the display and body tokens reference `Optima` (Linotype/Monotype) as the first preference in a CSS fallback chain. Apps that already have Optima installed system-wide use it; apps that do not fall through to URW Classico → Charter → Inter (body) / Georgia (display). The `Optima` reference is a stack hint only — never a binary redistribution. Consuming applications are responsible for their own font licensing if they choose to bundle or self-host Optima.

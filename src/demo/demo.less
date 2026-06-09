@@ -14,7 +14,7 @@
 }
 
 .demo-stage {
-  width: min(1040px, 100%);
+  width: min(1320px, 100%);
   margin: 0 auto;
 }
 
@@ -156,6 +156,737 @@
   align-items: start;
 }
 
+.demo-limit-gauges {
+  display: grid;
+  gap: @crystal-space-2;
+  width: min(100%, 540px);
+}
+
+.demo-damage-stage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-4;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(100%, 720px);
+  padding: @crystal-space-5;
+  background: rgba(2, 11, 19, 0.65);
+  border: 1px solid fade(@crystal-color-border, 28%);
+  border-radius: @crystal-radius-control;
+  min-height: 120px;
+}
+
+.demo-note {
+  width: min(100%, 720px);
+  margin: 6px auto 0;
+  color: @crystal-color-text-muted;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ============================================================
+ * Equipment Screen — bright blue glass room with corner brackets
+ * and a wide, three-column composition that mirrors the source
+ * method's flagship equipment surface. Wraps PartyMenuShell with
+ * a higher-saturation blue background and forces inner panels to
+ * become near-transparent so the glow shows through.
+ * ============================================================ */
+@equip-bg-deep: #0a1f4f;
+@equip-bg-mid: #1a3a8c;
+@equip-bg-rim: #2455b8;
+@equip-line: #7ec3ff;
+@equip-line-soft: rgba(126, 195, 255, 0.45);
+@equip-text: #eef6ff;
+@equip-text-muted: #9bc7ff;
+
+.demo-bright-room {
+  position: relative;
+  width: min(100%, 1440px);
+  margin: @crystal-space-5 auto 0;
+  padding: 56px 84px 64px;
+  color: @equip-text;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 38%, fade(@equip-bg-mid, 92%), transparent 70%),
+    radial-gradient(ellipse 110% 80% at 50% 100%, fade(@equip-bg-deep, 95%), transparent 75%),
+    linear-gradient(180deg, #0a1c44 0%, #061436 50%, #03081e 100%);
+  overflow: hidden;
+  /* Force EVERY text element inside the bright room to render through
+   * the Optima-led display stack. The source method's equipment surface
+   * uses Optima for both titles and body copy — body Inter looks like
+   * a placeholder by comparison. Fall back along the same stack. */
+  font-family: @crystal-font-display;
+}
+
+.demo-bright-room *:not(i):not(b):not(strong) {
+  font-family: inherit;
+}
+
+.demo-bright-room b,
+.demo-bright-room strong,
+.demo-bright-room i {
+  font-family: @crystal-font-display;
+}
+
+.demo-bright-room__corner {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+}
+
+.demo-bright-room__corner::before,
+.demo-bright-room__corner::after {
+  position: absolute;
+  background: @equip-line;
+  box-shadow: 0 0 8px fade(@equip-line, 60%);
+  content: '';
+}
+
+.demo-bright-room__corner::before {
+  width: 100%;
+  height: 1px;
+}
+
+.demo-bright-room__corner::after {
+  width: 1px;
+  height: 100%;
+}
+
+.demo-bright-room__corner--tl {
+  top: 12px;
+  left: 12px;
+}
+.demo-bright-room__corner--tl::before {
+  top: 0;
+  left: 0;
+}
+.demo-bright-room__corner--tl::after {
+  top: 0;
+  left: 0;
+}
+
+.demo-bright-room__corner--tr {
+  top: 12px;
+  right: 12px;
+}
+.demo-bright-room__corner--tr::before {
+  top: 0;
+  right: 0;
+}
+.demo-bright-room__corner--tr::after {
+  top: 0;
+  right: 0;
+}
+
+.demo-bright-room__corner--bl {
+  bottom: 12px;
+  left: 12px;
+}
+.demo-bright-room__corner--bl::before {
+  bottom: 0;
+  left: 0;
+}
+.demo-bright-room__corner--bl::after {
+  bottom: 0;
+  left: 0;
+}
+
+.demo-bright-room__corner--br {
+  bottom: 12px;
+  right: 12px;
+}
+.demo-bright-room__corner--br::before {
+  bottom: 0;
+  right: 0;
+}
+.demo-bright-room__corner--br::after {
+  bottom: 0;
+  right: 0;
+}
+
+.demo-bright-room__rule {
+  position: absolute;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, @equip-line-soft 20%, @equip-line-soft 80%, transparent);
+  pointer-events: none;
+}
+
+.demo-bright-room__rule--top {
+  top: 30px;
+}
+
+.demo-bright-room__rule--bottom {
+  bottom: 30px;
+}
+
+.demo-bright-room__hudtop {
+  position: absolute;
+  top: 6px;
+  right: 50%;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 10px;
+  color: @equip-text;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  background: rgba(6, 20, 54, 0.85);
+  border: 1px solid @equip-line-soft;
+  transform: translateX(50%);
+  pointer-events: none;
+}
+
+.demo-bright-room__hud-trig {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 18px;
+  padding: 0 6px;
+  color: @equip-bg-deep;
+  font-family: @crystal-font-display;
+  font-size: 11px;
+  font-weight: 700;
+  background: @equip-text;
+  border-radius: 9px;
+}
+
+.demo-bright-room__hud-arrow {
+  color: @equip-text-muted;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.demo-bright-room__hud-current {
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-bright-room__sidetag {
+  position: absolute;
+  top: 50%;
+  font-family: @crystal-font-display;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 4px 0 #021333;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  color: @equip-text;
+  pointer-events: none;
+}
+
+.demo-bright-room__sidetag--left {
+  left: 24px;
+}
+
+.demo-bright-room__sidetag--right {
+  right: 24px;
+  text-align: right;
+}
+
+.demo-bright-room__sidetag--right i {
+  display: block;
+  font-size: 18px;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: @equip-text-muted;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-equipment-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 24px 60px 0;
+  width: ~"calc(100% - 120px)";
+}
+
+/* Force the wrapped MenuPanels (PartyMenuShell renders MenuPanel internally)
+   to become near-transparent so the bright-room background shows through.
+   We target by descendant + first-level structure, since module class names
+   are hashed but their structure is stable. */
+/* CSS Module hashes the class names with a HYPHEN, e.g.
+ * .crystal-panel-egiVN, .crystal-corner-FY77X. Selectors must use
+ * [class*="crystal-panel-"] (NOT panel_). All overrides below target
+ * the hyphen form. */
+.demo-bright-room [class*="crystal-panel-"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Kill the MenuPanel's inner double-frame pseudo and corner-bracket
+ * span so each pane reads as a transparent slot in the bright room
+ * rather than a panel-inside-a-panel. */
+.demo-bright-room [class*="crystal-panel-"]::before {
+  display: none !important;
+}
+
+.demo-bright-room [class*="crystal-corner-"] {
+  display: none !important;
+}
+
+.demo-bright-room [class*="crystal-frame-"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Keep the panel title visible but drop its bottom rule so it floats on
+ * the bright room rather than reading as a panel chrome divider. */
+.demo-bright-room [class*="crystal-header-"] {
+  padding: 0 0 6px !important;
+  border: 0 !important;
+}
+
+.demo-bright-room [class*="crystal-footerPanel-"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* FloatingStatusBar's outer container uses crystal-bar-* class. */
+.demo-bright-room [class*="crystal-bar-"] {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid @equip-line-soft !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 14px 4px 4px !important;
+}
+
+.demo-bright-room [class*="crystal-hint-"] {
+  color: @equip-text !important;
+}
+
+.demo-bright-room [class*="crystal-meta-"] {
+  color: @equip-text !important;
+}
+
+.demo-bright-room [class*="crystal-grid-"] {
+  grid-template-columns: 130px minmax(640px, 1fr) 320px !important;
+  gap: @crystal-space-4 !important;
+}
+
+/* Tone the OrbGem outer halo down inside the bright room — the
+ * library default ships a strong cyan ring + bloom for OrbGem on
+ * dark glass, but on the bright blue room that ring reads as a
+ * floating capsule. Soften the box-shadow so each gem reads as a
+ * standalone bead instead of a button. */
+.demo-bright-room [class*="crystal-gemFrame-"] {
+  box-shadow:
+    0 0 0 1px rgba(129, 223, 255, 0.18),
+    0 4px 8px rgba(0, 10, 34, 0.32),
+    inset 0 4px 6px rgba(255, 255, 255, 0.22),
+    inset 0 -7px 10px rgba(0, 10, 24, 0.5) !important;
+}
+
+.demo-equip-stack {
+  display: grid;
+  gap: @crystal-space-5;
+}
+
+.demo-equip-row {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: @crystal-space-3;
+  align-items: start;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+/* Equipment row icon — double-diamond reading: an outer cyan diamond
+ * frame plus the inner glyph on a darker fill, with a soft glow. */
+.demo-equip-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 6px;
+  color: @equip-line;
+  background: rgba(8, 26, 60, 0.7);
+  border: 1.5px solid @equip-line;
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px fade(@equip-line, 60%), inset 0 0 8px rgba(126, 195, 255, 0.18);
+}
+
+.demo-equip-icon::before {
+  position: absolute;
+  inset: -7px;
+  content: '';
+  border: 1px solid fade(@equip-line, 55%);
+  pointer-events: none;
+}
+
+.demo-equip-icon > * {
+  transform: rotate(-45deg);
+}
+
+.demo-equip-body {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.demo-equip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: @crystal-space-4;
+  padding-bottom: 6px;
+  border-bottom: 1px solid @equip-line-soft;
+}
+
+.demo-equip-name {
+  margin: 0;
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-shadow: 0 3px 0 #021333;
+}
+
+.demo-equip-rail {
+  display: inline-flex;
+  align-items: center;
+  gap: @crystal-space-2;
+  margin-left: auto;
+  padding-left: @crystal-space-5;
+  justify-self: end;
+}
+
+.demo-equip-trailing {
+  display: inline-flex;
+  align-items: center;
+  padding-left: @crystal-space-3;
+  border-left: 1px solid @equip-line-soft;
+}
+
+.demo-equip-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-4;
+  align-items: center;
+}
+
+.demo-equip-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: @equip-line;
+  font-size: 15px;
+}
+
+.demo-equip-stat b {
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-equip-desc {
+  margin: 0;
+  color: @equip-line;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.demo-equip-roster {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-equip-roster__row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: @crystal-space-3;
+  height: 48px;
+  padding: 0 14px 0 22px;
+  background: linear-gradient(90deg, rgba(126, 195, 255, 0.32), rgba(126, 195, 255, 0.14) 60%, transparent);
+  border: 0;
+  overflow: visible;
+}
+
+/* Inner left highlight bar — sits flush inside the row (not -8px outside)
+ * so the whole roster aligns with the Equipment column gridline. */
+.demo-equip-roster__row::before {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 4px;
+  content: '';
+  background: @equip-line;
+  box-shadow: 0 0 10px fade(@equip-line, 70%);
+}
+
+.demo-equip-roster__name {
+  flex: 1;
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-equip-roster__leader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 10px;
+  color: @equip-bg-deep;
+  font-family: @crystal-font-display;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: linear-gradient(120deg, #ffe68a, #ffc24c);
+  box-shadow: 0 2px 6px rgba(255, 194, 76, 0.4);
+}
+
+.demo-bright-room .demo-attr-section-label {
+  display: block;
+  color: @equip-text-muted;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.demo-attr-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: @crystal-space-5;
+  padding-top: 4px;
+}
+
+.demo-attr-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-attr-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: @crystal-space-2;
+  padding: 4px 0;
+}
+
+.demo-attr-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: @equip-text;
+  font-size: 16px;
+}
+
+.demo-attr-label > span {
+  letter-spacing: 0.01em;
+}
+
+.demo-attr-value {
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-size: 18px;
+  text-shadow: 0 2px 0 #021333;
+}
+
+.demo-affinity {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+}
+
+.demo-affinity-title {
+  margin: 0 0 8px;
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.demo-affinity-sub {
+  margin: 0 0 4px 12px;
+  color: @equip-text;
+  font-family: @crystal-font-display;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.demo-affinity-list {
+  display: grid;
+  gap: 1px;
+  margin: 0 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.demo-affinity-row {
+  padding: 4px 10px 4px 14px;
+  color: @equip-text;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.demo-affinity-row--selected {
+  color: @equip-text;
+  background: linear-gradient(90deg, fade(@equip-line, 50%), fade(@equip-line, 8%));
+  padding-left: 14px;
+}
+
+.demo-character-pane {
+  position: relative;
+  display: block;
+  min-height: 620px;
+  padding-top: 0;
+  /* Let the portrait bleed outside the pane bounds so cropped edges
+   * never read as a hard cut against the bright room. The bright
+   * room itself still owns overflow: hidden so we don't escape the
+   * outer composition. */
+  overflow: visible;
+}
+
+/* Glowing diamond shard behind the portrait — recreates the bright
+ * sword-glow underlay seen in the source-method equipment screen.
+ * Layered: soft radial halos only, mask-faded at every edge so the
+ * shard reads as ambient light rather than a bordered rectangle. */
+.demo-character-pane::before {
+  position: absolute;
+  top: 12%;
+  right: -12px;
+  bottom: -32px;
+  left: -12px;
+  content: '';
+  background:
+    radial-gradient(ellipse 60% 38% at 52% 56%, rgba(170, 220, 255, 0.5), transparent 78%),
+    radial-gradient(ellipse 100% 70% at 50% 80%, rgba(126, 195, 255, 0.28), transparent 82%);
+  filter: blur(6px);
+  mask: radial-gradient(ellipse 80% 70% at 50% 55%, black 30%, transparent 92%);
+  -webkit-mask: radial-gradient(ellipse 80% 70% at 50% 55%, black 30%, transparent 92%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Secondary glow ring directly behind the head/shoulder area. */
+.demo-character-pane::after {
+  position: absolute;
+  top: 18%;
+  right: 14%;
+  width: 70%;
+  height: 36%;
+  content: '';
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(126, 195, 255, 0.4), transparent 75%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.demo-character-portrait {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  bottom: 0;
+  left: 0;
+  width: auto !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+  z-index: 1;
+}
+
+/* When LOCAL_PORTRAIT_SRC is set the demo renders a raw <img> instead
+ * of CharacterPortrait, so we can full-bleed the image to the pane
+ * without fighting the component's internal min-height and ::after. */
+.demo-character-portrait-img {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  bottom: 0;
+  left: -60px;
+  height: ~"calc(100% + 16px)";
+  width: ~"calc(100% + 68px)";
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+  /* Soft mask on every edge of the IMG box so the asset's hard
+   * cut-out boundary fades into the bright room instead of showing
+   * a vertical seam where the PNG ends. The mask is generous on
+   * the left/top (where Cloud's hair and side meet empty pixels)
+   * and tight on the bottom-right (where the body grounds the
+   * pane). */
+  mask:
+    linear-gradient(to right, transparent 0%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 92%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask:
+    linear-gradient(to right, transparent 0%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* LevelInfo overlay — fixed at the bottom-right with translucent
+ * background so the diagonal stat shelf reads against the portrait.
+ * Pinned higher so the "13" big-number sits in the middle of the
+ * portrait and the EXP/HP/MP/SP shelf hangs into the lower body. */
+.demo-character-pane > :last-child {
+  position: absolute;
+  right: -16px;
+  bottom: 4px;
+  width: 280px;
+  z-index: 3;
+  padding: 0;
+}
+
+.demo-shell--mobile-preview .demo-bright-room {
+  width: 100%;
+  padding: 32px 24px;
+}
+
+.demo-shell--mobile-preview .demo-bright-room__sidetag {
+  display: none;
+}
+
+.demo-shell--mobile-preview .demo-attr-grid {
+  grid-template-columns: 1fr;
+}
+
+.demo-shell--mobile-preview .demo-character-pane > :last-child {
+  position: static;
+  width: 100%;
+}
+
 .demo-shell--mobile-preview .demo-icon-grid,
 .demo-shell--mobile-preview .demo-detail-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -167,6 +898,17 @@
 
 .demo-shell--mobile-preview .demo-orb-showcase {
   width: min(100%, calc(100vw - 32px));
+}
+
+.demo-materia-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: @crystal-space-3;
+  width: min(100%, 880px);
+}
+
+.demo-shell--mobile-preview .demo-materia-row {
+  grid-template-columns: 1fr;
 }
 
 @media (max-width: 620px) {
@@ -184,5 +926,9 @@
 
   .demo-orb-showcase {
     width: min(100%, calc(100vw - 32px));
+  }
+
+  .demo-materia-row {
+    grid-template-columns: 1fr;
   }
 }

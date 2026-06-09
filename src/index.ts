@@ -115,3 +115,47 @@ export type {
 
 export { BattleMenu } from './components/BattleMenu';
 export type { BattleCommand, BattleMenuProps } from './components/BattleMenu';
+
+export { DamageNumber } from './components/DamageNumber';
+export type {
+  DamageNumberProps,
+  DamageNumberSize,
+  DamageNumberTone,
+} from './components/DamageNumber';
+
+export { LimitGauge } from './components/LimitGauge';
+export type {
+  LimitGaugeProps,
+  LimitGaugeSize,
+  LimitGaugeTone,
+} from './components/LimitGauge';
+
+export { ChapterIntroCard } from './components/ChapterIntroCard';
+export type {
+  ChapterIntroCardProps,
+  ChapterIntroDossierEntry,
+} from './components/ChapterIntroCard';
+
+export { ChapterEndCard } from './components/ChapterEndCard';
+export type {
+  ChapterEndCardProps,
+  ChapterEndStat,
+  ChapterEndReward,
+} from './components/ChapterEndCard';
+
+export { MateriaGrowthTree } from './components/MateriaGrowthTree';
+export type {
+  MateriaGrowthAbility,
+  MateriaGrowthAbilityStatus,
+  MateriaGrowthTone,
+  MateriaGrowthTreeProps,
+} from './components/MateriaGrowthTree';
+
+export { WeaponUpgradeMatrix } from './components/WeaponUpgradeMatrix';
+export type {
+  WeaponMatrixConnection,
+  WeaponMatrixNode,
+  WeaponNodeKind,
+  WeaponNodeStatus,
+  WeaponUpgradeMatrixProps,
+} from './components/WeaponUpgradeMatrix';

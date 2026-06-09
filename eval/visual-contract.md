@@ -10,7 +10,7 @@ Product/design learner and future implementer building a learning-only component
 
 ## Surface
 
-Implemented components: `CommandButton`, `MenuPanel`, `DialogueBox`, `PartyStatus`, `HPMPBar`, `LevelInfo`, `MainMenu`, `FloatingStatusBar`, `EquipmentPanel`, `OrbGem`, `OrbSocketRail`, `PartyMenuShell`, `ConfirmDialog`, `SaveSlot`, `GameIcon`, `CharacterProfile`, `CharacterPortrait`, `CharacterRoster`, `ProfileScreen`, `Divider`, `Loading`, `InventoryList`, `ItemTooltip`, and `BattleMenu`.
+Implemented components: `CommandButton`, `MenuPanel`, `DialogueBox`, `PartyStatus`, `HPMPBar`, `LevelInfo`, `MainMenu`, `FloatingStatusBar`, `EquipmentPanel`, `OrbGem`, `OrbSocketRail`, `PartyMenuShell`, `ConfirmDialog`, `SaveSlot`, `GameIcon`, `CharacterProfile`, `CharacterPortrait`, `CharacterRoster`, `ProfileScreen`, `Divider`, `Loading`, `InventoryList`, `ItemTooltip`, `BattleMenu`, `DamageNumber`, `LimitGauge`, `ChapterIntroCard`, `ChapterEndCard`, `MateriaGrowthTree`, and `WeaponUpgradeMatrix`.
 
 Planned components: none in the current source-method roadmap.
 

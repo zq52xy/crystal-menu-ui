@@ -42,6 +42,12 @@ Create a learning-only UI component library blueprint for JRPG glass HUD interfa
 - `InventoryList`: dense selectable item list with icon, quantity, category, selected, equipped, and disabled states.
 - `ItemTooltip`: compact item detail surface with category, description, effect metadata, quantity, and footer note.
 - `BattleMenu`: compact battle command shell with command grid, shortcuts, descriptions, and ATB/Limit gauges.
+- `DamageNumber`: floating combat damage indicator with rise-and-fade animation, critical/heal/magic/guard/miss tones, and optional element/weakness tag.
+- `LimitGauge`: segmented limit gauge with ready pulse, limit-level pip, and gold/crimson/cyan tones for limit-break readiness.
+- `ChapterIntroCard`: cinematic chapter-opening title card with rule-line title row, location frame, and dossier metadata.
+- `ChapterEndCard`: cinematic chapter-results card with ledger-style stats, rewards list, and footer hint.
+- `MateriaGrowthTree`: materia AP/level panel with orb core, conic AP-progress ring, segmented level ring, and ability list with locked/ready/unlocked states.
+- `WeaponUpgradeMatrix`: SP-grid weapon upgrade matrix with diamond nodes, SVG node connections, locked/available/unlocked/selected states, and a side detail panel.
 
 ## Planned Later Components
 

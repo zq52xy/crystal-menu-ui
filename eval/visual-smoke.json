@@ -1,12 +1,12 @@
 {
-  "baseUrl": "http://127.0.0.1:5173/",
+  "baseUrl": "http://127.0.0.1:5176/",
   "status": "pass",
   "results": [
     {
       "name": "desktop",
       "width": 1440,
       "height": 900,
-      "url": "http://127.0.0.1:5173/",
+      "url": "http://127.0.0.1:5176/",
       "title": "Crystal Menu UI Study",
       "screenshotPath": "eval/screenshots/desktop-prototypes.png",
       "hasCrystalMenuText": true,
@@ -18,7 +18,7 @@
       "name": "mobile",
       "width": 390,
       "height": 844,
-      "url": "http://127.0.0.1:5173/",
+      "url": "http://127.0.0.1:5176/",
       "title": "Crystal Menu UI Study",
       "screenshotPath": "eval/screenshots/mobile-prototypes.png",
       "hasCrystalMenuText": true,
@@ -31,7 +31,7 @@
       "width": 1440,
       "height": 900,
       "path": "?preview=mobile",
-      "url": "http://127.0.0.1:5173/?preview=mobile",
+      "url": "http://127.0.0.1:5176/?preview=mobile",
       "title": "Crystal Menu UI Study",
       "screenshotPath": "eval/screenshots/mobile-preview-link-prototypes.png",
       "hasCrystalMenuText": true,

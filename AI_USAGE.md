@@ -86,6 +86,11 @@ Do not create new one-off visual constants when a token exists. If a repeated vi
 | inventory | `InventoryList` |
 | item detail surface | `ItemTooltip` |
 | battle commands | `BattleMenu` |
+| floating combat damage number | `DamageNumber` |
+| limit-break gauge | `LimitGauge` |
+| chapter title / chapter end card | `ChapterIntroCard`, `ChapterEndCard` |
+| materia growth / AP progress | `MateriaGrowthTree` |
+| weapon SP upgrade matrix | `WeaponUpgradeMatrix` |
 | separator/loading | `Divider`, `Loading` |
 
 ## Implemented Components
@@ -114,6 +119,12 @@ Do not create new one-off visual constants when a token exists. If a repeated vi
 - Use `InventoryList` for dense selectable item lists with quantity, category, icon, and equipped state.
 - Use `ItemTooltip` for compact item detail surfaces with description, effects, and footer notes.
 - Use `BattleMenu` for compact battle command shells with command buttons and ATB/Limit gauges.
+- Use `DamageNumber` for floating combat damage indicators with rise-and-fade animation; tones cover normal, critical, heal, magic, guard, and miss.
+- Use `LimitGauge` for limit-break readiness gauges with a level pip, segmented track, ready pulse, and gold/crimson/cyan tones.
+- Use `ChapterIntroCard` for cinematic chapter opening title cards with a chapter index, rule-line title row, location frame, and dossier metadata.
+- Use `ChapterEndCard` for cinematic chapter-results cards with ledger-style stats and a rewards list.
+- Use `MateriaGrowthTree` for materia AP/level panels with an orb core, conic AP-progress ring, segmented level ring, and an ability list with locked/ready/unlocked states.
+- Use `WeaponUpgradeMatrix` for SP-grid weapon upgrade matrices with diamond nodes, SVG node connections, and a side detail panel.
 
 ## Planned Components
 
@@ -147,6 +158,12 @@ import {
   ProfileScreen,
   SaveSlot,
   BattleMenu,
+  DamageNumber,
+  LimitGauge,
+  ChapterIntroCard,
+  ChapterEndCard,
+  MateriaGrowthTree,
+  WeaponUpgradeMatrix,
   crystalTokens,
 } from 'crystal-menu-ui';
 import type { CrystalTokens } from 'crystal-menu-ui';
@@ -549,6 +566,105 @@ import 'crystal-menu-ui/style';
 }
 ```
 
+`DamageNumber` props:
+
+- `value: number | string`
+- `tone?: 'normal' | 'critical' | 'heal' | 'magic' | 'guard' | 'miss'`
+- `size?: 'sm' | 'md' | 'lg'`
+- `critical?: boolean`
+- `tag?: React.ReactNode` — e.g. `"FIRE"`, `"WEAK"` element label rendered as a chip above the number
+- `loop?: boolean` — when true, the rise-and-fade animation repeats indefinitely with a brief idle gap between cycles. Default `false` matches the realistic combat lifecycle (host spawns + despawns each tick); set `true` for galleries, demos, or idle visualizations. Pair with inline `animationDelay` to stagger multiple loops.
+- native span props
+
+`LimitGauge` props:
+
+- `label?: React.ReactNode` (default `"Limit"`)
+- `value: number`
+- `max: number`
+- `level?: number | string`
+- `segments?: number` (default `10`, clamped 2-20)
+- `tone?: 'gold' | 'crimson' | 'cyan'`
+- `size?: 'sm' | 'md' | 'lg'`
+- `ready?: boolean` — auto-detected when value reaches max
+- native div props
+
+`ChapterIntroCard` props:
+
+- `chapter: React.ReactNode`
+- `kicker?: React.ReactNode`
+- `title: React.ReactNode`
+- `subtitle?: React.ReactNode`
+- `location?: React.ReactNode`
+- `dossier?: ChapterIntroDossierEntry[]`
+- `staticEntrance?: boolean` — disable the entrance animation when remounting frequently
+- native section props
+
+`ChapterIntroDossierEntry` shape: `{ label: React.ReactNode; value: React.ReactNode }`
+
+`ChapterEndCard` props:
+
+- `chapter: React.ReactNode`
+- `kicker?: React.ReactNode` (default `"Chapter Complete"`)
+- `title: React.ReactNode`
+- `subtitle?: React.ReactNode`
+- `stats?: ChapterEndStat[]`
+- `rewards?: ChapterEndReward[]`
+- `footer?: React.ReactNode`
+- `staticEntrance?: boolean`
+- native section props
+
+`ChapterEndStat` shape: `{ label, value, highlight? }`
+
+`ChapterEndReward` shape: `{ id, label, amount?, icon? }`
+
+`MateriaGrowthTree` props:
+
+- `name: React.ReactNode`
+- `kicker?: React.ReactNode`
+- `level: number`
+- `maxLevel: number`
+- `ap: number`
+- `apToNext: number`
+- `totalAp?: number`
+- `tone?: 'green' | 'violet' | 'gold' | 'red' | 'cyan'`
+- `abilities: MateriaGrowthAbility[]`
+- `footer?: React.ReactNode`
+- native section props
+
+`MateriaGrowthAbility` shape: `{ id, level, label, description?, status?: 'locked' | 'ready' | 'unlocked' }`
+
+`WeaponUpgradeMatrix` props:
+
+- `weaponName: React.ReactNode`
+- `weaponLevel?: React.ReactNode`
+- `sp: number`
+- `spMax?: number`
+- `columns?: number` (default `6`, clamped 1-12)
+- `rows?: number` (default `4`, clamped 1-12)
+- `nodes: WeaponMatrixNode[]`
+- `connections?: WeaponMatrixConnection[]`
+- `selectedNodeId?: string`
+- `onSelectNode?: (node: WeaponMatrixNode) => void`
+- native section props except native `onSelect`
+
+`WeaponMatrixNode` shape:
+
+```ts
+{
+  id: string;
+  col: number;        // 1-based grid column
+  row: number;        // 1-based grid row
+  label: React.ReactNode;
+  description?: React.ReactNode;
+  effect?: React.ReactNode;
+  cost?: number;
+  status?: 'locked' | 'available' | 'unlocked' | 'selected';
+  kind?: 'core' | 'attack' | 'magic' | 'support' | 'unique';
+}
+```
+
+`WeaponMatrixConnection` shape: `{ from: string; to: string; active?: boolean }`
+
 ## Style Rules
 
 - Prefer dense, readable layouts over large marketing-style cards.
@@ -559,4 +675,4 @@ import 'crystal-menu-ui/style';
 
 ## Prompt Pattern
 
-Create a Remake-inspired JRPG HUD interface using `PartyMenuShell`, `MainMenu`, `PartyStatus`, `HPMPBar`, `LevelInfo`, `EquipmentPanel`, `OrbGem`, `OrbSocketRail`, `FloatingStatusBar`, `ConfirmDialog`, `SaveSlot`, `GameIcon`, `CharacterProfile`, `CharacterPortrait`, `CharacterRoster`, `ProfileScreen`, `Divider`, `Loading`, `InventoryList`, `ItemTooltip`, and `BattleMenu`. Use `MenuPanel` for custom subpanels, use `DialogueBox` for narration, and use `CommandButton` only for battle or contextual command rows. Keep the layout dense, dark, glassy, angular, readable, and free of official assets or direct screen clones.
+Create a Remake-inspired JRPG HUD interface using `PartyMenuShell`, `MainMenu`, `PartyStatus`, `HPMPBar`, `LevelInfo`, `EquipmentPanel`, `OrbGem`, `OrbSocketRail`, `FloatingStatusBar`, `ConfirmDialog`, `SaveSlot`, `GameIcon`, `CharacterProfile`, `CharacterPortrait`, `CharacterRoster`, `ProfileScreen`, `Divider`, `Loading`, `InventoryList`, `ItemTooltip`, `BattleMenu`, `DamageNumber`, `LimitGauge`, `ChapterIntroCard`, `ChapterEndCard`, `MateriaGrowthTree`, and `WeaponUpgradeMatrix`. Use `MenuPanel` for custom subpanels, use `DialogueBox` for narration, and use `CommandButton` only for battle or contextual command rows. Keep the layout dense, dark, glassy, angular, readable, and free of official assets or direct screen clones.
