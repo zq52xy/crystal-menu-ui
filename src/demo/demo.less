@@ -869,22 +869,14 @@
   padding: 0;
 }
 
+/* The bright-room Equipment Screen is engineered for >=1100px desktop
+ * canvases; at 390px the three-column grid (Party / Equipment / Cloud)
+ * collapses, the Cloud Leader badge clips outside, the portrait img
+ * masks awkwardly, and rail orbs jump rows. Hide it entirely in the
+ * `?preview=mobile` view instead of pretending it adapts. The other
+ * 29 components in the gallery are mobile-friendly on their own. */
 .demo-shell--mobile-preview .demo-bright-room {
-  width: 100%;
-  padding: 32px 24px;
-}
-
-.demo-shell--mobile-preview .demo-bright-room__sidetag {
   display: none;
-}
-
-.demo-shell--mobile-preview .demo-attr-grid {
-  grid-template-columns: 1fr;
-}
-
-.demo-shell--mobile-preview .demo-character-pane > :last-child {
-  position: static;
-  width: 100%;
 }
 
 .demo-shell--mobile-preview .demo-icon-grid,
