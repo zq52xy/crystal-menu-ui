@@ -573,6 +573,7 @@ import 'crystal-menu-ui/style';
 - `size?: 'sm' | 'md' | 'lg'`
 - `critical?: boolean`
 - `tag?: React.ReactNode` — e.g. `"FIRE"`, `"WEAK"` element label rendered as a chip above the number
+- `loop?: boolean` — when true, the rise-and-fade animation repeats indefinitely with a brief idle gap between cycles. Default `false` matches the realistic combat lifecycle (host spawns + despawns each tick); set `true` for galleries, demos, or idle visualizations. Pair with inline `animationDelay` to stagger multiple loops.
 - native span props
 
 `LimitGauge` props:

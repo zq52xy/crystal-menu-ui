@@ -559,12 +559,12 @@ export const App = () => (
 
         <MenuPanel title="Damage Numbers" variant="deep" density="compact">
           <div className="demo-damage-stage" aria-label="Damage number tone gallery">
-            <DamageNumber value={184} tone="normal" />
-            <DamageNumber value={612} tone="critical" critical tag="WEAK" size="lg" />
-            <DamageNumber value={120} tone="heal" tag="HEAL" />
-            <DamageNumber value={244} tone="magic" tag="ARC" />
-            <DamageNumber value={32} tone="guard" />
-            <DamageNumber value={0} tone="miss" />
+            <DamageNumber value={184} tone="normal" loop style={{ animationDelay: '0s' }} />
+            <DamageNumber value={612} tone="critical" critical tag="WEAK" size="lg" loop style={{ animationDelay: '0.32s' }} />
+            <DamageNumber value={120} tone="heal" tag="HEAL" loop style={{ animationDelay: '0.66s' }} />
+            <DamageNumber value={244} tone="magic" tag="ARC" loop style={{ animationDelay: '0.95s' }} />
+            <DamageNumber value={32} tone="guard" loop style={{ animationDelay: '1.28s' }} />
+            <DamageNumber value={0} tone="miss" loop style={{ animationDelay: '1.6s' }} />
           </div>
           <p className="demo-note">
             Damage numbers animate in/out automatically. Tones cover normal, critical, heal, magic, guard, and miss.

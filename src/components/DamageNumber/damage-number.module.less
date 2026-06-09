@@ -20,6 +20,21 @@
   user-select: none;
 }
 
+/* Loop variant — replaces the one-shot rise with a continuous cycle
+ * that includes a brief idle gap at the end so the eye registers
+ * the number as it appears each iteration. Use for demos and
+ * idle galleries; in a real combat loop the host normally spawns
+ * a fresh DamageNumber per tick instead. */
+.loop {
+  animation: damage-rise-loop 2s cubic-bezier(0.18, 0.78, 0.22, 1) infinite;
+}
+
+.loop.critical {
+  animation:
+    damage-rise-loop 2.2s cubic-bezier(0.18, 0.78, 0.22, 1) infinite,
+    damage-pulse-loop 2.2s ease-out infinite;
+}
+
 .tag {
   padding: 1px 6px;
   color: @crystal-color-bg;
@@ -125,9 +140,45 @@
   }
 }
 
+/* Loop keyframes: rise-and-fade ends at ~75%, then a 25% idle gap
+ * (held at opacity 0 / starting position) so the cycle feels like
+ * fresh damage spawning, not a number teleporting. */
+@keyframes damage-rise-loop {
+  0%, 75%, 100% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.85);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.08);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-22px) scale(1);
+  }
+  72% {
+    opacity: 0;
+    transform: translateY(-44px) scale(0.95);
+  }
+}
+
+@keyframes damage-pulse-loop {
+  0%, 70%, 100% {
+    filter: brightness(1);
+  }
+  6% {
+    filter: brightness(1.6);
+  }
+  20% {
+    filter: brightness(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .damage,
-  .critical {
+  .critical,
+  .loop,
+  .loop.critical {
     animation: none;
     opacity: 1;
     transform: none;

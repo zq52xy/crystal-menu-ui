@@ -25,6 +25,13 @@ export interface DamageNumberProps extends React.HTMLAttributes<HTMLSpanElement>
   critical?: boolean;
   /** Optional weakness/element label rendered above the number (e.g. "FIRE"). */
   tag?: React.ReactNode;
+  /**
+   * When true, the rise-and-fade animation loops indefinitely instead of
+   * playing once and freezing on the final frame. Default false matches
+   * the realistic combat lifecycle (host spawns + despawns each tick);
+   * set true for demos, gallery showcases, or idle visualization.
+   */
+  loop?: boolean;
 }
 
 const formatValue = (value: number | string, tone: DamageNumberTone): string => {
@@ -41,6 +48,7 @@ export const DamageNumber: React.FC<DamageNumberProps> = ({
   size = 'md',
   critical = false,
   tag,
+  loop = false,
   className,
   ...rest
 }) => (
@@ -51,6 +59,7 @@ export const DamageNumber: React.FC<DamageNumberProps> = ({
       styles[tone],
       styles[size],
       critical && styles.critical,
+      loop && styles.loop,
       className,
     )}
     role="status"
