@@ -2,12 +2,15 @@
 
 # crystal-menu-ui
 
+### Final Fantasy VII Remake-inspired JRPG Glass HUD UI Kit for React
+### 最终幻想 VII Remake 风格 JRPG 玻璃 HUD 组件库（React + TypeScript）
+
 [![npm version](https://img.shields.io/npm/v/crystal-menu-ui?color=cb3837&labelColor=222)](https://www.npmjs.com/package/crystal-menu-ui)
 [![npm downloads](https://img.shields.io/npm/dm/crystal-menu-ui?color=5fa04e&labelColor=222)](https://www.npmjs.com/package/crystal-menu-ui)
 [![GitHub stars](https://img.shields.io/github/stars/zq52xy/crystal-menu-ui?color=ffd700&labelColor=222)](https://github.com/zq52xy/crystal-menu-ui/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-81dfff?labelColor=222)](LICENSE)
 
-[![Components](https://img.shields.io/badge/Components-24-4bcdff?labelColor=222)](#components-24--组件)
+[![Components](https://img.shields.io/badge/Components-30-4bcdff?labelColor=222)](#components-30--组件)
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&labelColor=222)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript&logoColor=fff&labelColor=222)](https://typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=fff&labelColor=222)](https://vite.dev)
@@ -17,11 +20,9 @@
 
 </div>
 
-An original React UI component library for Final Fantasy-inspired JRPG-style glass HUD interfaces.
-24 components with cyan linework, dark glass panels, orb/socket controls, AI-consumable docs, and public design tokens.
+**`crystal-menu-ui`** is an original, MIT-licensed React + TypeScript component library that recreates the visual language of *Final Fantasy VII Remake*'s in-game UI — dark blue glass panels, cyan linework, materia orb sockets, angular HUD frames, and humanist Optima-style typography — as **30 reusable components** ready to drop into any JRPG, RPG, fantasy, sci-fi, or game-style web project. It ships AI-ready component documentation, a Figma-derived design tokens system, a flagship bright-blue **Equipment Screen** demo composition, opt-in motion (looped damage numbers, animated chapter cards, ready-pulse limit gauges), and full bilingual docs in English and 简体中文 — explicitly framed as an unofficial fan study project, not an official Square Enix asset.
 
-一套受最终幻想界面研究启发的原创 React UI 组件库，用来构建 JRPG 风格的玻璃 HUD 界面。
-24 个组件，包含青色线框、深色玻璃面板、宝石插槽控件、AI 可消费文档和公开设计变量。
+**`crystal-menu-ui`** 是一套基于 MIT 许可的原创 React + TypeScript 组件库，把《最终幻想 VII Remake》游戏 UI 的视觉语言——深蓝玻璃面板、青色线条、魔晶石宝石轨、菱形 HUD 框、衬线感的 Optima 字体——重建为 **30 个可复用组件**，可直接嵌入任意 JRPG / 角色扮演 / 奇幻 / 科幻 / 游戏风格的 Web 项目。库本体附带面向 AI 的组件文档、来自 Figma 的设计变量系统、明亮宝蓝风格的 **Equipment Screen 装备屏 demo**、可选的动画体系（循环伤害数字、章节卡入场、极限槽脉冲）以及全中英双语文档——本项目明确定义为非官方粉丝学习项目，与 Square Enix 等任何权利方无关。
 
 > [!IMPORTANT]
 > **Unofficial learning project · 非官方学习项目**
@@ -38,10 +39,24 @@ An original React UI component library for Final Fantasy-inspired JRPG-style gla
 >
 > MIT 许可仅覆盖**本项目代码**，不授予任何第三方商标、游戏 IP、官方美术、名称或专有视觉资产的使用权。任何复用，尤其是商业用途，都需要使用者自行完成 IP 和商标风险审查。
 
+### About this project / 关于本项目
+
+`crystal-menu-ui` is a long-form study of the question: *what would the Final Fantasy VII Remake equipment, party, and battle UIs look like as a clean, typed React component library?* It studies the in-game **dark blue glass panel hierarchy**, **angular cyan corner brackets**, **materia / orb socket motifs**, **Lv-13-style diagonal stat shelves**, **chapter title / chapter results cards**, **floating damage numbers**, **limit gauges**, **save / load archive rows**, and **Optima-led humanist typography** — and turns each pattern into an isolated, prop-driven, theme-friendly React component that an LLM or human builder can compose into a complete JRPG menu screen in a few lines.
+
+Because every component is rebuilt from scratch in CSS and SVG, the package can be MIT-licensed and shipped to npm without redistributing official screenshots, logos, character art, fonts, or extracted vector paths. The repository ships matching AI documentation (`AI_USAGE.md`, `PROMPT.md`, `DESIGN_PROMPT.md`, `skill/SKILL.md`) so an AI assistant can produce a Final Fantasy-style menu using the public component API without inventing branded assets.
+
+`crystal-menu-ui` 是一次完整的设计研究：*如果用一套干净、强类型的 React 组件库来重建《最终幻想 VII Remake》中的装备屏、队伍菜单和战斗 UI，会长什么样?* 仓库系统性研究了游戏中的**深蓝玻璃面板层级**、**菱形青色角框**、**魔晶石 / 宝石插槽语言**、**Lv 13 斜线属性轨**、**章节标题 / 结算卡**、**浮动伤害数字**、**极限技能槽**、**存档行**与 **Optima 衬线字体** —— 每一个模式都被独立成一个 prop 驱动、可换肤、可被 AI 或人类一行行组合的 React 组件。
+
+由于所有组件都是用 CSS + SVG 从头实现，整个包可以以 MIT 许可发布到 npm，**完全不分发**官方截图、logo、角色立绘、字体或矢量路径。仓库还提供了配套的 AI 文档（`AI_USAGE.md`、`PROMPT.md`、`DESIGN_PROMPT.md`、`skill/SKILL.md`），让 AI 助手能在不"幻觉"出品牌资产的前提下，基于公开组件 API 生成一个完整的最终幻想风格菜单。
+
 ### Search Keywords / 搜索关键词
 
-- **English:** Final Fantasy UI study, Final Fantasy-inspired JRPG menu components, Final Fantasy Remake UI reference, JRPG glass HUD React components.
-- **中文：** 最终幻想 UI 学习、最终幻想风格菜单组件、最终幻想 Remake 界面参考、JRPG 玻璃 HUD React 组件。
+- **English component-library keywords:** Final Fantasy UI components, Final Fantasy VII Remake UI kit, FF7R UI clone, FF7 menu components, JRPG UI library, JRPG menu React library, JRPG glass HUD React components, materia orb React component, RPG status bar React, fantasy game UI components, anime game UI library.
+- **English design-language keywords:** dark blue glass UI, cyan linework UI, angular menu HUD, holographic glass HUD, sci-fi RPG menu, Optima font menu, blue glass equipment screen, JRPG status panel, RPG character profile React.
+- **English use-case keywords:** game web menu, indie RPG UI starter, fan game UI kit, MMO inspector UI, RPG character sheet web, web RPG companion app UI, AI-generated JRPG menu, GPT JRPG UI generator.
+- **中文组件库关键词：** 最终幻想 UI、最终幻想 7 重制版 UI、FF7 重制版界面、FF7R 组件库、JRPG 组件库、最终幻想风格菜单组件、最终幻想风格 React 组件、JRPG 玻璃 HUD React 组件、魔晶石宝石 React 组件、RPG 状态栏 React。
+- **中文设计语言关键词：** 深蓝玻璃 UI、青色边框 UI、菱形 HUD、科幻 RPG 菜单、玻璃质感装备屏、JRPG 状态面板、Optima 字体菜单、衬线 RPG UI。
+- **中文使用场景关键词：** 游戏 Web 菜单、独立 RPG UI 启动包、同人游戏 UI 套件、MMO 信息面板、RPG 角色卡 Web、Web RPG 配套 App UI、AI 生成 JRPG 菜单、GPT JRPG UI 生成器。
 
 > These keywords describe learning, reference, and search intent only. They are not official product names, affiliation claims, or asset licenses.
 >
@@ -51,23 +66,23 @@ An original React UI component library for Final Fantasy-inspired JRPG-style gla
 
 ### 🔗 Preview
 
-- **Online Preview (PC):** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
-- **Online Preview (Mobile):** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile)
-- **Component Docs:** [All 30 components](#components-30--组件) — component map, code examples, and props contract
-- **Showcase:** [Real-world UI examples](#highlights--核心卖点) — menu screens, HUD panels, archive slots, inventory surfaces, and orb/socket rails
-- **Source Figma:** [Figma component library](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1)
+- **Online Preview (PC):** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) — full demo gallery, including the bright-blue Equipment Screen, Materia Growth panels, Weapon Upgrade Matrix, looping Damage Numbers, Limit Gauges, Chapter Intro / Results cards, and the original 24 components.
+- **Online Preview (Mobile):** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile) — same gallery in 390 px layout.
+- **Component Docs:** [All 30 components](#components-30--组件) — component map, code examples, and props contract.
+- **Showcase:** [Highlights / 核心卖点](#highlights--核心卖点) — menu screens, HUD panels, archive slots, inventory surfaces, materia growth, weapon upgrade matrix, and chapter cinematics.
+- **Source Figma:** [Final Fantasy VII Remake UI Kit and Prototypes (Community Copy)](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1) — visual-language reference; not bundled.
 
 ### 🔗 预览
 
-- **在线预览（PC）：** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
-- **在线预览（Mobile）：** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile)
-- **组件文档：** [全部 30 个组件](#components-30--组件)——组件地图、代码示例和 Props 契约
-- **效果展示：** [真实界面示例](#highlights--核心卖点)——菜单屏、HUD 面板、存档列表、物品界面和宝石插槽轨道
-- **来源 Figma：** [Figma 组件库](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1)
+- **在线预览（PC）：** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) —— 完整 demo 画廊，包含明亮宝蓝装备屏、魔晶石升级面板、武器升级矩阵、循环伤害数字、极限槽、章节开场 / 结算卡，以及原本 24 个组件。
+- **在线预览（Mobile）：** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile) —— 390 px 移动端版本。
+- **组件文档：** [全部 30 个组件](#components-30--组件) —— 组件地图、代码示例和 Props 契约。
+- **效果展示：** [核心卖点 / Highlights](#highlights--核心卖点) —— 菜单屏、HUD 面板、存档行、物品界面、魔晶石升级、武器矩阵、章节卡。
+- **来源 Figma：** [Final Fantasy VII Remake UI Kit and Prototypes (Community Copy)](https://www.figma.com/design/GjQLMKKW4sLALp3auVsSqG/Final-Fantasy-VII-Remake-UI-Kit-and-Prototypes--Community---Copy-?node-id=1-3&t=NbDcbMPlhTXk572y-1) —— 视觉语言参考，不打包。
 
-> The GitHub Pages links become active after the repository is public and `npm run deploy` has published `demo-dist`.
+> The GitHub Pages links update after each `npm run deploy`. If the live preview is older than the latest commit, run `npm run deploy` from a clone to refresh `demo-dist`.
 >
-> GitHub Pages 链接会在仓库公开并执行 `npm run deploy` 发布 `demo-dist` 后生效。
+> GitHub Pages 预览链接在每次执行 `npm run deploy` 后更新。如果发现在线预览比当前 commit 旧，clone 仓库后执行 `npm run deploy` 即可重新发布 `demo-dist`。
 
 ---
 
@@ -80,14 +95,20 @@ An original React UI component library for Final Fantasy-inspired JRPG-style gla
 </tr>
 </table>
 
-- **24 typed React components** for menu shells, command lists, dialogs, HUD metadata, party status, archive slots, inventory panels, and battle commands.
-- **Original CSS-rendered visuals**: dark glass panels, cyan borders, glow states, custom icon vectors, and orb/socket motifs.
+- **30 typed React components** spanning menu shells, command lists, dialogs, HUD metadata, party status, archive slots, inventory panels, battle commands, materia growth panels, weapon upgrade matrices, chapter cinematics, and floating combat damage indicators.
+- **Equipment Screen demo** — a complete bright-blue glass HUD composition in `src/demo/App.tsx` that mirrors the source method's flagship equipment surface, composed entirely from existing public components plus a small wrapper.
+- **Optima-led typography** — both display and body tokens lead with `Optima`; the package never bundles a font binary, but a gitignored local-only injection slot lets the demo preview the real face on any platform.
+- **Original CSS-rendered visuals**: dark / bright dual glass surfaces, cyan and gold linework, glow states, custom inline-SVG icons, materia orb sockets, weapon SP nodes, and damage-number loops.
+- **Opt-in motion** — `DamageNumber loop`, `LimitGauge ready` pulse, `ChapterIntroCard` / `ChapterEndCard` entrance animations; all motion respects `prefers-reduced-motion`.
 - **AI-ready documentation** with component routing, prompt files, hard boundaries, and local skill instructions.
 - **Public design tokens** through Less variables and the TypeScript `crystalTokens` export.
 - **Demo-driven QA** with desktop, mobile, and mobile-preview visual smoke screenshots.
 
-- **24 个带类型的 React 组件**，覆盖菜单外壳、命令列表、弹窗、HUD 元信息、队伍状态、存档列表、物品面板和战斗命令。
-- **原创 CSS 视觉实现**：深色玻璃面板、青色边框、发光状态、自绘图标和宝石插槽结构。
+- **30 个带类型的 React 组件**，覆盖菜单外壳、命令列表、弹窗、HUD 元信息、队伍状态、存档列表、物品面板、战斗命令、魔晶石升级面板、武器升级矩阵、章节开场 / 结算卡和浮动战斗伤害数字。
+- **Equipment Screen 装备屏 demo** —— `src/demo/App.tsx` 中包含一个完整的明亮宝蓝玻璃 HUD 复合界面，复刻来源界面的旗舰装备屏，整屏由现有公开组件 + 一个轻量 wrapper 拼成。
+- **Optima 衬线字体优先** —— display 和 body token 都以 `Optima` 起头；包本身不打包任何字体文件，但 demo 配套了 gitignored 的本地字体注入槽，可以让真 Optima 在任何平台上预览。
+- **原创 CSS 视觉**：暗色 / 明亮双玻璃面板系统、青色与金色线条、发光态、自绘内联 SVG 图标、魔晶石宝石轨、武器 SP 节点、伤害数字循环。
+- **可选动画**：`DamageNumber loop`、`LimitGauge ready` 脉冲、`ChapterIntroCard` / `ChapterEndCard` 入场动画；所有动画都尊重 `prefers-reduced-motion`。
 - **面向 AI 的文档体系**：组件路由、提示词文件、硬边界和本地 skill 指令。
 - **公开设计变量**：Less 变量和 TypeScript `crystalTokens` 导出。
 - **Demo 驱动 QA**：桌面、移动端和移动预览链接的视觉烟测截图。
@@ -249,10 +270,11 @@ const shellStyle = {
 
 | | |
 |---|---|
-| Framework | React 18 + TypeScript |
+| Framework | React 18 + TypeScript 5 |
 | Build | Vite 7, library mode, ESM + CJS dual output |
 | Styling | Less Modules with `crystal-[local]-[hash:base64:5]` scoped names |
 | Tokens | Less variables + exported `crystalTokens` TypeScript mirror |
+| Typography | Optima-led humanist serif stack on both display and body tokens (no bundled binary) |
 | QA | TypeScript, docs coverage audit, Vite demo build, Playwright visual smoke |
 | Package | CSS side effects, typed exports, `prepublishOnly` build |
 
@@ -284,11 +306,21 @@ http://127.0.0.1:5173/
 http://127.0.0.1:5173/?preview=mobile
 ```
 
-Deploy the static demo:
+Deploy the static demo to GitHub Pages:
 
 ```bash
 npm run deploy
 ```
+
+This script runs `npm run build:demo` followed by `gh-pages -d demo-dist`, refreshing https://zq52xy.github.io/crystal-menu-ui/ . Run it whenever the live preview is older than the latest commit (e.g. after merging new components or tweaking the Equipment Screen demo).
+
+部署静态 demo 到 GitHub Pages：
+
+```bash
+npm run deploy
+```
+
+该脚本会先 `npm run build:demo`，再 `gh-pages -d demo-dist`，刷新 https://zq52xy.github.io/crystal-menu-ui/ 。**当在线预览落后于最新 commit 时**（例如刚合并新组件或调整 Equipment Screen demo），运行此命令即可重新发布。
 
 ---
 
