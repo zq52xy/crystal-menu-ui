@@ -763,8 +763,13 @@
 .demo-character-pane {
   position: relative;
   display: block;
-  min-height: 580px;
+  min-height: 620px;
   padding-top: 0;
+  /* Let the portrait bleed outside the pane bounds so cropped edges
+   * never read as a hard cut against the bright room. The bright
+   * room itself still owns overflow: hidden so we don't escape the
+   * outer composition. */
+  overflow: visible;
 }
 
 /* Glowing diamond shard behind the portrait — recreates the bright
@@ -823,16 +828,30 @@
  * without fighting the component's internal min-height and ::after. */
 .demo-character-portrait-img {
   position: absolute;
-  top: -32px;
-  right: 0;
-  bottom: -16px;
-  left: -40px;
-  height: ~"calc(100% + 48px)";
-  width: ~"calc(100% + 40px)";
+  top: -16px;
+  right: -8px;
+  bottom: 0;
+  left: -60px;
+  height: ~"calc(100% + 16px)";
+  width: ~"calc(100% + 68px)";
   max-width: none;
   object-fit: contain;
   object-position: right bottom;
   filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+  /* Soft mask on every edge of the IMG box so the asset's hard
+   * cut-out boundary fades into the bright room instead of showing
+   * a vertical seam where the PNG ends. The mask is generous on
+   * the left/top (where Cloud's hair and side meet empty pixels)
+   * and tight on the bottom-right (where the body grounds the
+   * pane). */
+  mask:
+    linear-gradient(to right, transparent 0%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 92%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask:
+    linear-gradient(to right, transparent 0%, black 22%, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 10%, black 92%, transparent 100%);
+  -webkit-mask-composite: source-in;
   z-index: 1;
   pointer-events: none;
 }
