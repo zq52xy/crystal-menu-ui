@@ -49,29 +49,43 @@ import {
 
 // ============================================================
 // Local-only authorized portrait (third-party reference image).
-// Vite globs src/demo/local-assets/portrait.png if present; the
-// local-assets directory is gitignored, so the public repo never
-// ships a portrait. When the file is missing the demo falls back
-// to the original placeholder shape rendered by CharacterPortrait.
+//
+// HARD RULE — assets must NEVER ship in production builds:
+//   - The src/demo/local-assets/ directory is gitignored, so the
+//     repo cannot accidentally commit them.
+//   - But Vite's `import.meta.glob` would still copy any file it
+//     finds into demo-dist/ at build time, which would publish
+//     them via `npm run deploy` to GitHub Pages.
+//   - Therefore the glob runs ONLY when `import.meta.env.DEV`
+//     is true. Production builds (build:demo, build) skip the
+//     glob entirely and the demo falls back to the original
+//     placeholder shape rendered by CharacterPortrait.
 // ============================================================
-const localPortraits = import.meta.glob<{ default: string }>(
-  './local-assets/portrait.png',
-  { eager: true, query: '?url', import: 'default' },
-);
+const localPortraits = import.meta.env.DEV
+  ? import.meta.glob<{ default: string }>('./local-assets/portrait.png', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  : {};
 const LOCAL_PORTRAIT_SRC: string | undefined =
   (Object.values(localPortraits)[0] as unknown as string) ?? undefined;
 
 // ============================================================
-// Local-only Optima font file. Same gitignored path. When the
-// file is present we inject an @font-face rule at runtime so
-// the display token "Optima" resolves to the bundled binary;
-// when it's missing the CSS stack falls through to URW Classico
-// → Charter → Georgia. Public package never ships the binary.
+// Local-only Optima font file. Same gitignored path, same dev-only
+// gating. When the file is present in dev we inject an @font-face
+// rule at runtime so the display token "Optima" resolves to the
+// bundled binary; in production the CSS stack falls through to
+// URW Classico → Charter → Georgia. Public package and Pages
+// build never ship the binary.
 // ============================================================
-const localFonts = import.meta.glob<{ default: string }>(
-  './local-assets/optima.ttf',
-  { eager: true, query: '?url', import: 'default' },
-);
+const localFonts = import.meta.env.DEV
+  ? import.meta.glob<{ default: string }>('./local-assets/optima.ttf', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  : {};
 const LOCAL_OPTIMA_SRC: string | undefined =
   (Object.values(localFonts)[0] as unknown as string) ?? undefined;
 
