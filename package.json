@@ -4,6 +4,13 @@
   "description": "Unofficial Final Fantasy VII Remake-inspired JRPG glass HUD UI kit for React + TypeScript — 30 components (Equipment Screen, Materia, Weapon Matrix, Limit Gauge, Damage Numbers, Chapter Cards, etc.) with Optima typography, AI-ready docs, and bilingual EN/中文 documentation. 最终幻想 VII Remake 风格 JRPG 玻璃 HUD 组件库。",
   "author": "zq52xy",
   "homepage": "https://zq52xy.github.io/crystal-menu-ui/",
+  "packageManager": "npm@11.6.2",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zq52xy/crystal-menu-ui.git"
@@ -30,7 +37,9 @@
     "README.md",
     "PROMPT.md",
     "DESIGN_PROMPT.md",
+    "docs/ai-workflow.md",
     "docs/ai-user-guide.md",
+    "docs/content",
     "docs/tokens.md",
     "skill/SKILL.md"
   ],
@@ -46,6 +55,7 @@
     "deploy": "npm run build:demo && gh-pages -d demo-dist",
     "art:readme": "node scripts/generate-readme-art.mjs",
     "typecheck": "tsc --noEmit",
+    "smoke:package": "node scripts/package-smoke.mjs",
     "visual:smoke": "node scripts/visual-smoke.mjs",
     "audit:docs": "node scripts/audit-docs-coverage.mjs",
     "art:motion": "node scripts/generate-motion-showcase.mjs"

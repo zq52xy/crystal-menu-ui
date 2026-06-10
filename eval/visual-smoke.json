@@ -1,12 +1,12 @@
 {
-  "baseUrl": "http://127.0.0.1:4173/",
+  "baseUrl": "http://127.0.0.1:5173/",
   "status": "pass",
   "results": [
     {
       "name": "desktop",
       "width": 1440,
       "height": 900,
-      "url": "http://127.0.0.1:4173/",
+      "url": "http://127.0.0.1:5173/",
       "title": "crystal-menu-ui · Final Fantasy VII Remake-inspired JRPG UI Kit for React / 最终幻想 VII Remake 风格 JRPG 组件库",
       "screenshotPath": "eval/screenshots/desktop-prototypes.png",
       "hasCrystalMenuText": true,
@@ -18,7 +18,7 @@
       "name": "mobile",
       "width": 390,
       "height": 844,
-      "url": "http://127.0.0.1:4173/",
+      "url": "http://127.0.0.1:5173/",
       "title": "crystal-menu-ui · Final Fantasy VII Remake-inspired JRPG UI Kit for React / 最终幻想 VII Remake 风格 JRPG 组件库",
       "screenshotPath": "eval/screenshots/mobile-prototypes.png",
       "hasCrystalMenuText": true,
@@ -31,7 +31,7 @@
       "width": 1440,
       "height": 900,
       "path": "?preview=mobile",
-      "url": "http://127.0.0.1:4173/?preview=mobile",
+      "url": "http://127.0.0.1:5173/?preview=mobile",
       "title": "crystal-menu-ui · Final Fantasy VII Remake-inspired JRPG UI Kit for React / 最终幻想 VII Remake 风格 JRPG 组件库",
       "screenshotPath": "eval/screenshots/mobile-preview-link-prototypes.png",
       "hasCrystalMenuText": true,

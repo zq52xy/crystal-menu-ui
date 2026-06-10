@@ -1,5 +1,109 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## AI Workflow and SEO Content Assets - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User provided an AI discussion document and asked what the repository could learn from it.
+- Sub-agent synthesis recommended shifting the primary story from a visual-style component library to an AI-ready JRPG interface design system with component-constrained AI composition.
+
+### Change
+
+- Added README `Why this exists` and `AI workflow` sections that explain prompt-only drift, screenshot-to-code bloat, and component-constrained AI composition.
+- Added `docs/ai-workflow.md` with a direct answer, workflow steps, prompt pattern, comparison table, do/don't rules, and citation-safe summary.
+- Added `docs/content/` with three SEO/AEO article drafts: React JRPG menu UI, AI-ready game UI components, and rights-safe game UI study.
+- Updated `llms.txt` and `public/llms.txt` to position the project as an AI-ready JRPG interface design system.
+- Added `docs/ai-workflow.md` and `docs/content` to `package.json` `files` so npm README links resolve inside the package.
+- Updated `docs/CLAUDE.md` and added `docs/content/CLAUDE.md` for the new documentation surfaces.
+
+### Evidence
+
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm run typecheck`: pass.
+- `npm run build:demo`: pass.
+- `npm run smoke:package`: pass; `Package smoke ok: crystal-menu-ui@0.1.1 (79 files)`.
+- `npm pack --dry-run --json`: package includes `docs/ai-workflow.md` and three `docs/content/*.md` article drafts.
+- `git diff --check`: pass.
+
+## SEO and AI Search Surface Pass - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User paused code-structure optimization and prioritized repository SEO / AI-search visibility.
+- Review found the project already had strong README visuals and `llms.txt`, but the GitHub Pages demo lacked canonical metadata, crawler files, sitemap, and structured data.
+
+### Change
+
+- Added canonical URL, keyword meta, Open Graph image metadata, Twitter image metadata, and `SoftwareSourceCode` JSON-LD to `index.html`.
+- Added README answer blocks for `What is crystal-menu-ui?`, `Best for`, and FAQ-style AI extraction.
+- Added `public/robots.txt`, `public/sitemap.xml`, and deployed-copy `public/llms.txt` for GitHub Pages indexing.
+- Expanded root `llms.txt` with common AI questions and a citation-safe answer.
+- Added `public/CLAUDE.md` and updated root `CLAUDE.md` so crawler files are documented as a first-class public surface.
+
+### Evidence
+
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm run typecheck`: pass.
+- `npm run build:demo`: pass; Vite output includes `demo-dist/index.html` plus public crawler files.
+- Demo-dist SEO check: canonical `true`, JSON-LD `true`, OG image `true`, robots `true`, sitemap `true`, llms `true`.
+- `npm run smoke:package`: pass; `Package smoke ok: crystal-menu-ui@0.1.1 (74 files)`.
+- `git diff --check`: pass.
+
+## Demo Composition Boundary Refactor - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Repository review found `src/demo/App.tsx` had grown into a large mixed-responsibility file containing local asset loading, placeholder data, and JSX composition.
+- The safe refactor target was to remove data clumps and split section JSX without changing the rendered demo layout.
+
+### Change
+
+- Extracted dev-only local portrait/font loading into `src/demo/localDemoAssets.ts`.
+- Extracted demo placeholder data behind `src/demo/demoData.ts` and topic slices under `src/demo/demo-data/`.
+- Extracted demo section JSX under `src/demo/sections/`, grouped by menu shell, foundation gallery, equipment, and progression/archive responsibilities.
+- Reduced `src/demo/App.tsx` from 862 lines to 22 lines so it only owns preview-mode shell wiring.
+- Updated `src/demo/CLAUDE.md`, `src/demo/demo-data/CLAUDE.md`, and `src/demo/sections/CLAUDE.md` to keep the architecture map aligned.
+
+### Evidence
+
+- `npm run typecheck`: pass.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm run build`: pass.
+- `npm run smoke:package`: pass; `Package smoke ok: crystal-menu-ui@0.1.1 (74 files)`.
+- `npm run visual:smoke`: pass; screenshots refreshed at `eval/screenshots/desktop-prototypes.png`, `eval/screenshots/mobile-prototypes.png`, and `eval/screenshots/mobile-preview-link-prototypes.png`.
+- Browser runtime check: `http://127.0.0.1:5173/` opened with title `crystal-menu-ui · Final Fantasy VII Remake-inspired JRPG UI Kit for React / 最终幻想 VII Remake 风格 JRPG 组件库` and exposed `Crystal Menu UI demo` region.
+- `git diff --check`: pass.
+
+## CI and Package Consumer Smoke - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Repository review found that local quality scripts existed but were not enforced by GitHub Actions.
+- Review also found no tarball-level consumer smoke test for ESM, CJS, token, and CSS export resolution.
+
+### Change
+
+- Added `.github/workflows/ci.yml` to run install, typecheck, docs audit, production build, and packed-package smoke checks on pull requests and `main` pushes.
+- Added `scripts/package-smoke.mjs`, which runs `npm pack`, installs the tarball into a temporary consumer project, and verifies ESM, CJS, token, and CSS export resolution.
+- Added `smoke:package`, `packageManager`, `engines`, and `publishConfig.access` metadata to `package.json`.
+- Updated `CLAUDE.md`, `.github/CLAUDE.md`, `.github/workflows/CLAUDE.md`, and `scripts/CLAUDE.md` so the architecture map matches the new CI and QA surfaces.
+
+### Evidence
+
+- `npm run typecheck`: pass.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm run build`: pass.
+- `npm run smoke:package`: pass; `Package smoke ok: crystal-menu-ui@0.1.1 (74 files)`.
+- `git diff --check`: pass.
+
 ## npm 0.1.1 Release - 2026-06-10
 
 Outcome: pass.

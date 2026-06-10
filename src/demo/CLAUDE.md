@@ -8,6 +8,10 @@ Local Vite demo used for visual review, responsive QA, and online preview links.
 
 - `main.tsx`: demo app mount.
 - `App.tsx`: representative JRPG menu composition and `?preview=mobile` online preview mode.
+- `sections/`: section-level demo JSX composition split by visual responsibility.
+- `demoData.ts`: stable barrel for original placeholder data consumed by `App.tsx`.
+- `demo-data/`: topic-specific demo data slices for core party, equipment, combat, and progression examples.
+- `localDemoAssets.ts`: dev-only local portrait/font loading boundary that never ships local assets in production builds.
 - `demo.less`: demo-only layout, page background, and mobile preview wrapper.
 - `readme-art-main.tsx`: local mount for README art screenshot boards.
 - `motion-showcase-main.tsx`: local mount for README motion showcase capture.

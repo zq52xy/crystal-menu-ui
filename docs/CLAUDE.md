@@ -8,6 +8,8 @@ Product, source-method, rights-boundary, and Figma reference documentation for t
 
 - `requirements.md`: product scope and component roadmap.
 - `ai-user-guide.md`: AI assistant guide for routing, generation patterns, and hard boundaries.
+- `ai-workflow.md`: component-constrained AI workflow for stable JRPG UI generation.
+- `content/`: SEO and AI-search article drafts for JRPG React UI, AI-ready game UI components, and rights-safe visual study.
 - `tokens.md`: public design token documentation and sync rules.
 - `source-method-map.md`: generalized source-method translation for public game-UI component libraries.
 - `copyright-boundary.md`: learning and publishing boundary.

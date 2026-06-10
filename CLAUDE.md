@@ -13,15 +13,16 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 
 ## Current Modules
 
-- `.github/`: issue and PR templates for community conversion and safe contributions.
+- `.github/`: issue templates, PR template, and CI workflow for community conversion plus quality gates.
 - `docs/`: product requirements, source-method mapping, launch materials, and rights boundary.
 - `eval/`: visual contract, work contract, and evidence report.
 - `skill/`: local AI-assistant instruction draft.
 - root docs: AI usage, generation prompt, visual design prompt, README, and `llms.txt` AI citation summary.
 - `readme-art.html`: local Vite entry for component-rendered README screenshots.
 - `motion-showcase.html`: local Vite entry for component-rendered README motion GIF capture.
+- `public/`: GitHub Pages crawler files for robots, sitemap, and deployed `llms.txt`.
 - `src/`: React component source, styles, and demo.
-- `scripts/`: repeatable QA helpers.
+- `scripts/`: repeatable QA, package-smoke, and README-art helpers.
 
 ## Next Engineering Track
 

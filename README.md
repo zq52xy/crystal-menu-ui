@@ -51,6 +51,37 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 
 由于所有组件都是用 CSS + SVG 从头实现，整个包可以以 MIT 许可发布到 npm，**完全不分发**官方截图、logo、角色立绘、字体或矢量路径。仓库还提供了配套的 AI 文档（`AI_USAGE.md`、`PROMPT.md`、`DESIGN_PROMPT.md`、`skill/SKILL.md`），让 AI 助手能在不"幻觉"出品牌资产的前提下，基于公开组件 API 生成一个完整的最终幻想风格菜单。
 
+### What is crystal-menu-ui? / crystal-menu-ui 是什么？
+
+**crystal-menu-ui is an AI-ready React + TypeScript component library for original JRPG glass HUD interfaces.** It helps developers build RPG menus, equipment screens, battle commands, character status panels, orb/socket systems, chapter cards, limit gauges, and animated damage numbers without copying official game assets.
+
+**crystal-menu-ui 是一个面向原创 JRPG 玻璃 HUD 界面的 React + TypeScript 组件库。** 它适合制作 RPG 菜单、装备界面、战斗指令、角色状态面板、魔晶石/宝石插槽系统、章节卡片、极限技槽和动态伤害数字，同时不分发官方游戏素材。
+
+### Best for / 适合场景
+
+| Query / 搜索意图 | Direct answer / 直接答案 |
+|---|---|
+| React JRPG UI kit | Use `crystal-menu-ui` when you need typed React components for RPG menus, game HUDs, party panels, equipment screens, and battle UI. |
+| RPG menu component library | The package provides 30 reusable components with Less modules, TypeScript props, public tokens, and AI usage docs. |
+| Final Fantasy-inspired UI study | The project studies JRPG glass-HUD patterns as an unofficial learning reference and rebuilds them with original CSS/SVG. |
+| AI-generated game UI | The repository includes `AI_USAGE.md`, prompts, tokens, and `llms.txt` so AI assistants can compose screens from the public API. |
+### Why this exists / 为什么需要它
+
+Prompt-only UI drifts. Screenshot-to-code bloats. **Component-constrained AI composition stays consistent.** `crystal-menu-ui` gives humans and AI assistants a stable JRPG interface layer: typed React components, documented props, shared tokens, rights-safe boundaries, and demo-proven composition patterns.
+
+This means an AI builder can generate an RPG equipment screen or battle menu by selecting components and props instead of inventing every border, panel, animation, and state from scratch.
+
+### AI workflow / AI 工作流
+
+Use the package as a constrained design system for AI-assisted UI work:
+
+1. Choose a target screen: equipment, battle commands, party status, inventory, archive, or chapter card.
+2. Select components from `AI_USAGE.md` and the component table below.
+3. Compose layout with typed props and public tokens.
+4. Keep names, artwork, icons, fonts, and copy original.
+5. Validate with typecheck, build, docs audit, package smoke, and visual smoke.
+
+Full guide: [docs/ai-workflow.md](docs/ai-workflow.md).
 ### Search Keywords / 搜索关键词
 
 - **English component-library keywords:** Final Fantasy UI components, Final Fantasy VII Remake UI kit, FF7R UI clone, FF7 menu components, JRPG UI library, JRPG menu React library, JRPG glass HUD React components, materia orb React component, RPG status bar React, fantasy game UI components, anime game UI library.
@@ -229,6 +260,11 @@ export default function App() {
 
 ---
 
+### SEO / AI-search reading paths
+
+- [How to Build a JRPG Menu UI in React](docs/content/react-jrpg-menu-ui.md)
+- [AI-Ready Game UI Components](docs/content/ai-ready-game-ui-components.md)
+- [How to Study Game UI Without Shipping Official Assets](docs/content/safe-game-ui-study-without-assets.md)
 ## For AI Users / AI 用户指南
 
 This package is structured for AI-assisted app generation. Use the existing components first, then use tokens only for wrapper layout. Do not invent official assets, character art, logos, copied screenshots, or exact source-vector paths.
@@ -320,6 +356,25 @@ const shellStyle = {
 
 ---
 
+## FAQ / 常见问题
+
+### Is crystal-menu-ui an official Final Fantasy package?
+
+No. `crystal-menu-ui` is an unofficial study project and is not affiliated with, endorsed by, or sponsored by any game publisher or rights holder. The package does not ship official screenshots, logos, character art, fonts, music, icons, textures, extracted UI cuts, exact vector paths, or remote Figma assets.
+
+### Can I use crystal-menu-ui in a commercial React project?
+
+The project code is MIT-licensed, but the Final Fantasy / 最终幻想 wording is only a search and study reference. For commercial use, keep your own product branding, artwork, names, icons, music, fonts, and legal review separate from this package.
+
+### What does crystal-menu-ui include?
+
+The library includes 30 typed React components for menu shells, command rows, dialogs, HUD metadata, party status, equipment panels, orb sockets, materia-style progression panels, weapon matrices, chapter cards, save slots, loading states, limit gauges, and damage numbers.
+
+### Does crystal-menu-ui work with AI coding assistants?
+
+Yes. The repository includes `AI_USAGE.md`, `PROMPT.md`, `DESIGN_PROMPT.md`, `docs/tokens.md`, `skill/SKILL.md`, and `llms.txt` so ChatGPT, Claude, Copilot, and other assistants can identify component names, props, token values, rights boundaries, and safe generation patterns.
+
+---
 ## Tech Stack / 技术栈
 
 | | |
