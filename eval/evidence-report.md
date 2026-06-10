@@ -1,5 +1,26 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Badge Hotfix - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- GitHub README first screen showed a red `downloads: package not found or too new` badge.
+- `npm view crystal-menu-ui version name --json` confirmed the npm package exists as `crystal-menu-ui@0.1.0`.
+- Direct Shields check confirmed the version badge resolves, while the `npm/dt` downloads badge still returns the new-package error state.
+
+### Change
+
+- Replaced the unstable npm total-downloads badge in `README.md` with a stable `npm published` badge linked to the same npm package page.
+- Kept the package name neutral and preserved the existing Final Fantasy / 最终幻想 study-positioning language.
+
+### Evidence
+
+- `npm view crystal-menu-ui version name --json`: pass.
+- `https://img.shields.io/npm/v/crystal-menu-ui`: resolves to `npm: v0.1.0`.
+- `https://img.shields.io/badge/npm-published-cb3837?logo=npm&logoColor=fff&labelColor=222`: static replacement avoids the new-package downloads API gap.
+
 ## Summary
 
 Added bilingual `Final Fantasy` / `最终幻想` search keywords and supporting content while preserving the unofficial learning-only boundary. Outcome: pass.

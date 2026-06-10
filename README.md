@@ -6,7 +6,7 @@
 ### 最终幻想 VII Remake 风格 JRPG 玻璃 HUD 组件库（React + TypeScript）
 
 [![npm version](https://img.shields.io/npm/v/crystal-menu-ui?color=cb3837&labelColor=222)](https://www.npmjs.com/package/crystal-menu-ui)
-[![npm downloads](https://img.shields.io/npm/dt/crystal-menu-ui?color=5fa04e&labelColor=222&label=downloads)](https://www.npmjs.com/package/crystal-menu-ui)
+[![npm package](https://img.shields.io/badge/npm-published-cb3837?logo=npm&logoColor=fff&labelColor=222)](https://www.npmjs.com/package/crystal-menu-ui)
 [![GitHub stars](https://img.shields.io/github/stars/zq52xy/crystal-menu-ui?color=ffd700&labelColor=222)](https://github.com/zq52xy/crystal-menu-ui/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-81dfff?labelColor=222)](LICENSE)
 
