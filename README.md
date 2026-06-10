@@ -141,12 +141,13 @@ These screenshots are generated from the public demo and use original CSS/SVG vi
 
 ## Highlights / 核心卖点
 
-<table>
-<tr>
-<td width="50%"><img src="docs/img/feature-onepager.png" alt="Core highlights in English" width="100%" /></td>
-<td width="50%"><img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" width="100%" /></td>
-</tr>
-</table>
+<p align="center">
+  <img src="docs/img/feature-onepager.png" alt="Core highlights in English" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" width="100%" />
+</p>
 
 - **30 typed React components** spanning menu shells, command lists, dialogs, HUD metadata, party status, archive slots, inventory panels, battle commands, materia growth panels, weapon upgrade matrices, chapter cinematics, and floating combat damage indicators.
 - **Equipment Screen demo** — a complete bright-blue glass HUD composition in `src/demo/App.tsx` that mirrors the source method's flagship equipment surface, composed entirely from existing public components plus a small wrapper.

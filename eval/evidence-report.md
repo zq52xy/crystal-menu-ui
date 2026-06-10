@@ -1,5 +1,22 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Highlights Layout Fix - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User showed that the Core Highlights section still rendered poorly: two wide images in a table were squeezed and visually broken on GitHub.
+
+### Change
+
+- Replaced the two-column highlights image table with two centered full-width image blocks.
+- Kept both English and Chinese one-pager images, but removed the fragile table layout.
+
+### Evidence
+
+- README now renders `feature-onepager.png` and `feature-onepager-zh.png` as separate `width="100%"` blocks instead of a compressed table row.
+
 ## README Image Bounds Fix - 2026-06-10
 
 Outcome: pass.
