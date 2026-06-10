@@ -1,5 +1,22 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Image Bounds Fix - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User reported that images in the Core Highlights section overflowed their README table bounds.
+
+### Change
+
+- Added explicit `width="100%"` to Core Highlights images.
+- Applied the same bound-safe width to Visual Gallery table images to prevent the same overflow pattern.
+
+### Evidence
+
+- README image tags for `feature-onepager.png`, `feature-onepager-zh.png`, and `gallery-*.png` now use `width="100%"`.
+
 ## README Motion Showcase GIF - 2026-06-10
 
 Outcome: pass.

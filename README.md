@@ -127,15 +127,15 @@ These screenshots are generated from the public demo and use original CSS/SVG vi
 
 <table>
 <tr>
-<td width="50%"><img src="docs/img/gallery-equipment-screen.png" alt="Equipment Screen component composition" /><br /><strong>Equipment Screen</strong></td>
-<td width="50%"><img src="docs/img/gallery-materia-growth.png" alt="Materia Growth component panels" /><br /><strong>Materia Growth</strong></td>
+<td width="50%"><img src="docs/img/gallery-equipment-screen.png" alt="Equipment Screen component composition" width="100%" /><br /><strong>Equipment Screen</strong></td>
+<td width="50%"><img src="docs/img/gallery-materia-growth.png" alt="Materia Growth component panels" width="100%" /><br /><strong>Materia Growth</strong></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/img/gallery-weapon-matrix.png" alt="Weapon Upgrade Matrix component" /><br /><strong>Weapon Matrix</strong></td>
-<td width="50%"><img src="docs/img/gallery-damage-numbers.png" alt="Damage Numbers feedback component" /><br /><strong>Damage Numbers</strong></td>
+<td width="50%"><img src="docs/img/gallery-weapon-matrix.png" alt="Weapon Upgrade Matrix component" width="100%" /><br /><strong>Weapon Matrix</strong></td>
+<td width="50%"><img src="docs/img/gallery-damage-numbers.png" alt="Damage Numbers feedback component" width="100%" /><br /><strong>Damage Numbers</strong></td>
 </tr>
 <tr>
-<td colspan="2"><img src="docs/img/gallery-chapter-title.png" alt="Chapter title cinematic card" /><br /><strong>Chapter Card</strong></td>
+<td colspan="2"><img src="docs/img/gallery-chapter-title.png" alt="Chapter title cinematic card" width="100%" /><br /><strong>Chapter Card</strong></td>
 </tr>
 </table>
 
@@ -143,8 +143,8 @@ These screenshots are generated from the public demo and use original CSS/SVG vi
 
 <table>
 <tr>
-<td width="50%"><img src="docs/img/feature-onepager.png" alt="Core highlights in English" /></td>
-<td width="50%"><img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" /></td>
+<td width="50%"><img src="docs/img/feature-onepager.png" alt="Core highlights in English" width="100%" /></td>
+<td width="50%"><img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" width="100%" /></td>
 </tr>
 </table>
 
