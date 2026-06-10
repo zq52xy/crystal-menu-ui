@@ -1,0 +1,30 @@
+﻿name: Feature request
+description: Suggest a component, example, token, or documentation improvement.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What are you trying to build?
+      placeholder: I want to build a save/load screen for an indie RPG web app...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed shape
+      description: Name the component, props, example screen, or docs section you expect.
+      placeholder: Add a QuestLogPanel with ...
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Rights boundary
+      options:
+        - label: This request can be implemented with original CSS/SVG/tokens and does not require official assets.
+          required: true
+        - label: I am not asking for official screenshots, logos, fonts, characters, music, icons, textures, or extracted UI cuts.
+          required: true

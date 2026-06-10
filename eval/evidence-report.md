@@ -1,5 +1,114 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## GitHub Launch Settings Checklist - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Active goal: increase popularity and star count after README visual and community-template improvements.
+- Several high-impact star-growth actions live outside the repository files: About description, topics, social preview, pinned roadmap issue, first release, labels, and weekly posting rhythm.
+
+### Change
+
+- Added `docs/launch/github-settings-checklist.md` with exact GitHub About metadata, recommended topics, social preview asset, pinned roadmap issue body, v0.1.0 release body, starter issues, labels, and weekly growth ritual.
+- Linked the checklist from README and `docs/launch/community-launch-kit.md`.
+- Updated `docs/launch/CLAUDE.md` to include the new launch checklist.
+
+### Evidence
+
+- README Star / Share section links to `docs/launch/github-settings-checklist.md`.
+- Checklist points to `docs/img/banner.png` as the social preview image and includes repo topics aligned with README badges and package keywords.
+- Checklist keeps the same unofficial/original-assets rights boundary while making the external GitHub setup actionable.
+
+## GitHub Community Templates - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Active goal: increase project popularity and star count by converting visitors into feedback, showcases, and safe contributors.
+- README had Star / Share CTAs but no structured GitHub issue or PR flow for community participation.
+
+### Change
+
+- Added `.github/ISSUE_TEMPLATE/` forms for visual bugs, feature requests, docs improvements, and showcases.
+- Added `.github/PULL_REQUEST_TEMPLATE.md` with validation, evidence, rights-boundary, and documentation checks.
+- Added `.github/CLAUDE.md` as the community-surface architecture map.
+- Linked Showcase issues and contribution safety from README and launch kit.
+- Updated root `CLAUDE.md` so the project map includes `.github/`.
+
+### Evidence
+
+- README points builders to `https://github.com/zq52xy/crystal-menu-ui/issues/new?template=showcase.yml`.
+- Issue forms require original/project-owned assets and keep official-asset requests out of the contribution flow.
+- PR template requires typecheck, docs audit, visual smoke for UI changes, evidence report updates, rights-boundary checks, and CLAUDE map updates.
+
+## README Visual Gallery - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Active goal: improve content imagery and star conversion.
+- README had a strong hero and share banner, but lacked a scan-friendly component screenshot gallery.
+
+### Change
+
+- Copied verified component screenshots into README-owned assets under `docs/img/gallery-*.png`.
+- Added a `Visual Gallery / 视觉画廊` README section covering Equipment Screen, Materia Growth, Weapon Matrix, Damage Numbers, and Chapter Card.
+- Updated `docs/CLAUDE.md` and `docs/launch/community-launch-kit.md` so the new gallery assets are discoverable for launch posts.
+
+### Evidence
+
+- Gallery assets: `docs/img/gallery-equipment-screen.png`, `docs/img/gallery-materia-growth.png`, `docs/img/gallery-weapon-matrix.png`, `docs/img/gallery-damage-numbers.png`, `docs/img/gallery-chapter-title.png`.
+- README gallery uses local repository assets instead of `eval/` evidence paths.
+- Visual source remains original CSS/SVG demo output, not official screenshots or bundled third-party assets.
+
+## Community Growth Kit - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Active goal: improve project popularity and star growth beyond visual README polish.
+- The repository needed reusable launch copy, community checklists, and an AI-readable citation summary.
+
+### Change
+
+- Added `docs/launch/community-launch-kit.md` with safe positioning, launch checklist, X/Twitter copy, Chinese community copy, Reddit/forum copy, release notes template, and follow-up content ideas.
+- Added root `llms.txt` with concise project summary, key URLs, citation points, safe positioning, and search phrases for AI/answer-engine discoverability.
+- Linked both from the README Star / Share section.
+- Updated `CLAUDE.md` and `docs/CLAUDE.md` so the architecture map reflects the new growth surfaces.
+
+### Evidence
+
+- `README.md` links to `docs/launch/community-launch-kit.md` and `llms.txt`.
+- `docs/launch/community-launch-kit.md` includes ready-to-post English and Chinese launch copy plus ethical star-growth guardrails.
+- `llms.txt` keeps the unofficial boundary and points AI systems to README, npm, demo, AI usage, tokens, rights boundary, and launch kit.
+
+## README Visual Growth Pass - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- Active goal: improve content imagery and increase project popularity / star conversion.
+- Existing README art still showed `24 components` despite the current public surface documenting 30 components.
+
+### Change
+
+- Updated README art copy in `src/demo/ReadmeArt.tsx` from 24 to 30 components.
+- Regenerated `docs/img/banner.png`, `docs/img/feature-onepager.png`, and `docs/img/feature-onepager-zh.png` via `npm run art:readme`.
+- Added a bilingual Star / Share README section with the social banner, star link, live demo link, npm link, social preview asset path, and suggested GitHub topics.
+- Updated `docs/star-growth-strategy.md` with current conversion surfaces and 30-component proof.
+
+### Evidence
+
+- `npm run art:readme`: pass; regenerated all README marketing images.
+- Manual image review: `docs/img/banner.png` now displays `30 components`.
+- README conversion links point to GitHub, GitHub Pages, npm, and the local social preview asset.
+
 ## README Equipment Hero - 2026-06-10
 
 Outcome: pass.

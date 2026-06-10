@@ -68,7 +68,7 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 
 ### 🔗 Preview
 
-- **Online Preview (PC):** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) — full demo gallery, including the bright-blue Equipment Screen, Materia Growth panels, Weapon Upgrade Matrix, looping Damage Numbers, Limit Gauges, Chapter Intro / Results cards, and the original 24 components.
+- **Online Preview (PC):** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) — full demo gallery, including the bright-blue Equipment Screen, Materia Growth panels, Weapon Upgrade Matrix, looping Damage Numbers, Limit Gauges, Chapter Intro / Results cards, and the full 30-component gallery.
 - **Online Preview (Mobile):** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile) — same gallery in 390 px layout.
 - **Component Docs:** [All 30 components](#components-30--组件) — component map, code examples, and props contract.
 - **Showcase:** [Highlights / 核心卖点](#highlights--核心卖点) — menu screens, HUD panels, archive slots, inventory surfaces, materia growth, weapon upgrade matrix, and chapter cinematics.
@@ -76,7 +76,7 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 
 ### 🔗 预览
 
-- **在线预览（PC）：** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) —— 完整 demo 画廊，包含明亮宝蓝装备屏、魔晶石升级面板、武器升级矩阵、循环伤害数字、极限槽、章节开场 / 结算卡，以及原本 24 个组件。
+- **在线预览（PC）：** [crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/) —— 完整 demo 画廊，包含明亮宝蓝装备屏、魔晶石升级面板、武器升级矩阵、循环伤害数字、极限槽、章节开场 / 结算卡，以及完整 30 个组件画廊。
 - **在线预览（Mobile）：** [crystal-menu-ui-mobile](https://zq52xy.github.io/crystal-menu-ui/?preview=mobile) —— 390 px 移动端版本。
 - **组件文档：** [全部 30 个组件](#components-30--组件) —— 组件地图、代码示例和 Props 契约。
 - **效果展示：** [核心卖点 / Highlights](#highlights--核心卖点) —— 菜单屏、HUD 面板、存档行、物品界面、魔晶石升级、武器矩阵、章节卡。
@@ -87,6 +87,47 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 > GitHub Pages 预览链接在每次执行 `npm run deploy` 后更新。如果发现在线预览比当前 commit 旧，clone 仓库后执行 `npm run deploy` 即可重新发布 `demo-dist`。
 
 ---
+
+## Star / Share / 传播
+
+<p align="center">
+  <img src="docs/img/banner.png" alt="crystal-menu-ui social preview banner" width="100%" />
+</p>
+
+If this project helps you build JRPG, RPG, game HUD, or AI-generated menu interfaces faster, please consider starring the repository. Stars help more React, TypeScript, indie-game, and AI-builder users find a safe component system instead of copying official assets.
+
+如果这个项目能帮你更快搭建 JRPG / RPG / 游戏 HUD / AI 生成菜单界面，欢迎点一个 Star。Star 会帮助更多 React、TypeScript、独立游戏和 AI builder 用户找到一个不复制官方素材的安全组件系统。
+
+- **Star:** [github.com/zq52xy/crystal-menu-ui](https://github.com/zq52xy/crystal-menu-ui)
+- **Live demo:** [zq52xy.github.io/crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
+- **npm:** [npmjs.com/package/crystal-menu-ui](https://www.npmjs.com/package/crystal-menu-ui)
+- **Social preview asset:** use `docs/img/banner.png` for posts, release notes, and the GitHub repository social preview.
+- **Launch kit:** use [`docs/launch/community-launch-kit.md`](docs/launch/community-launch-kit.md) for ready-to-post launch copy and community checklists.
+- **GitHub settings checklist:** use [`docs/launch/github-settings-checklist.md`](docs/launch/github-settings-checklist.md) for topics, social preview, release, and pinned issue setup.
+- **AI citation entry:** [`llms.txt`](llms.txt) summarizes the project for AI search and answer engines.
+- **Showcase your build:** open a [Showcase issue](https://github.com/zq52xy/crystal-menu-ui/issues/new?template=showcase.yml) if you use the library in a project or AI-generated screen.
+- **Contribute safely:** issue and PR templates guide contributors through visual evidence, docs updates, and rights-boundary checks.
+- **Suggested topics:** `react`, `typescript`, `component-library`, `game-ui`, `jrpg`, `rpg-ui`, `design-system`, `ai-ready`, `vite`.
+
+## Visual Gallery / 视觉画廊
+
+These screenshots are generated from the public demo and use original CSS/SVG visuals only. They are safe to reuse in posts, release notes, and community submissions.
+
+这些截图来自公开 demo，只使用原创 CSS / SVG 视觉。可以用于社区帖子、release notes 和项目介绍。
+
+<table>
+<tr>
+<td width="50%"><img src="docs/img/gallery-equipment-screen.png" alt="Equipment Screen component composition" /><br /><strong>Equipment Screen</strong></td>
+<td width="50%"><img src="docs/img/gallery-materia-growth.png" alt="Materia Growth component panels" /><br /><strong>Materia Growth</strong></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/img/gallery-weapon-matrix.png" alt="Weapon Upgrade Matrix component" /><br /><strong>Weapon Matrix</strong></td>
+<td width="50%"><img src="docs/img/gallery-damage-numbers.png" alt="Damage Numbers feedback component" /><br /><strong>Damage Numbers</strong></td>
+</tr>
+<tr>
+<td colspan="2"><img src="docs/img/gallery-chapter-title.png" alt="Chapter title cinematic card" /><br /><strong>Chapter Card</strong></td>
+</tr>
+</table>
 
 ## Highlights / 核心卖点
 

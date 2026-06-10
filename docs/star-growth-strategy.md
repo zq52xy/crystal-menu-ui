@@ -12,13 +12,21 @@ Do not position the project as a clone or asset extraction package. The stronger
 
 High-impact items before launch:
 
-- Strong README hero screenshot above the fold.
-- Focused orb/socket screenshot for social posts.
+- Strong README hero screenshot above the fold. Status: added `docs/img/readme-hero-equipment.png`.
+- Social sharing banner and focused screenshots for posts. Status: use `docs/img/banner.png` and `eval/screenshots/preview-equipment-screen.png`.
 - GitHub Pages demo from `npm run deploy`.
 - Repository topics: `react`, `typescript`, `component-library`, `game-ui`, `jrpg`, `design-system`, `vite`, `ai-ready`.
 - Clear disclaimer: original assets only, unofficial, learning-only.
-- Copy-paste usage example within the first screen of the README.
+- Copy-paste usage example plus Star / Share CTA in README.
 - `AI_USAGE.md`, `docs/ai-user-guide.md`, `docs/tokens.md`, `PROMPT.md`, and `DESIGN_PROMPT.md` linked from README.
+
+## README Conversion Surface
+
+- Above-the-fold hero: `docs/img/readme-hero-equipment.png`.
+- Share card: `docs/img/banner.png`.
+- Trust proof: npm badge, license badge, 30-component badge, AI-ready badge, rights-boundary notice.
+- Conversion CTA: Star / Share block immediately before Highlights.
+- Discovery phrases: Final Fantasy / 最终幻想 only as unofficial study/search language, not package ownership.
 
 ## Launch Plan
 
@@ -36,7 +44,7 @@ High-impact items before launch:
 - Post a short demo clip or screenshot thread:
   - problem: game UI references are hard for AI to reproduce consistently,
   - solution: typed components + AI usage contract,
-  - proof: 24 components, live demo, prompt docs.
+  - proof: 30 components, live demo, prompt docs, production-safe README hero.
 - Submit to design/dev communities where game UI is relevant.
 - Ask for concrete feedback, not generic stars.
 

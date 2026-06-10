@@ -1,0 +1,34 @@
+﻿name: Showcase / built with crystal-menu-ui
+description: Share a project, screenshot, experiment, or AI-generated screen built with this library.
+title: "[Showcase]: "
+labels: [showcase]
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project or experiment name
+      placeholder: My JRPG menu prototype
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Demo, repo, or screenshot link
+      placeholder: https://...
+  - type: textarea
+    id: story
+    attributes:
+      label: What did you build?
+      description: Mention components used, prompts used, or what you learned.
+      placeholder: I used PartyMenuShell, EquipmentPanel, OrbSocketRail...
+    validations:
+      required: true
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Permission
+      options:
+        - label: The shared media uses original/project-owned assets only.
+          required: true
+        - label: The maintainer may link this showcase from docs or release notes.
+          required: false

@@ -13,10 +13,11 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 
 ## Current Modules
 
-- `docs/`: product requirements, source-method mapping, and rights boundary.
+- `.github/`: issue and PR templates for community conversion and safe contributions.
+- `docs/`: product requirements, source-method mapping, launch materials, and rights boundary.
 - `eval/`: visual contract, work contract, and evidence report.
 - `skill/`: local AI-assistant instruction draft.
-- root docs: AI usage, generation prompt, visual design prompt, and README.
+- root docs: AI usage, generation prompt, visual design prompt, README, and `llms.txt` AI citation summary.
 - `readme-art.html`: local Vite entry for component-rendered README screenshots.
 - `src/`: React component source, styles, and demo.
 - `scripts/`: repeatable QA helpers.
@@ -31,3 +32,5 @@ When implementation starts, mirror the established library code shape:
 - `examples/`
 
 Add L3 headers to new source files when code is introduced.
+
+[PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md

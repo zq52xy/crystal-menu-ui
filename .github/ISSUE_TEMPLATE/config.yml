@@ -1,0 +1,8 @@
+﻿blank_issues_enabled: false
+contact_links:
+  - name: Live demo
+    url: https://zq52xy.github.io/crystal-menu-ui/
+    about: Check the current demo before filing a visual issue.
+  - name: AI usage contract
+    url: https://github.com/zq52xy/crystal-menu-ui/blob/main/AI_USAGE.md
+    about: Read component props and generation rules before asking AI usage questions.

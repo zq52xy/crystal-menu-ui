@@ -1,0 +1,27 @@
+﻿name: Docs improvement
+description: Improve README, AI_USAGE, examples, prompts, rights boundary, or launch materials.
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: textarea
+    id: target
+    attributes:
+      label: Target doc
+      description: Which file or section should change?
+      placeholder: README Visual Gallery, AI_USAGE BattleMenu props, docs/tokens.md...
+    validations:
+      required: true
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Suggested improvement
+      description: Explain the missing, confusing, outdated, or misleading part.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Boundary checks
+      options:
+        - label: This docs request keeps the unofficial learning-project boundary intact.
+          required: true

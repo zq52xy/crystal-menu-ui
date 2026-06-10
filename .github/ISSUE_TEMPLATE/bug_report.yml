@@ -1,0 +1,43 @@
+﻿name: Visual bug / UI issue
+description: Report a visual, responsive, accessibility, or component behavior issue.
+title: "[Bug]: "
+labels: [bug, visual]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve crystal-menu-ui. Please do not attach official game assets, cropped screenshots, logos, or character art.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the visual or behavior problem.
+      placeholder: The Equipment Screen clips at ...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include viewport, browser, demo URL, and component props when possible.
+      placeholder: 1. Open ... 2. Resize to ... 3. See ...
+    validations:
+      required: true
+  - type: input
+    id: screenshot
+    attributes:
+      label: Screenshot or recording
+      description: Use original/project screenshots only. Do not upload official game assets.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - README / docs
+        - Live demo
+        - Component API
+        - Mobile layout
+        - Accessibility
+        - Other
+    validations:
+      required: true

@@ -77,7 +77,7 @@ const featureCopy = {
     title: 'Built from the component system',
     subtitle: 'README images are rendered by the same React components, Less modules, and tokens shipped in the library.',
     items: [
-      ['24 Typed Components', 'Menu shells, command rows, status panels, archive slots, inventory, battle commands, and orb sockets.', 'attack'],
+      ['30 Typed Components', 'Menu shells, command rows, status panels, archive slots, inventory, battle commands, and orb sockets.', 'attack'],
       ['AI-ready Docs', 'AI_USAGE, prompts, local skill rules, component routing, and hard boundaries for safer generation.', 'summon'],
       ['Public Tokens', 'Less variables plus crystalTokens for colors, spacing, radius, borders, fonts, and shadows.', 'magic'],
       ['Original Visuals', 'CSS-rendered glass panels, cyan linework, glow states, icon vectors, and gem/socket controls.', 'sword'],
@@ -90,7 +90,7 @@ const featureCopy = {
     title: '由真实组件系统生成',
     subtitle: 'README 图片直接使用仓库里的 React 组件、Less 模块和 tokens 渲染，视觉会跟组件库同步。',
     items: [
-      ['24 个类型化组件', '覆盖菜单外壳、命令行、状态面板、存档、物品、战斗命令和宝石插槽。', 'attack'],
+      ['30 个类型化组件', '覆盖菜单外壳、命令行、状态面板、存档、物品、战斗命令和宝石插槽。', 'attack'],
       ['AI 友好文档', '包含 AI_USAGE、提示词、本地 skill、组件路由和生成边界。', 'summon'],
       ['公开设计变量', 'Less 变量与 crystalTokens 同步提供颜色、间距、圆角、边框、字体和阴影。', 'magic'],
       ['原创视觉实现', 'CSS 绘制玻璃面板、青色线框、发光状态、矢量图标和宝石插槽控件。', 'sword'],
@@ -116,7 +116,7 @@ const BannerArt = () => (
       <h1>crystal-menu-ui</h1>
       <p>Original JRPG glass HUD components rendered from the same public component API used by the demo.</p>
       <div className="readme-art__chips">
-        <span>24 components</span>
+        <span>30 components</span>
         <span>TypeScript</span>
         <span>Design tokens</span>
         <span>Preview ready</span>
