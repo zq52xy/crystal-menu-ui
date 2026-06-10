@@ -1,5 +1,24 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README CTA Tone Refinement - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User questioned whether the Star / Share conversion block was actually useful.
+- Review conclusion: the CTA is useful as a low-friction action path, but it should feel less like asking for stars and more like inviting use, sharing, and showcases.
+
+### Change
+
+- Renamed `Star / Share / 传播` to `Use, Share, or Showcase / 使用、分享或展示作品`.
+- Rewrote the intro copy to prioritize usage, visual sharing, feedback, and showcase issues before stars.
+
+### Evidence
+
+- README keeps the same links to GitHub, live demo, npm, social preview asset, launch kit, GitHub settings checklist, llms.txt, and Showcase issue.
+- Tone is now more open-source-native and less like direct star begging.
+
 ## GitHub Launch Settings Checklist - 2026-06-10
 
 Outcome: pass.

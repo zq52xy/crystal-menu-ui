@@ -88,15 +88,15 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 
 ---
 
-## Star / Share / 传播
+## Use, Share, or Showcase / 使用、分享或展示作品
 
 <p align="center">
   <img src="docs/img/banner.png" alt="crystal-menu-ui social preview banner" width="100%" />
 </p>
 
-If this project helps you build JRPG, RPG, game HUD, or AI-generated menu interfaces faster, please consider starring the repository. Stars help more React, TypeScript, indie-game, and AI-builder users find a safe component system instead of copying official assets.
+Use the package, share the visual assets, or open a showcase issue if it helps you build JRPG, RPG, game HUD, or AI-generated menu interfaces faster. Stars are welcome, but useful demos, feedback, and showcases are even more valuable for the project.
 
-如果这个项目能帮你更快搭建 JRPG / RPG / 游戏 HUD / AI 生成菜单界面，欢迎点一个 Star。Star 会帮助更多 React、TypeScript、独立游戏和 AI builder 用户找到一个不复制官方素材的安全组件系统。
+如果这个项目能帮你更快搭建 JRPG / RPG / 游戏 HUD / AI 生成菜单界面，可以直接使用、分享配图，或者提交一个 Showcase issue。Star 当然欢迎，但真实 demo、反馈和作品展示对项目更有价值。
 
 - **Star:** [github.com/zq52xy/crystal-menu-ui](https://github.com/zq52xy/crystal-menu-ui)
 - **Live demo:** [zq52xy.github.io/crystal-menu-ui](https://zq52xy.github.io/crystal-menu-ui/)
