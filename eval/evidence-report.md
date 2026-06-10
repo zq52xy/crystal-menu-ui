@@ -1,5 +1,27 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## npm 0.1.1 Release - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User approved updating the npm package after README hero, motion showcase, gallery, and Core Highlights image fixes landed in the repository.
+
+### Change
+
+- Bumped `crystal-menu-ui` from `0.1.0` to `0.1.1` in `package.json` and `package-lock.json`.
+- Switched README image references to GitHub raw URLs so npm README rendering keeps the visuals without shipping large marketing images in the package tarball.
+- Removed `docs/img` from `package.json` `files` so the npm package remains a lean component library package rather than a screenshot archive.
+
+### Evidence
+
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm run typecheck`: pass.
+- `npm pack --dry-run --json`: pass; `crystal-menu-ui@0.1.1`, package size `78.9 kB`, unpacked size `287.9 kB`, total files `74`, `docs/img` excluded.
+- `npm view crystal-menu-ui version time.modified --json`: latest version `0.1.1`, modified `2026-06-10T07:24:48.770Z`.
+- `npm view crystal-menu-ui@0.1.1 version dist.tarball dist.unpackedSize --json`: tarball `https://registry.npmjs.org/crystal-menu-ui/-/crystal-menu-ui-0.1.1.tgz`, unpacked size `287927`.
+
 ## README Feature Image Regeneration - 2026-06-10
 
 Outcome: pass.

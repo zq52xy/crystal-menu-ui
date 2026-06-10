@@ -18,7 +18,7 @@
 [![Figma Source](https://img.shields.io/badge/Figma-Source-9f7dff?labelColor=222)](FIGMA_REFERENCE.md)
 [![Bilingual](https://img.shields.io/badge/docs-EN%20%2F%20中文-FF9E64?labelColor=222)](#)
 
-<img src="docs/img/readme-hero-equipment.png" alt="crystal-menu-ui Equipment Screen hero preview" width="100%" />
+<img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/readme-hero-equipment.png" alt="crystal-menu-ui Equipment Screen hero preview" width="100%" />
 
 </div>
 
@@ -64,7 +64,7 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 >
 > 以上关键词仅用于说明学习参考和搜索意图，不代表官方产品名、授权关系或素材许可。
 
-![Crystal Menu UI banner](docs/img/banner.png)
+![Crystal Menu UI banner](https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/banner.png)
 
 ### 🔗 Preview
 
@@ -91,7 +91,7 @@ Because every component is rebuilt from scratch in CSS and SVG, the package can 
 ## Use, Share, or Showcase / 使用、分享或展示作品
 
 <p align="center">
-  <img src="docs/img/banner.png" alt="crystal-menu-ui social preview banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/banner.png" alt="crystal-menu-ui social preview banner" width="100%" />
 </p>
 
 Use the package, share the visual assets, or open a showcase issue if it helps you build JRPG, RPG, game HUD, or AI-generated menu interfaces faster. Stars are welcome, but useful demos, feedback, and showcases are even more valuable for the project.
@@ -112,7 +112,7 @@ Use the package, share the visual assets, or open a showcase issue if it helps y
 ## Motion Showcase / 动效展示
 
 <p align="center">
-  <img src="docs/img/motion-showcase.gif" alt="Animated crystal-menu-ui component showcase" width="100%" />
+  <img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/motion-showcase.gif" alt="Animated crystal-menu-ui component showcase" width="100%" />
 </p>
 
 The GIF is generated from real React components: looping damage numbers, ready limit gauges, a cinematic chapter card, and the crystal loading state.
@@ -127,26 +127,26 @@ These screenshots are generated from the public demo and use original CSS/SVG vi
 
 <table>
 <tr>
-<td width="50%"><img src="docs/img/gallery-equipment-screen.png" alt="Equipment Screen component composition" width="100%" /><br /><strong>Equipment Screen</strong></td>
-<td width="50%"><img src="docs/img/gallery-materia-growth.png" alt="Materia Growth component panels" width="100%" /><br /><strong>Materia Growth</strong></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/gallery-equipment-screen.png" alt="Equipment Screen component composition" width="100%" /><br /><strong>Equipment Screen</strong></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/gallery-materia-growth.png" alt="Materia Growth component panels" width="100%" /><br /><strong>Materia Growth</strong></td>
 </tr>
 <tr>
-<td width="50%"><img src="docs/img/gallery-weapon-matrix.png" alt="Weapon Upgrade Matrix component" width="100%" /><br /><strong>Weapon Matrix</strong></td>
-<td width="50%"><img src="docs/img/gallery-damage-numbers.png" alt="Damage Numbers feedback component" width="100%" /><br /><strong>Damage Numbers</strong></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/gallery-weapon-matrix.png" alt="Weapon Upgrade Matrix component" width="100%" /><br /><strong>Weapon Matrix</strong></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/gallery-damage-numbers.png" alt="Damage Numbers feedback component" width="100%" /><br /><strong>Damage Numbers</strong></td>
 </tr>
 <tr>
-<td colspan="2"><img src="docs/img/gallery-chapter-title.png" alt="Chapter title cinematic card" width="100%" /><br /><strong>Chapter Card</strong></td>
+<td colspan="2"><img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/gallery-chapter-title.png" alt="Chapter title cinematic card" width="100%" /><br /><strong>Chapter Card</strong></td>
 </tr>
 </table>
 
 ## Highlights / 核心卖点
 
 <p align="center">
-  <img src="docs/img/feature-onepager.png" alt="Core highlights in English" width="100%" />
+  <img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/feature-onepager.png" alt="Core highlights in English" width="100%" />
 </p>
 
 <p align="center">
-  <img src="docs/img/feature-onepager-zh.png" alt="核心卖点中文图" width="100%" />
+  <img src="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/feature-onepager-zh.png" alt="核心卖点中文图" width="100%" />
 </p>
 
 - **30 typed React components** spanning menu shells, command lists, dialogs, HUD metadata, party status, archive slots, inventory panels, battle commands, materia growth panels, weapon upgrade matrices, chapter cinematics, and floating combat damage indicators.
