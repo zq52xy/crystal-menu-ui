@@ -11,8 +11,8 @@ const outDir = resolve('docs/img');
 
 const boards = [
   { board: 'banner', file: 'banner.png', width: 1600, height: 720 },
-  { board: 'features-en', file: 'feature-onepager.png', width: 1200, height: 720 },
-  { board: 'features-zh', file: 'feature-onepager-zh.png', width: 1200, height: 720 },
+  { board: 'features-en', file: 'feature-onepager.png', width: 1200, height: 840 },
+  { board: 'features-zh', file: 'feature-onepager-zh.png', width: 1200, height: 840 },
 ];
 
 const getDevBaseUrl = (server) => {

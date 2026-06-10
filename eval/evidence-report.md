@@ -1,5 +1,24 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Feature Image Regeneration - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User confirmed the Core Highlights problem came from the generated image itself: the proof strip was clipped inside `feature-onepager.png`, not just by README table layout.
+
+### Change
+
+- Increased feature artboard capture height from `1200x720` to `1200x840` in `scripts/generate-readme-art.mjs`.
+- Updated `src/demo/readme-art.less` feature board height/padding to match the new capture size.
+- Regenerated `docs/img/feature-onepager.png` and `docs/img/feature-onepager-zh.png`.
+
+### Evidence
+
+- `npm run art:readme`: pass.
+- Manual image review: both English and Chinese Core Highlights images now show the bottom proof strip completely.
+
 ## README Highlights Layout Fix - 2026-06-10
 
 Outcome: pass.
