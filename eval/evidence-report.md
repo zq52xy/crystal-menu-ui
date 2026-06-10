@@ -1,5 +1,27 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Equipment Hero - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User requested a README opening hero image similar to the Equipment Screen screenshot.
+- Public README should show the original component-rendered glass HUD before long-form text.
+
+### Change
+
+- Generated `docs/img/readme-hero-equipment.png` from the production demo build, with `src/demo/local-assets/` hidden during build.
+- Added the hero image under the README badge block.
+- Mirrored the visual evidence to `eval/screenshots/readme-hero-equipment.png`.
+
+### Evidence
+
+- `npm run build:demo`: pass; local assets hidden and restored by `scripts/build-demo-public.mjs`.
+- `node scripts/preview-new-components.mjs`: pass against static `demo-dist` server.
+- `npm run visual:smoke`: pass against static `demo-dist` server; zero console and page errors.
+- Evidence image: `eval/screenshots/readme-hero-equipment.png`.
+
 ## README Badge Hotfix - 2026-06-10
 
 Outcome: pass.

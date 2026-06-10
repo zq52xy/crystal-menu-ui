@@ -18,6 +18,8 @@
 [![Figma Source](https://img.shields.io/badge/Figma-Source-9f7dff?labelColor=222)](FIGMA_REFERENCE.md)
 [![Bilingual](https://img.shields.io/badge/docs-EN%20%2F%20中文-FF9E64?labelColor=222)](#)
 
+<img src="docs/img/readme-hero-equipment.png" alt="crystal-menu-ui Equipment Screen hero preview" width="100%" />
+
 </div>
 
 **`crystal-menu-ui`** is an original, MIT-licensed React + TypeScript component library that recreates the visual language of *Final Fantasy VII Remake*'s in-game UI — dark blue glass panels, cyan linework, materia orb sockets, angular HUD frames, and humanist Optima-style typography — as **30 reusable components** ready to drop into any JRPG, RPG, fantasy, sci-fi, or game-style web project. It ships AI-ready component documentation, a Figma-derived design tokens system, a flagship bright-blue **Equipment Screen** demo composition, opt-in motion (looped damage numbers, animated chapter cards, ready-pulse limit gauges), and full bilingual docs in English and 简体中文 — explicitly framed as an unofficial fan study project, not an official Square Enix asset.
