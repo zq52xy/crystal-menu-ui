@@ -8,6 +8,7 @@ Repeatable local QA helpers for the component library.
 
 - `visual-smoke.mjs`: captures desktop and mobile demo screenshots and writes a JSON smoke report.
 - `generate-readme-art.mjs`: starts Vite, captures component-rendered README banner and bilingual feature images under `docs/img/`.
+- `generate-motion-showcase.mjs`: starts Vite, captures animated component frames, and encodes README motion GIF assets.
 
 ## Boundaries
 

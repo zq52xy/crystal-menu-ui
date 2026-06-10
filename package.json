@@ -48,7 +48,8 @@
     "art:readme": "node scripts/generate-readme-art.mjs",
     "typecheck": "tsc --noEmit",
     "visual:smoke": "node scripts/visual-smoke.mjs",
-    "audit:docs": "node scripts/audit-docs-coverage.mjs"
+    "audit:docs": "node scripts/audit-docs-coverage.mjs",
+    "art:motion": "node scripts/generate-motion-showcase.mjs"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -63,8 +64,10 @@
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^5.1.1",
     "gh-pages": "^6.3.0",
+    "gifenc": "^1.0.3",
     "less": "^4.4.2",
     "playwright": "^1.60.0",
+    "pngjs": "^7.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.9.3",

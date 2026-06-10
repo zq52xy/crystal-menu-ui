@@ -109,6 +109,16 @@ Use the package, share the visual assets, or open a showcase issue if it helps y
 - **Contribute safely:** issue and PR templates guide contributors through visual evidence, docs updates, and rights-boundary checks.
 - **Suggested topics:** `react`, `typescript`, `component-library`, `game-ui`, `jrpg`, `rpg-ui`, `design-system`, `ai-ready`, `vite`.
 
+## Motion Showcase / 动效展示
+
+<p align="center">
+  <img src="docs/img/motion-showcase.gif" alt="Animated crystal-menu-ui component showcase" width="100%" />
+</p>
+
+The GIF is generated from real React components: looping damage numbers, ready limit gauges, a cinematic chapter card, and the crystal loading state.
+
+这张 GIF 由真实 React 组件生成：循环伤害数字、Ready 极限槽、章节卡入场和水晶加载态。
+
 ## Visual Gallery / 视觉画廊
 
 These screenshots are generated from the public demo and use original CSS/SVG visuals only. They are safe to reuse in posts, release notes, and community submissions.

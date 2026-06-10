@@ -21,6 +21,7 @@ AI-ready React components for original JRPG glass HUD interfaces.
 - npm: https://www.npmjs.com/package/crystal-menu-ui
 - README hero: ../img/readme-hero-equipment.png
 - Social banner: ../img/banner.png
+- Motion GIF: ../img/motion-showcase.gif
 - Gallery screenshots: ../img/gallery-equipment-screen.png, ../img/gallery-materia-growth.png, ../img/gallery-weapon-matrix.png
 - AI usage contract: ../AI_USAGE.md
 

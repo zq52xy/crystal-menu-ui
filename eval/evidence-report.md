@@ -1,5 +1,27 @@
 # Evidence Report: Final Fantasy Search Keywords
 
+## README Motion Showcase GIF - 2026-06-10
+
+Outcome: pass.
+
+### Trigger
+
+- User asked whether animated components could be shown as motion content.
+- Animated components are stronger star-conversion proof than static screenshots because they show the UI is running component code, not just a mockup.
+
+### Change
+
+- Added `motion-showcase.html`, `src/demo/MotionShowcase.tsx`, `src/demo/motion-showcase-main.tsx`, and `src/demo/motion-showcase.less` as a dedicated animated capture surface.
+- Added `scripts/generate-motion-showcase.mjs` and `npm run art:motion` to capture Playwright frames and encode a GIF with `gifenc` + `pngjs`.
+- Generated `docs/img/motion-showcase.gif` and mirrored it to `eval/screenshots/motion-showcase.gif`.
+- Inserted a `Motion Showcase / 动效展示` README section before the static visual gallery.
+
+### Evidence
+
+- `npm run art:motion`: pass; generated `docs/img/motion-showcase.gif` at about 2.6 MiB.
+- Manual visual review: GIF shows DamageNumber, LimitGauge, ChapterIntroCard, and Loading motion without official assets.
+- Evidence GIF: `eval/screenshots/motion-showcase.gif`.
+
 ## README CTA Tone Refinement - 2026-06-10
 
 Outcome: pass.

@@ -19,6 +19,7 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 - `skill/`: local AI-assistant instruction draft.
 - root docs: AI usage, generation prompt, visual design prompt, README, and `llms.txt` AI citation summary.
 - `readme-art.html`: local Vite entry for component-rendered README screenshots.
+- `motion-showcase.html`: local Vite entry for component-rendered README motion GIF capture.
 - `src/`: React component source, styles, and demo.
 - `scripts/`: repeatable QA helpers.
 
