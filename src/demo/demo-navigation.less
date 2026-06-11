@@ -1,0 +1,33 @@
+﻿/* [PROTOCOL]: Change this header when demo top navigation styles change, then check CLAUDE.md.
+ * INPUT: Demo App top-level navigation links.
+ * OUTPUT: Lightweight demo navigation styling shared by the live demo shell.
+ * POS: Demo shell navigation only; component index route styling lives in component-index.less.
+ */
+@import '../styles/index.less';
+
+.demo-top-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-2;
+  width: min(1320px, 100%);
+  margin: 0 auto @crystal-space-4;
+}
+
+.demo-top-links a {
+  padding: @crystal-space-2 @crystal-space-3;
+  color: @crystal-color-text;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgba(2, 11, 19, 0.54);
+  border: 1px solid fade(@crystal-color-border, 56%);
+}
+
+.demo-top-links a:hover,
+.demo-top-links a:focus-visible {
+  color: @crystal-color-cyan;
+  border-color: @crystal-color-border;
+  outline: none;
+}

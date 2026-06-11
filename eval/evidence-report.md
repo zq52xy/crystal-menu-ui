@@ -1,4 +1,4 @@
-# Evidence Report: Final Fantasy Search Keywords
+﻿# Evidence Report: Final Fantasy Search Keywords
 
 ## AI Workflow and SEO Content Assets - 2026-06-10
 
@@ -77,7 +77,7 @@ Outcome: pass.
 - `npm run build`: pass.
 - `npm run smoke:package`: pass; `Package smoke ok: crystal-menu-ui@0.1.1 (74 files)`.
 - `npm run visual:smoke`: pass; screenshots refreshed at `eval/screenshots/desktop-prototypes.png`, `eval/screenshots/mobile-prototypes.png`, and `eval/screenshots/mobile-preview-link-prototypes.png`.
-- Browser runtime check: `http://127.0.0.1:5173/` opened with title `crystal-menu-ui · Final Fantasy VII Remake-inspired JRPG UI Kit for React / 最终幻想 VII Remake 风格 JRPG 组件库` and exposed `Crystal Menu UI demo` region.
+- Browser runtime check: `http://127.0.0.1:5173/` opened with title `crystal-menu-ui 路 Final Fantasy VII Remake-inspired JRPG UI Kit for React / 鏈€缁堝够鎯?VII Remake 椋庢牸 JRPG 缁勪欢搴揱 and exposed `Crystal Menu UI demo` region.
 - `git diff --check`: pass.
 
 ## CI and Package Consumer Smoke - 2026-06-10
@@ -193,7 +193,7 @@ Outcome: pass.
 - Added `motion-showcase.html`, `src/demo/MotionShowcase.tsx`, `src/demo/motion-showcase-main.tsx`, and `src/demo/motion-showcase.less` as a dedicated animated capture surface.
 - Added `scripts/generate-motion-showcase.mjs` and `npm run art:motion` to capture Playwright frames and encode a GIF with `gifenc` + `pngjs`.
 - Generated `docs/img/motion-showcase.gif` and mirrored it to `eval/screenshots/motion-showcase.gif`.
-- Inserted a `Motion Showcase / 动效展示` README section before the static visual gallery.
+- Inserted a `Motion Showcase / 鍔ㄦ晥灞曠ず` README section before the static visual gallery.
 
 ### Evidence
 
@@ -212,7 +212,7 @@ Outcome: pass.
 
 ### Change
 
-- Renamed `Star / Share / 传播` to `Use, Share, or Showcase / 使用、分享或展示作品`.
+- Renamed `Star / Share / 浼犳挱` to `Use, Share, or Showcase / 浣跨敤銆佸垎浜垨灞曠ず浣滃搧`.
 - Rewrote the intro copy to prioritize usage, visual sharing, feedback, and showcase issues before stars.
 
 ### Evidence
@@ -276,7 +276,7 @@ Outcome: pass.
 ### Change
 
 - Copied verified component screenshots into README-owned assets under `docs/img/gallery-*.png`.
-- Added a `Visual Gallery / 视觉画廊` README section covering Equipment Screen, Materia Growth, Weapon Matrix, Damage Numbers, and Chapter Card.
+- Added a `Visual Gallery / 瑙嗚鐢诲粖` README section covering Equipment Screen, Materia Growth, Weapon Matrix, Damage Numbers, and Chapter Card.
 - Updated `docs/CLAUDE.md` and `docs/launch/community-launch-kit.md` so the new gallery assets are discoverable for launch posts.
 
 ### Evidence
@@ -364,7 +364,7 @@ Outcome: pass.
 ### Change
 
 - Replaced the unstable npm total-downloads badge in `README.md` with a stable `npm published` badge linked to the same npm package page.
-- Kept the package name neutral and preserved the existing Final Fantasy / 最终幻想 study-positioning language.
+- Kept the package name neutral and preserved the existing Final Fantasy / 鏈€缁堝够鎯?study-positioning language.
 
 ### Evidence
 
@@ -374,7 +374,7 @@ Outcome: pass.
 
 ## Summary
 
-Added bilingual `Final Fantasy` / `最终幻想` search keywords and supporting content while preserving the unofficial learning-only boundary. Outcome: pass.
+Added bilingual `Final Fantasy` / `鏈€缁堝够鎯砢 search keywords and supporting content while preserving the unofficial learning-only boundary. Outcome: pass.
 
 ## Contract
 
@@ -393,13 +393,13 @@ Work contract: `eval/work-contract.md`
 ## Inputs
 
 - User request:
-  - add Final Fantasy / 最终幻想 as keywords and content.
+  - add Final Fantasy / 鏈€缁堝够鎯?as keywords and content.
 
 ## Implementation
 
 - Updated `package.json`:
   - description now includes unofficial Final Fantasy-style UI studies.
-  - keywords include `final-fantasy`, `final-fantasy-ui`, `final-fantasy-inspired`, `final-fantasy-remake-ui`, `最终幻想`, `最终幻想-ui`, and `最终幻想组件库`.
+  - keywords include `final-fantasy`, `final-fantasy-ui`, `final-fantasy-inspired`, `final-fantasy-remake-ui`, `鏈€缁堝够鎯砢, `鏈€缁堝够鎯?ui`, and `鏈€缁堝够鎯崇粍浠跺簱`.
 - Updated `README.md`:
   - intro mentions Final Fantasy-inspired JRPG-style UI.
   - added bilingual Search Keywords section with an explicit unofficial/search-intent note.
@@ -418,7 +418,7 @@ Work contract: `eval/work-contract.md`
 - Ran `npm run typecheck`: pass.
 - Ran `npm run audit:docs`: pass; 24 exported components documented.
 - Ran `npm pack --dry-run --json`: pass.
-- Ran keyword grep for `Final Fantasy` / `最终幻想`: pass; uses are paired with source reference, search intent, or unofficial boundary.
+- Ran keyword grep for `Final Fantasy` / `鏈€缁堝够鎯砢: pass; uses are paired with source reference, search intent, or unofficial boundary.
 
 ## Package Evidence
 
@@ -440,7 +440,7 @@ User should review whether the added SEO value is worth the remaining trademark-
 
 ## Final Status
 
-Pass. The repository now includes bilingual Final Fantasy / 最终幻想 search keywords with explicit unofficial learning-only guardrails.
+Pass. The repository now includes bilingual Final Fantasy / 鏈€缁堝够鎯?search keywords with explicit unofficial learning-only guardrails.
 
 ---
 
@@ -492,7 +492,7 @@ Work contract: `eval/work-contract.md`
 - Wired all six new components into `src/demo/App.tsx` with original placeholder data; added matching layout rules in `src/demo/demo.less` (limit gauges row, damage stage, materia row).
 - Re-exported the components and their types from `src/index.ts`.
 - Updated `src/components/CLAUDE.md`, `docs/requirements.md`, `docs/figma-coverage-matrix.md`, and `eval/visual-contract.md` to list the new components.
-- Expanded `AI_USAGE.md` with routing rows, "Use … for …" lines, import block, and full prop docs for each new component.
+- Expanded `AI_USAGE.md` with routing rows, "Use 鈥?for 鈥? lines, import block, and full prop docs for each new component.
 - Updated `README.md` component map to "30 components" with the new `Combat / Feedback`, `Chapter / Cinematic`, and expanded `Status / HUD` and `Equipment / Orbs` rows.
 
 ## Files Changed
@@ -528,3 +528,93 @@ Work contract: `eval/work-contract.md`
 ## Final Status
 
 Pass. The library now ships an Optima-led display stack and six FFVII Remake-language components covering the largest remaining structural gaps: floating damage numbers, limit-break gauges, chapter open/close cards, materia AP growth panels, and a weapon SP upgrade matrix.
+
+---
+
+# Evidence Report: SEO Component Index Page
+
+## Summary
+
+Added a dedicated bilingual `components.html` GitHub Pages entry that exposes a searchable component index for AI-ready JRPG React UI use cases in English and Chinese. Outcome: pass.
+
+## Contract
+
+Parent contract: `eval/visual-contract.md`
+
+## Environment
+
+- Workspace: `D:\work\crystal`
+- Date context: 2026-06-11 Asia/Shanghai
+- Preview URL: `http://127.0.0.1:4178/components.html`
+
+## Implementation
+
+- Added `components.html` with bilingual canonical metadata, Open Graph tags, and valid `CollectionPage` structured data.
+- Added `src/demo/ComponentIndexPage.tsx`, `src/demo/componentIndexData.ts`, `src/demo/component-index-main.tsx`, and `src/demo/component-index.less`.
+- Reused public design-system components (`MenuPanel`, `GameIcon`, `OrbGem`) and shared tokens rather than hand-rolling a separate visual system.
+- Updated `vite.config.demo.ts` to build both `index.html` and `components.html` into `demo-dist/`.
+- Added homepage navigation links to the component index, GitHub, and npm through a lightweight demo navigation stylesheet.
+- Updated `public/sitemap.xml` so crawlers can discover `components.html`.
+
+## Checks Run
+
+- `npm run typecheck`: pass.
+- `npm run build:demo`: pass; generated `demo-dist/components.html`.
+- Browser preview: `components.html` loaded with 0 console errors and 0 warnings; JSON-LD parsed successfully.
+- DOM check: verified title, canonical URL, meta description, H1, 10 representative component cards, and 31 `lang="zh-CN"` bilingual text nodes.
+
+## Evidence
+
+- Screenshot: `eval/screenshots/component-index-seo-page.png`
+- Bilingual screenshot: `eval/screenshots/component-index-bilingual-seo-page.png`
+
+## Final Status
+
+Pass. The public demo now has a focused bilingual SEO/AEO component index entry without adding a new runtime dependency or bypassing the design system.
+
+
+
+
+---
+
+# Evidence Report: Static AI-Readable Component Layer
+
+## Summary
+
+Added a static AI-readable layer for the bilingual component index so crawlers and AI tools can extract component facts without executing React. Outcome: pass.
+
+## Contract
+
+Parent contract: `eval/visual-contract.md`
+
+## Environment
+
+- Workspace: `D:\work\crystal`
+- Date context: 2026-06-11 Asia/Shanghai
+- Preview URL: `http://127.0.0.1:4178/components.html`
+
+## Implementation
+
+- Added `public/component-index.json`, generated from `src/demo/componentIndexData.ts` by `scripts/generate-component-index-json.mjs`.
+- Updated `npm run build:demo` to regenerate the machine-readable component JSON before building GitHub Pages output.
+- Added `<noscript>` bilingual component summary to `components.html` for no-JS crawlers and static AI extraction.
+- Added `FAQPage` JSON-LD to `components.html` for install/use, unofficial status, asset boundary, and AI component routing questions.
+- Added README first-screen links to Live Demo, Component Index, npm, AI Usage, and `component-index.json`.
+- Added component index links to root `llms.txt`, deployed `public/llms.txt`, and `public/sitemap.xml`.
+
+## Checks Run
+
+- `npm run typecheck`: pass.
+- `npm run build:demo`: pass; regenerated `public/component-index.json` and built `demo-dist/components.html`.
+- JSON check: `public/component-index.json` parses, contains 10 representative component entries, and includes EN + `zh-CN` language metadata.
+- Browser check: `components.html` loaded with 0 console errors and 0 warnings.
+- Browser DOM/fetch check: `/component-index.json` returned 10 components; structured data types were `CollectionPage` and `FAQPage`; `<noscript>` static summary was present.
+
+## Evidence
+
+- Machine-readable data: `public/component-index.json`
+- Page evidence: `eval/screenshots/component-index-bilingual-seo-page.png`
+
+## Final Status
+
+Pass. The public demo now exposes component facts through rendered React, static no-JS HTML, JSON-LD FAQ, `llms.txt`, sitemap, and machine-readable JSON.

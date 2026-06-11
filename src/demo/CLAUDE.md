@@ -1,4 +1,4 @@
-# Module Map: src/demo
+﻿# Module Map: src/demo
 
 ## Purpose
 
@@ -25,3 +25,5 @@ Local Vite demo used for visual review, responsive QA, and online preview links.
 - Demo content must be original placeholder content.
 - Demo styles may compose components but must not replace component internals.
 - README art must render public components instead of hand-drawn parallel UI.
+
+

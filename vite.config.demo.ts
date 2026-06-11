@@ -1,4 +1,4 @@
-// [PROTOCOL]: Change this header when demo build behavior changes, then check CLAUDE.md.
+﻿// [PROTOCOL]: Change this header when demo build behavior changes, then check CLAUDE.md.
 // INPUT: Vite demo entry and shared Less token setup.
 // OUTPUT: Static demo build in demo-dist.
 // POS: Demo build config only; package build stays in vite.config.ts.
@@ -32,5 +32,12 @@ export default defineConfig({
   },
   build: {
     outDir: 'demo-dist',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        components: resolve(__dirname, 'components.html'),
+      },
+    },
   },
 });
+

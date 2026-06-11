@@ -50,7 +50,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build && tsc --project tsconfig.build.json --emitDeclarationOnly",
-    "build:demo": "node scripts/build-demo-public.mjs",
+    "build:demo": "node scripts/generate-component-index-json.mjs && node scripts/build-demo-public.mjs",
     "prepublishOnly": "npm run build",
     "deploy": "npm run build:demo && gh-pages -d demo-dist",
     "art:readme": "node scripts/generate-readme-art.mjs",

@@ -7,5 +7,7 @@
 - `robots.txt`: crawler access and sitemap pointer for the GitHub Pages demo.
 - `sitemap.xml`: canonical URL list for repository, live demo, npm package, AI docs, and token docs.
 - `llms.txt`: AI-answer-engine summary copied into the deployed GitHub Pages root.
+- `component-index.json`: machine-readable bilingual component index for crawlers, AI tools, and static consumers.
 
 [PROTOCOL]: 变更时更新此头部，然后检查 CLAUDE.md
+

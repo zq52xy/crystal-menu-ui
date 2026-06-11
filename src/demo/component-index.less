@@ -1,0 +1,177 @@
+﻿/* [PROTOCOL]: Change this header when component index landing styles change, then check CLAUDE.md.
+ * INPUT: ComponentIndexPage semantic catalog markup and shared crystal tokens.
+ * OUTPUT: Demo-only SEO catalog layout using the public visual language.
+ * POS: Component index route styling only; core component styles stay in modules.
+ */
+@import '../styles/index.less';
+
+.component-index-shell {
+  color: @crystal-color-text;
+}
+
+.component-index-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: @crystal-space-5;
+  width: min(1320px, 100%);
+  margin: 0 auto @crystal-space-5;
+  align-items: stretch;
+}
+
+.component-index-hero__copy {
+  display: grid;
+  gap: @crystal-space-4;
+  padding: clamp(24px, 4vw, 54px);
+  background: linear-gradient(135deg, rgba(18, 23, 31, 0.92), rgba(48, 48, 48, 0.76));
+  border: @crystal-border-width solid fade(@crystal-color-border, 72%);
+  border-radius: @crystal-radius-panel;
+  box-shadow: @crystal-shadow-panel;
+}
+
+.component-index-kicker,
+.component-index-card header span,
+.component-index-card dt {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.component-index-hero h1 {
+  max-width: 11ch;
+  margin: 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: 0.95;
+  text-shadow: @crystal-shadow-text;
+}
+
+.component-index-hero p,
+.component-index-card p,
+.component-index-card dd {
+  margin: 0;
+  color: @crystal-color-text-muted;
+  line-height: 1.65;
+}
+
+.component-index-actions,
+.component-index-query-list,
+.component-index-card footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: @crystal-space-2;
+}
+
+.component-index-action,
+.component-index-chip {
+  color: @crystal-color-text;
+  text-decoration: none;
+  border: 1px solid fade(@crystal-color-border, 64%);
+  background: rgba(2, 11, 19, 0.54);
+}
+
+.component-index-action {
+  display: inline-flex;
+  gap: @crystal-space-3;
+  justify-content: space-between;
+  min-width: 170px;
+  padding: @crystal-space-3 @crystal-space-4;
+  font-weight: 800;
+}
+
+.component-index-action--magic {
+  border-color: fade(@crystal-color-violet, 72%);
+}
+
+.component-index-action span,
+.component-index-chip {
+  color: @crystal-color-cyan;
+  font-size: 12px;
+}
+
+.component-index-snapshot {
+  min-height: 100%;
+}
+
+.component-index-stat-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: @crystal-space-2 @crystal-space-3;
+  align-items: baseline;
+  margin-bottom: @crystal-space-4;
+}
+
+.component-index-stat-grid strong {
+  color: @crystal-color-gold;
+  font-family: @crystal-font-display;
+  font-size: 32px;
+}
+
+.component-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: @crystal-space-4;
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.component-index-card {
+  display: grid;
+  gap: @crystal-space-3;
+}
+
+.component-index-card header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: @crystal-space-3;
+  align-items: center;
+}
+
+.component-index-card h2 {
+  margin: 0;
+  color: @crystal-color-text;
+  font-family: @crystal-font-display;
+  font-size: 24px;
+}
+
+.component-index-card dl {
+  display: grid;
+  gap: @crystal-space-2;
+  margin: 0;
+}
+
+.component-index-card dl div {
+  display: grid;
+  gap: @crystal-space-1;
+  padding: @crystal-space-2;
+  background: rgba(2, 11, 19, 0.38);
+  border: 1px solid fade(@crystal-color-border, 28%);
+}
+
+.component-index-chip {
+  padding: 4px 8px;
+}
+
+@media (max-width: 860px) {
+  .component-index-hero,
+  .component-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.component-index-copy-pair {
+  display: grid;
+  gap: @crystal-space-2;
+}
+
+.component-index-card [lang='zh-CN'],
+.component-index-hero [lang='zh-CN'] {
+  color: fade(@crystal-color-text, 86%);
+  font-family: @crystal-font-body;
+}
+
+.component-index-card dd + dd {
+  margin-top: @crystal-space-1;
+}

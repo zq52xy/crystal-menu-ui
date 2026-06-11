@@ -1,4 +1,4 @@
-# Module Map: scripts
+﻿# Module Map: scripts
 
 ## Purpose
 
@@ -10,9 +10,11 @@ Repeatable local QA helpers for the component library.
 - `package-smoke.mjs`: packs the npm artifact, installs it into a temporary consumer project, and verifies ESM, CJS, token, and CSS export resolution.
 - `generate-readme-art.mjs`: starts Vite, captures component-rendered README banner and bilingual feature images under `docs/img/`.
 - `generate-motion-showcase.mjs`: starts Vite, captures animated component frames, and encodes README motion GIF assets.
+- `generate-component-index-json.mjs`: generates `public/component-index.json` from bilingual component index source data for AI and crawler consumption.
 
 ## Boundaries
 
 - Scripts may create files under `eval/` and `docs/img/`.
 - Scripts must not mutate source components or baselines.
 - README art generation must screenshot `readme-art.html` instead of duplicating component styles in raw HTML.
+
