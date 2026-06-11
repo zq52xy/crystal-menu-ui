@@ -1,5 +1,42 @@
 ﻿# Evidence Report: crystal-menu-ui Quality History
 
+## GitHub Repository Surface Settings - 2026-06-11
+
+Outcome: pass.
+
+### Contract
+
+- Governed by `eval/work-contract.md`.
+- Parent contract: `eval/visual-contract.md`.
+
+### Change
+
+- Updated GitHub repository description to `AI-ready React components for original JRPG glass HUD interfaces.`
+- Updated repository website to `https://zq52xy.github.io/crystal-menu-ui/`.
+- Replaced repository topics with `react`, `typescript`, `component-library`, `design-system`, `game-ui`, `jrpg`, `vite`, `ai-ready`, and `rpg-ui`.
+- Uploaded `docs/img/banner.png` as the GitHub Social Preview image.
+
+### Checks Run
+
+- Browser verification on the repository homepage confirmed the new title/description.
+- Browser DOM verification confirmed the website link is present.
+- Browser DOM verification confirmed the visible topics match the target topic set.
+- Browser verification in Settings confirmed the repository image id changed from `1891527` to `1891564` after upload.
+
+### Outputs
+
+- Repository homepage: `https://github.com/zq52xy/crystal-menu-ui`
+- Social preview source image: `docs/img/banner.png`
+- Evidence report: `eval/evidence-report.md`
+
+### Human Review
+
+- User can visually confirm the Social Preview crop in GitHub Settings if desired.
+
+### Baseline Decision
+
+- No code or visual baseline changed.
+
 ## v0.2.0 Release and Pages Deploy - 2026-06-11
 
 Outcome: pass.
