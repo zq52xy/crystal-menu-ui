@@ -1,5 +1,58 @@
 ﻿# Evidence Report: crystal-menu-ui Quality History
 
+## v0.2.0 Release and Pages Deploy - 2026-06-11
+
+Outcome: partial pass.
+
+### Contract
+
+- Governed by `eval/work-contract.md`.
+- Parent contract: `eval/visual-contract.md`.
+
+### Environment
+
+- Workspace: `O:\coding\crystal-menu-ui`
+- Package after bump: `crystal-menu-ui@0.2.0`
+- Release commit: `0e25924 Release v0.2.0`
+- Remote branch: `origin/main`
+
+### Change
+
+- Bumped `package.json` and `package-lock.json` from `0.1.1` to `0.2.0`.
+- Committed and pushed `0e25924 Release v0.2.0` to `origin/main`.
+- Created and pushed annotated tag `v0.2.0` with message `v0.2.0: AI-ready JRPG screen presets`.
+- Ran `npm run deploy`, which rebuilt the demo and published `demo-dist` through `gh-pages`.
+
+### Checks Run
+
+- `npm run typecheck`: pass.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm pack --dry-run --json`: pass; package reports `crystal-menu-ui@0.2.0` and includes `docs/screen-presets.md`.
+- `npm run deploy`: pass; Vite built the demo and `gh-pages` returned `Published`.
+- Remote verification: `origin/main` points to `0e25924ce4e0d5c1ec8c43572d6d9c3f7151a36f`; `origin/gh-pages` points to `a8cd289bcb15b81d3ff94c1efb759b58e2ed5ebc`; tag `v0.2.0` exists on origin.
+
+### Outputs
+
+- Pages URL: `https://zq52xy.github.io/crystal-menu-ui/`
+- Tag URL: `https://github.com/zq52xy/crystal-menu-ui/releases/tag/v0.2.0`
+- Evidence report: `eval/evidence-report.md`
+
+### Failures
+
+- GitHub CLI is not installed on this host.
+- `git credential fill` did not expose a GitHub username/password token for API use.
+- The available GitHub MCP connector did not expose repository topic, social-preview, or release-creation tools.
+- Playwright opened `https://github.com/zq52xy/crystal-menu-ui/settings` as `Page not found`, indicating the browser context had no repository settings permission or login state.
+
+### Human Review
+
+- GitHub repository topics and Social Preview still require manual review in the GitHub settings UI.
+- A full GitHub Release object still requires manual creation through GitHub UI or a configured `gh`/token environment. The `v0.2.0` tag is pushed and ready for that release.
+
+### Baseline Decision
+
+- No visual baseline changed.
+
 ## Star Growth Conversion Pass - 2026-06-11
 
 Outcome: pass.
