@@ -2,79 +2,103 @@
 
 ## Positioning
 
-Lead with a narrow, memorable promise:
+Lead with the durable public promise:
 
 > AI-ready React components for original JRPG glass HUD interfaces.
 
-Do not position the project as a clone or asset extraction package. The stronger public angle is "game UI language turned into a safe, typed, AI-consumable component system."
+Use Final Fantasy / 最终幻想 language only as an unofficial study and search reference. The repository should read like a safe component system for game UI builders, not a clone, asset extraction package, or unofficial brand kit.
 
-## Repository Surface
+## Current Growth Problem
 
-High-impact items before launch:
+The repository already has the hard assets: npm package, live demo, README hero, motion GIF, gallery images, AI docs, component index, and rights-boundary notes. The missing layer is distribution and fast conversion.
 
-- Strong README hero screenshot above the fold. Status: added `docs/img/readme-hero-equipment.png`.
-- Social sharing banner and focused screenshots for posts. Status: use `docs/img/banner.png` and `eval/screenshots/preview-equipment-screen.png`.
-- GitHub Pages demo from `npm run deploy`.
-- Repository topics: `react`, `typescript`, `component-library`, `game-ui`, `jrpg`, `design-system`, `vite`, `ai-ready`.
-- Clear disclaimer: original assets only, unofficial, learning-only.
-- Copy-paste usage example plus Star / Share CTA in README.
-- `AI_USAGE.md`, `docs/ai-user-guide.md`, `docs/tokens.md`, `PROMPT.md`, and `DESIGN_PROMPT.md` linked from README.
+Visitors should be able to answer four questions within 10 seconds:
 
-## README Conversion Surface
+1. What is this? A React + TypeScript JRPG glass HUD component library.
+2. Does it look good? Yes, the hero, GIF, and gallery prove it.
+3. Can I use it now? Yes, `npm install crystal-menu-ui` plus quick examples.
+4. Is it safe to share? Yes, original CSS/SVG output with explicit unofficial boundaries.
 
-- Above-the-fold hero: `docs/img/readme-hero-equipment.png`.
-- Share card: `docs/img/banner.png`.
-- Trust proof: npm badge, license badge, 30-component badge, AI-ready badge, rights-boundary notice.
-- Conversion CTA: Star / Share block immediately before Highlights.
-- Discovery phrases: Final Fantasy / 最终幻想 only as unofficial study/search language, not package ownership.
+## Conversion Surface
 
-## Launch Plan
+| Surface | Target state | Owner action |
+|---|---|---|
+| README first screen | positioning, hero image, install, minimal code, preset links, Star/Showcase CTA | keep the quick path above long-form background |
+| Live demo | complete visual proof and mobile preview | refresh with `npm run deploy` after meaningful visual changes |
+| Screen presets | copy-paste recipes for real screens | point posts and AI users to `docs/screen-presets.md` |
+| Social assets | banner, hero screenshot, motion GIF, gallery screenshots | use one strong visual per post |
+| Release notes | one event people can react to | ship `v0.2.0` as the first growth release |
 
-### Day 0
+## 14-Day Execution Plan
 
-- Create GitHub repository with neutral name: `crystal-menu-ui` or `jrpg-menu-ui`.
-- Fill `package.json` repository/homepage/bugs/author fields.
-- Run `npm run typecheck && npm run build && npm run build:demo && npm run audit:docs && npm run visual:smoke`.
-- Run `npm run deploy`.
-- Add the best screenshot as the GitHub social preview.
-- Publish release `v0.1.0` with screenshots and component count.
+### Days 1-2: Conversion Pass
 
-### Day 1-3
+- Keep README top focused on the quick path: install, import, example, presets, demo.
+- Make `docs/screen-presets.md` the main "start building" link.
+- Confirm GitHub social preview uses `docs/img/banner.png`.
+- Confirm repository topics include `react`, `typescript`, `component-library`, `game-ui`, `jrpg`, `rpg-ui`, `design-system`, `ai-ready`, and `vite`.
+- Pin or create a roadmap issue with the next three visible deliverables.
 
-- Post a short demo clip or screenshot thread:
-  - problem: game UI references are hard for AI to reproduce consistently,
-  - solution: typed components + AI usage contract,
-  - proof: 30 components, live demo, prompt docs, production-safe README hero.
-- Submit to design/dev communities where game UI is relevant.
-- Ask for concrete feedback, not generic stars.
+### Days 3-5: Release Event
 
-### Week 1
+- Publish `v0.2.0` only after the README, presets, demo, npm package, and docs audit are green.
+- Release title: `v0.2.0: AI-ready JRPG screen presets`.
+- Attach `docs/img/readme-hero-equipment.png`, `docs/img/motion-showcase.gif`, and `docs/img/banner.png`.
+- Mention: 30 typed components, screen presets, AI usage docs, original CSS/SVG, no official assets.
 
-- Add 3-5 example pages:
-  - main menu,
-  - equipment screen,
-  - archive/load screen,
-  - profile screen,
-  - battle command screen.
-- Open "good first issue" tasks for components, docs, and accessibility.
-- Add a roadmap issue and pin it.
+### Days 6-10: Distribution
 
-## Channels
+- Day 6: X/Twitter visual thread with motion GIF.
+- Day 7: Juejin or V2EX post with Chinese positioning and demo screenshots.
+- Day 8: Reddit/react or gamedev community post where self-promotion rules allow it.
+- Day 9: Submit to HelloGitHub after the release page is stable.
+- Day 10: Publish a short build-log article: "Turning JRPG menu language into typed React components".
 
-- GitHub topics and README SEO.
-- X / Twitter visual thread with screenshots.
-- Reddit communities only where self-promotion rules allow it.
-- V2EX / Juejin / SegmentFault for Chinese dev audience.
-- HelloGitHub submission after the README and Pages demo are stable.
-- Product Hunt or Show HN only after the live demo and examples are polished.
+### Days 11-14: Feedback Loop
 
-## Content Angles
+- Convert repeated comments into issues.
+- Label 3-5 tasks as `good first issue`: docs, examples, accessibility, theming, presets.
+- Ask users for screenshots or Showcase issues instead of generic praise.
+- Ship one small visible improvement from feedback to show the project is alive.
 
-- "I turned JRPG menu UI into a React component library for AI builders."
-- "The useful part is not the style clone; it is the component contract and prompt docs."
-- "Every visual is CSS-rendered and de-branded."
-- "The token layer is public: Less variables for components, `crystalTokens` for AI/app builders."
-- "Use `OrbGem` and `OrbSocketRail` to compose socket systems without asset files."
+## Channel Copy Rules
+
+- Lead with the screenshot or GIF, not the repository URL.
+- Ask for feedback first, stars second.
+- Avoid "official", "authentic assets", "exact clone", "pixel-perfect recreation", or any wording that implies ownership.
+- Keep the package name neutral and the visual reference framed as study language.
+- Use the same links in every post: live demo, GitHub, npm, screen presets.
+
+## Post Angles
+
+- "I turned JRPG menu UI patterns into a typed React component library."
+- "Prompt-only game UI drifts; component-constrained AI generation is more stable."
+- "30 React components for equipment screens, battle commands, archive rows, orb sockets, limit gauges, and damage numbers."
+- "Everything is original CSS/SVG; no official screenshots, fonts, logos, or extracted assets."
+- "The useful part is not imitation. It is the component contract, design tokens, and AI-readable docs."
+
+## Metrics
+
+Refresh these before each launch push:
+
+| Metric | Why it matters |
+|---|---|
+| GitHub stars | top-line reach and save intent |
+| GitHub forks | builder intent |
+| npm weekly downloads | actual package trial |
+| demo visits | visual interest |
+| showcase issues | real downstream usage |
+| external post clicks | channel quality |
+
+## Milestones
+
+| Target | Goal |
+|---|---|
+| 50 stars | Validate README/demo clarity. |
+| 100 stars | Add more examples and a roadmap issue. |
+| 300 stars | Add theming and screen preset variants. |
+| 500 stars | Submit to curated lists and newsletters. |
+| 1,000 stars | Publish a full build-log article and invite contributors. |
 
 ## Ethical Star Growth Rules
 
@@ -82,16 +106,6 @@ High-impact items before launch:
 - Do not use star-exchange groups.
 - Do not automate GitHub activity.
 - Do not imply official affiliation.
-- Do not use official images to bait attention.
+- Do not use official images, logos, names, or extracted assets to bait attention.
 
-The durable growth loop is: strong screenshot -> live demo -> copy-paste example -> useful docs -> roadmap -> recurring improvements.
-
-## Milestones
-
-| Target | Goal |
-|---|---|
-| 50 stars | Validate README/demo clarity. |
-| 100 stars | Add GitHub Pages examples and npm publish. |
-| 300 stars | Add theming and more screen presets. |
-| 500 stars | Submit to curated lists and newsletters. |
-| 1,000 stars | Publish a build log article and invite contributors. |
+The durable growth loop is: strong visual proof -> fast install -> copy-paste preset -> useful AI docs -> feedback issue -> visible release.

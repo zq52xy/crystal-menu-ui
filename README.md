@@ -22,12 +22,59 @@
 <p>
   <a href="https://zq52xy.github.io/crystal-menu-ui/"><strong>Live Demo</strong></a> ·
   <a href="https://zq52xy.github.io/crystal-menu-ui/components.html"><strong>Component Index / 组件索引</strong></a> ·
+  <a href="docs/screen-presets.md"><strong>Screen Presets / 界面预设</strong></a> ·
   <a href="https://www.npmjs.com/package/crystal-menu-ui"><strong>npm</strong></a> ·
   <a href="AI_USAGE.md"><strong>AI Usage</strong></a> ·
   <a href="https://zq52xy.github.io/crystal-menu-ui/component-index.json"><strong>component-index.json</strong></a>
 </p>
 
 </div>
+
+**AI-ready React components for original JRPG glass HUD interfaces.** Use `crystal-menu-ui` when you need a typed component system for RPG menus, equipment screens, battle commands, party status panels, archive slots, materia/orb sockets, limit gauges, chapter cards, and animated damage numbers without copying official game assets.
+
+**面向原创 JRPG 玻璃 HUD 界面的 AI-ready React 组件库。** 适合快速搭建 RPG 菜单、装备屏、战斗命令、队伍状态、存档列表、魔晶石/宝石槽、极限槽、章节卡和伤害数字，同时不分发官方素材。
+
+```bash
+npm install crystal-menu-ui
+```
+
+```tsx
+import { BattleMenu, MenuPanel } from 'crystal-menu-ui';
+import 'crystal-menu-ui/style';
+
+export function CommandPreset() {
+  return (
+    <MenuPanel title="Commands" subtitle="Active Unit">
+      <BattleMenu
+        actor="Ari"
+        selectedId="attack"
+        atb={72}
+        limit={38}
+        commands={[
+          { id: 'attack', label: 'Attack', shortcut: 'A' },
+          { id: 'magic', label: 'Magic', shortcut: 'M', variant: 'magic' },
+          { id: 'items', label: 'Items', shortcut: 'I', variant: 'item' },
+          { id: 'guard', label: 'Guard', shortcut: 'G' },
+        ]}
+      />
+    </MenuPanel>
+  );
+}
+```
+
+### Start Here / 快速入口
+
+| Need / 目标 | Link / 链接 |
+|---|---|
+| Inspect the complete visual demo | [Live Demo](https://zq52xy.github.io/crystal-menu-ui/) |
+| Copy a full screen recipe | [Screen Presets](docs/screen-presets.md) |
+| Browse every component and prop shape | [Component Index](https://zq52xy.github.io/crystal-menu-ui/components.html) |
+| Generate with an AI assistant | [AI Usage](AI_USAGE.md) |
+| Share the project safely | [Community Launch Kit](docs/launch/community-launch-kit.md) |
+
+If this saves you time building game UI, star the repo, share a screenshot/GIF, or open a [Showcase issue](https://github.com/zq52xy/crystal-menu-ui/issues/new?template=showcase.yml). Useful demos and API feedback are the strongest signal for the next release.
+
+如果它能帮你更快做出游戏 UI，可以点 Star、分享截图/GIF，或者提交 [Showcase issue](https://github.com/zq52xy/crystal-menu-ui/issues/new?template=showcase.yml)。真实 demo 和 API 反馈会直接影响下一版路线。
 
 **`crystal-menu-ui`** is an original, MIT-licensed React + TypeScript component library that recreates the visual language of *Final Fantasy VII Remake*'s in-game UI — dark blue glass panels, cyan linework, materia orb sockets, angular HUD frames, and humanist Optima-style typography — as **30 reusable components** ready to drop into any JRPG, RPG, fantasy, sci-fi, or game-style web project. It ships AI-ready component documentation, a Figma-derived design tokens system, a flagship bright-blue **Equipment Screen** demo composition, opt-in motion (looped damage numbers, animated chapter cards, ready-pulse limit gauges), and full bilingual docs in English and 简体中文 — explicitly framed as an unofficial fan study project, not an official Square Enix asset.
 
@@ -471,4 +518,3 @@ This repository converts source-interface ideas into original React components. 
 MIT. See [LICENSE](LICENSE).
 
 MIT。见 [LICENSE](LICENSE)。
-

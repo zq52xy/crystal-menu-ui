@@ -1,4 +1,55 @@
-﻿# Evidence Report: Final Fantasy Search Keywords
+﻿# Evidence Report: crystal-menu-ui Quality History
+
+## Star Growth Conversion Pass - 2026-06-11
+
+Outcome: pass.
+
+### Contract
+
+- Governed by `eval/work-contract.md`.
+- Parent contract: `eval/visual-contract.md`.
+
+### Environment
+
+- Workspace: `O:\coding\crystal-menu-ui`
+- Package: `crystal-menu-ui@0.1.1`
+- Dependency install: `npm ci` was required because `node_modules` was absent and the first typecheck could not find `tsc`.
+
+### Change
+
+- Reworked the README first screen around the fast conversion path: positioning, install command, minimal `BattleMenu` example, Screen Presets link, Live Demo link, AI Usage link, and Showcase/Star CTA.
+- Added `docs/screen-presets.md` with copy-paste recipes for Equipment Screen, Battle Command HUD, Save / Load Archive, and Inventory Inspector compositions.
+- Added `docs/screen-presets.md` to `package.json` `files` so npm README links can resolve inside the published package.
+- Updated `docs/star-growth-strategy.md` into a concrete 14-day execution plan with release angle, channel order, metrics, and ethical rules.
+- Updated `docs/launch/community-launch-kit.md` with `v0.2.0` release positioning, preset links, and refreshed English/Chinese/forum post copy.
+- Updated `docs/CLAUDE.md` and this work contract/evidence pair for the new docs surface.
+
+### Checks Run
+
+- `npm ci`: pass; 141 packages installed, 0 vulnerabilities.
+- `npm run typecheck`: pass after dependency install.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `npm pack --dry-run --json`: pass; package includes `docs/screen-presets.md`.
+- Safety wording grep across changed docs: pass; unofficial/no-official-assets guardrails remain present.
+
+### Outputs
+
+- Evidence report: `eval/evidence-report.md`
+- Work contract: `eval/work-contract.md`
+- New screen preset guide: `docs/screen-presets.md`
+- npm dry-run package entry includes `docs/screen-presets.md` with size 7508 bytes.
+
+### Failures
+
+- Initial `npm run typecheck` failed because `node_modules` was missing and `tsc` was not available. Classification: environment setup issue, not a code regression. Resolved with `npm ci`, then typecheck passed.
+
+### Human Review
+
+- User should review whether the README CTA tone is direct enough and whether the FF7-inspired search language remains acceptable before broad external promotion.
+
+### Baseline Decision
+
+- No visual baseline changed.
 
 ## AI Workflow and SEO Content Assets - 2026-06-10
 

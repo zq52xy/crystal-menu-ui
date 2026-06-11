@@ -1,8 +1,8 @@
-# Work Contract: Final Fantasy Search Keywords
+# Work Contract: Star Growth Conversion Pass
 
 ## Work Target
 
-Add bilingual `Final Fantasy` / `最终幻想` search keywords and supporting content while preserving the unofficial learning-only boundary.
+Improve the public repository surface so first-time visitors can quickly understand, try, share, and star `crystal-menu-ui` without weakening the unofficial learning-only boundary.
 
 ## Parent Contract
 
@@ -10,28 +10,27 @@ Add bilingual `Final Fantasy` / `最终幻想` search keywords and supporting co
 
 ## Core User Paths
 
-1. GitHub visitors can find the project through `Final Fantasy` / `最终幻想` style UI search terms.
-2. npm metadata contains English and Chinese discovery keywords.
-3. AI assistants can understand that these terms are search/reference aliases only.
-4. Public docs keep the package name neutral and do not imply official affiliation.
-5. Rights-boundary docs explicitly allow descriptive search phrases and forbid official ownership/license claims.
+1. GitHub visitors can identify the package value, preview the visual result, install it, and find a copy-paste example within the README first screen.
+2. Builders and AI users can choose from concrete screen presets instead of assembling every component from scratch.
+3. Maintainers can run a repeatable launch plan with safe positioning, social copy, and measurable star-growth checkpoints.
 
 ## Done Definition
 
-- `package.json` includes Final Fantasy / 最终幻想 discovery keywords.
-- README includes a bilingual Search Keywords section.
-- `AI_USAGE.md` and `docs/ai-user-guide.md` include search aliases and guardrails.
-- `ATTRIBUTION.md` and `docs/copyright-boundary.md` define allowed and forbidden direct-name usage.
-- Typecheck, docs audit, package dry-run, and keyword grep pass.
-- Evidence report is updated.
+- README lead is repositioned around "AI-ready React components for JRPG glass HUD interfaces".
+- README contains install/import usage, quick component example, screen preset links, live demo links, and a Star/Share CTA before long-form background.
+- A local screen preset guide exists with 3-5 concrete recipes and safe reuse notes.
+- Launch/growth docs explain priority actions, channel order, release angle, and ethical constraints.
+- Docs module map includes any new documentation surface touched by this work.
+- Typecheck and docs audit pass.
+- Evidence report is updated with commands, outputs, and remaining human-review items.
 
 ## Invariants
 
-- Keep public naming neutral.
-- Do not imply official affiliation.
-- Do not use official screenshots, icons, textures, exact vector paths, fonts, or remote Figma assets.
-- Do not describe the package as official, endorsed, licensed, or containing Final Fantasy assets.
-- Direct game names must appear as study/search phrases only.
+- Keep public package naming neutral.
+- Do not imply official affiliation, endorsement, license, or ownership.
+- Do not add official screenshots, icons, textures, vector paths, fonts, logos, characters, or remote Figma assets.
+- Preserve original CSS/SVG and learning-only framing.
+- Do not change component behavior in this pass.
 
 ## Gates
 
@@ -41,7 +40,7 @@ Add bilingual `Final Fantasy` / `最终幻想` search keywords and supporting co
 - Run `npm run typecheck`.
 - Run `npm run audit:docs`.
 - Run `npm pack --dry-run --json`.
-- Grep for `Final Fantasy` / `最终幻想` usage and confirm the disclaimer remains.
+- Review changed docs for unsafe official-affiliation wording.
 - Write evidence report after implementation.
 
 ## Evidence Required
@@ -50,8 +49,8 @@ Add bilingual `Final Fantasy` / `最终幻想` search keywords and supporting co
 
 ## Human Review
 
-User should review whether the SEO value is worth the remaining trademark-search risk before promoting the repository widely.
+User should review the final README tone, launch copy, and whether the FF7-inspired search language remains worth the trademark/search tradeoff before wide promotion.
 
 ## Baseline Policy
 
-Do not weaken attribution or rights-boundary wording to make the keywords more aggressive.
+No visual baseline should be refreshed in this pass. If visual assets are changed later, screenshot evidence and human visual review are required before accepting the new baseline.
