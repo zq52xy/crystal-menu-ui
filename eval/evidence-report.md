@@ -2,7 +2,7 @@
 
 ## v0.2.0 Release and Pages Deploy - 2026-06-11
 
-Outcome: partial pass.
+Outcome: pass.
 
 ### Contract
 
@@ -46,8 +46,9 @@ Outcome: partial pass.
 
 ### Human Review
 
+- GitHub Release page was completed through the logged-in browser session after initial CLI/API tooling was unavailable.
+- Release verification: `https://github.com/zq52xy/crystal-menu-ui/releases/tag/v0.2.0` shows `Latest`, not `Pre-release`, with the screen preset release notes, demo link, presets link, npm link, and safety note.
 - GitHub repository topics and Social Preview still require manual review in the GitHub settings UI.
-- A full GitHub Release object still requires manual creation through GitHub UI or a configured `gh`/token environment. The `v0.2.0` tag is pushed and ready for that release.
 
 ### Baseline Decision
 
