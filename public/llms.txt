@@ -1,4 +1,4 @@
-﻿# crystal-menu-ui
+# crystal-menu-ui
 
 > AI-ready JRPG interface design system for React, TypeScript, and component-constrained AI UI generation.
 
@@ -41,5 +41,6 @@ AI-ready JRPG interface design system for React and component-constrained AI UI 
 crystal-menu-ui is an MIT-licensed React and TypeScript design system for building original JRPG-style glass HUD interfaces. It helps AI assistants compose stable game UI screens from 30 typed components, public design tokens, a live demo, npm distribution, and AI workflow documentation while avoiding official game assets or affiliation claims.
 ## Search phrases
 
-React JRPG UI kit, RPG menu component library, game HUD React components, AI-ready React components, Final Fantasy-inspired UI study, 鏈€缁堝够鎯抽鏍?UI 瀛︿範, JRPG 鑿滃崟缁勪欢搴?
+React JRPG UI kit, RPG menu component library, game HUD React components, AI-ready React components, Final Fantasy-inspired UI study, 最终幻想风格 UI 学习, JRPG 菜单组件库
+
 
