@@ -1,0 +1,130 @@
+<!doctype html>
+<!--
+  [PROTOCOL]: Change this header when the component index HTML shell changes, then check CLAUDE.md.
+  INPUT: Vite component index root, SEO metadata, and public component catalog needs.
+  OUTPUT: Browser-loadable component index shell for GitHub Pages and AI search extraction.
+  POS: Static host shell only; React catalog composition lives in src/demo/ComponentIndexPage.tsx.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2302161f'/%3E%3Cpath d='M16 3 29 16 16 29 3 16Z' fill='none' stroke='%234bcdff' stroke-width='3'/%3E%3Cpath d='M16 9 23 16 16 23 9 16Z' fill='%2381dfff'/%3E%3C/svg%3E"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bilingual EN/中文 component index for crystal-menu-ui: 30 React + TypeScript JRPG menu, equipment, materia progression, battle HUD, cinematic RPG UI components, and AI-ready game UI generation."
+    />
+    <meta
+      name="keywords"
+      content="React JRPG UI components, RPG menu component index, Final Fantasy inspired React UI kit, game HUD components, materia progression UI, battle menu React, React 游戏 UI 组件库, JRPG 菜单组件, 最终幻想风格 UI"
+    />
+    <meta name="theme-color" content="#0a1f4f" />
+    <link rel="canonical" href="https://zq52xy.github.io/crystal-menu-ui/components.html" />
+    <meta property="og:title" content="crystal-menu-ui Component Index" />
+    <meta
+      property="og:description"
+      content="Browse 30 typed React components for JRPG menus, equipment screens, battle feedback, progression panels, and AI-ready game UI generation. 中英双语组件索引，覆盖 JRPG 菜单、装备界面、战斗 HUD 与最终幻想风格 UI 学习。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zq52xy.github.io/crystal-menu-ui/components.html" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/zq52xy/crystal-menu-ui/main/docs/img/banner.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "crystal-menu-ui Component Index",
+        "description": "Bilingual searchable catalog of React and TypeScript JRPG UI components for RPG menus, equipment screens, materia-style progression, combat HUD feedback, AI-ready game UI generation, and 中文 JRPG 菜单组件检索。",
+        "url": "https://zq52xy.github.io/crystal-menu-ui/components.html",
+        "isPartOf": {
+          "@type": "SoftwareSourceCode",
+          "name": "crystal-menu-ui",
+          "codeRepository": "https://github.com/zq52xy/crystal-menu-ui"
+        },
+        "about": [
+          "React JRPG UI components",
+          "RPG menu component library",
+          "Final Fantasy inspired UI study",
+          "AI-ready game UI components",
+          "React 游戏 UI 组件库",
+          "JRPG 菜单组件",
+          "最终幻想风格 UI 学习"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is crystal-menu-ui? / crystal-menu-ui 是什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "crystal-menu-ui is an MIT-licensed React and TypeScript component library for original JRPG-style glass HUD interfaces. It provides typed components for RPG menus, equipment screens, battle feedback, progression panels, and AI-assisted UI generation. crystal-menu-ui 是一个 MIT 许可的 React + TypeScript 组件库，用于构建原创 JRPG 玻璃 HUD、RPG 菜单、装备界面、战斗反馈和 AI 辅助生成界面。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this an official Final Fantasy package? / 这是官方最终幻想组件吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It is an unofficial learning and interface study project. It is not affiliated with, endorsed by, or sponsored by any game publisher, studio, owner, or rights holder. 不是。本项目是非官方学习与界面研究项目，与任何游戏发行方、工作室或权利方无从属、授权、背书或赞助关系。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it include official game assets? / 是否包含官方游戏素材？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The package ships original React, TypeScript, Less, CSS, SVG, public tokens, and documentation only. It does not redistribute official screenshots, logos, characters, fonts, music, icons, textures, extracted UI cuts, or exact vector paths. 不包含。项目只发布原创代码、样式、SVG、tokens 和文档，不分发官方截图、logo、角色、美术、字体、音乐、图标、贴图、切图或精确矢量路径。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do AI assistants choose components? / AI 应该如何选择组件？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use PartyMenuShell for full menu layouts, EquipmentPanel for gear and stat deltas, MateriaGrowthTree for AP progression, WeaponUpgradeMatrix for SP node grids, BattleMenu for commands, LimitGauge and DamageNumber for combat feedback, and ChapterIntroCard for cinematic transitions. AI 可按场景选型：完整菜单用 PartyMenuShell，装备属性用 EquipmentPanel，AP 成长用 MateriaGrowthTree，SP 节点用 WeaponUpgradeMatrix，战斗指令用 BattleMenu，战斗反馈用 LimitGauge 与 DamageNumber，章节转场用 ChapterIntroCard。"
+            }
+          }
+        ]
+      }
+    </script>
+    <title>Component Index / 组件索引 · crystal-menu-ui React JRPG UI Kit</title>
+    <script type="module" crossorigin src="./assets/components-Da7F4C-T.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/demo-BzE2vjHd.js">
+    <link rel="stylesheet" crossorigin href="./assets/demo-DcmFuF2g.css">
+    <link rel="stylesheet" crossorigin href="./assets/components-BlHj7Va8.css">
+  </head>
+  <body>
+    <noscript>
+      <main>
+        <h1>crystal-menu-ui Component Index / 组件索引</h1>
+        <p>AI-ready React + TypeScript JRPG UI kit with 30 typed components for RPG menus, equipment screens, progression panels, battle HUD feedback, and cinematic cards.</p>
+        <p>面向 AI 生成与人工开发的 React + TypeScript JRPG UI 组件库，包含 30 个类型化组件，覆盖 RPG 菜单、装备界面、成长系统、战斗 HUD 反馈和章节演出卡。</p>
+        <ul>
+          <li>PartyMenuShell / 菜单框架: full RPG menu layout with navigation, status, details, and footer.</li>
+          <li>EquipmentPanel / 装备界面: weapon slots, stat deltas, and materia-like orb sockets.</li>
+          <li>MateriaGrowthTree / 魔晶石成长: AP progress, level pips, and ability unlock states.</li>
+          <li>WeaponUpgradeMatrix / 武器升级矩阵: connected SP upgrade nodes and selected detail.</li>
+          <li>BattleMenu / 战斗菜单: command list for attack, magic, items, and disabled actions.</li>
+          <li>LimitGauge + DamageNumber / 极限技与伤害数字: combat readiness and animated feedback.</li>
+          <li>ChapterIntroCard / 章节标题卡: cinematic mission and chapter transition surface.</li>
+          <li>Machine-readable data / 机器可读数据: /component-index.json.</li>
+        </ul>
+        <p>Unofficial learning project only. No official assets, screenshots, logos, characters, fonts, textures, extracted UI cuts, or affiliation claims are included.</p>
+        <p>本项目仅用于非官方学习与界面研究，不包含官方素材、截图、logo、角色、字体、贴图、切图，也不声明任何官方从属或授权关系。</p>
+      </main>
+    </noscript>
+    <div id="root"></div>
+  </body>
+</html>
+
+
+
+

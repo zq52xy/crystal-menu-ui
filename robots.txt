@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://zq52xy.github.io/crystal-menu-ui/sitemap.xml
