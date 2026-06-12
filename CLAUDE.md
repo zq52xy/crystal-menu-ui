@@ -18,7 +18,7 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 - `eval/`: visual contract, work contract, and evidence report.
 - `examples/`: runnable consumer examples for local app integration.
 - `skill/`: local AI-assistant instruction draft.
-- root docs: AI usage, generation prompt, visual design prompt, README, and `llms.txt` AI citation summary.
+- root docs: AI usage, generation prompt, visual design prompt, README, ROADMAP, and `llms.txt` AI citation summary.
 - `readme-art.html`: local Vite entry for component-rendered README screenshots.
 - `motion-showcase.html`: local Vite entry for component-rendered README motion GIF capture.
 - `public/`: GitHub Pages crawler files for robots, sitemap, deployed `llms.txt`, and machine-readable component index JSON.
@@ -37,4 +37,3 @@ When implementation starts, mirror the established library code shape:
 Add L3 headers to new source files when code is introduced.
 
 [PROTOCOL]: 鍙樻洿鏃舵洿鏂版澶撮儴锛岀劧鍚庢鏌?CLAUDE.md
-

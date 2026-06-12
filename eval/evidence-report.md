@@ -1,5 +1,69 @@
 ﻿# Evidence Report: crystal-menu-ui Quality History
 
+## Roadmap and Good First Issues - 2026-06-12
+
+Outcome: pass.
+
+### Contract
+
+- Governed by `eval/work-contract.md`.
+- Parent contract: `eval/visual-contract.md`.
+
+### Environment
+
+- Workspace: `O:\coding\crystal-menu-ui`
+- Repository: `zq52xy/crystal-menu-ui`
+- Branch: `main`
+
+### Change
+
+- Added `ROADMAP.md` with short-term, next, and later contribution priorities.
+- Linked `ROADMAP.md` from the README top link row and Start Here table.
+- Updated root `CLAUDE.md` to include ROADMAP in the root docs surface.
+- Created five GitHub starter issues with `good first issue` labels:
+  - `#4` Add Next.js basic example
+  - `#5` Add battle screen example
+  - `#6` Add keyboard navigation docs
+  - `#7` Add theme preset docs
+  - `#8` Add community showcase page
+- Linked those five issues from `ROADMAP.md`.
+
+### Checks Run
+
+- `quality-eval-kit/SKILL.md`: read.
+- `quality-eval-kit/templates/MANIFEST.md`: read.
+- GitHub issues page before creation: browser view showed no open issue results.
+- GitHub labels page: browser view confirmed default labels including `documentation`, `enhancement`, `good first issue`, and `help wanted`.
+- GitHub connector issue creation: pass for issues `#4` through `#8`.
+- GitHub issue page verification: issue `#4` rendered open with `enhancement` and `good first issue` labels; repository issue count rendered as `Issues 5`.
+- `npm run typecheck`: pass.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `git diff --check`: pass.
+
+### Outputs
+
+- Roadmap: `ROADMAP.md`
+- Issues:
+  - `https://github.com/zq52xy/crystal-menu-ui/issues/4`
+  - `https://github.com/zq52xy/crystal-menu-ui/issues/5`
+  - `https://github.com/zq52xy/crystal-menu-ui/issues/6`
+  - `https://github.com/zq52xy/crystal-menu-ui/issues/7`
+  - `https://github.com/zq52xy/crystal-menu-ui/issues/8`
+- Evidence report: `eval/evidence-report.md`
+
+### Failures
+
+- Unauthenticated GitHub REST issue-list request returned 403. Browser issue page and authenticated GitHub connector were used instead.
+- GitHub issue list page appeared stale immediately after issue creation, but individual issue pages confirmed the issues and repository issue count.
+
+### Human Review
+
+- User should review whether the roadmap priority order matches the intended public launch positioning before pinning issues.
+
+### Baseline Decision
+
+- No visual baseline changed.
+
 ## Runnable Vite Example - 2026-06-12
 
 Outcome: pass.
