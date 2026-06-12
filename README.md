@@ -23,6 +23,7 @@
   <a href="https://zq52xy.github.io/crystal-menu-ui/"><strong>Live Demo</strong></a> ·
   <a href="https://zq52xy.github.io/crystal-menu-ui/components.html"><strong>Component Index / 组件索引</strong></a> ·
   <a href="docs/screen-presets.md"><strong>Screen Presets / 界面预设</strong></a> ·
+  <a href="examples/vite-basic"><strong>Vite Example</strong></a> ·
   <a href="https://www.npmjs.com/package/crystal-menu-ui"><strong>npm</strong></a> ·
   <a href="AI_USAGE.md"><strong>AI Usage</strong></a> ·
   <a href="https://zq52xy.github.io/crystal-menu-ui/component-index.json"><strong>component-index.json</strong></a>
@@ -68,9 +69,18 @@ export function CommandPreset() {
 |---|---|
 | Inspect the complete visual demo | [Live Demo](https://zq52xy.github.io/crystal-menu-ui/) |
 | Copy a full screen recipe | [Screen Presets](docs/screen-presets.md) |
+| Run a local Vite app | [Vite Basic Example](examples/vite-basic) |
 | Browse every component and prop shape | [Component Index](https://zq52xy.github.io/crystal-menu-ui/components.html) |
 | Generate with an AI assistant | [AI Usage](AI_USAGE.md) |
 | Share the project safely | [Community Launch Kit](docs/launch/community-launch-kit.md) |
+
+### Runnable Example
+
+```bash
+cd examples/vite-basic
+npm install
+npm run dev
+```
 
 If this saves you time building game UI, star the repo, share a screenshot/GIF, or open a [Showcase issue](https://github.com/zq52xy/crystal-menu-ui/issues/new?template=showcase.yml). Useful demos and API feedback are the strongest signal for the next release.
 

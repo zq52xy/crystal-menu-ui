@@ -1,5 +1,68 @@
 ﻿# Evidence Report: crystal-menu-ui Quality History
 
+## Runnable Vite Example - 2026-06-12
+
+Outcome: pass.
+
+### Contract
+
+- Governed by `eval/work-contract.md`.
+- Parent contract: `eval/visual-contract.md`.
+
+### Environment
+
+- Workspace: `O:\coding\crystal-menu-ui`
+- Example path: `examples/vite-basic`
+- Local preview URL: `http://127.0.0.1:5175/`
+- Local preview process: listening on `127.0.0.1:5175`, owning process `33008`.
+- Vite version observed during example build: `v7.3.5`.
+
+### Change
+
+- Added `examples/vite-basic`, a minimal Vite + React + TypeScript consumer app.
+- The example imports `crystal-menu-ui` and `crystal-menu-ui/style` through package-like entry points.
+- `examples/vite-basic/vite.config.ts` maps those package-like imports to repository source files for local clone development.
+- Added `examples/CLAUDE.md` and updated root `CLAUDE.md` for the new example module.
+- Added README first-screen links and run commands for the Vite example.
+- Added a screenshot evidence artifact at `eval/screenshots/vite-basic-example.png`.
+
+### Checks Run
+
+- `quality-eval-kit/SKILL.md`: read.
+- `quality-eval-kit/templates/MANIFEST.md`: read.
+- Context7 Vite documentation: queried for npm scripts, React plugin setup, `resolve.alias`, and Less preprocessor options.
+- `npm install --package-lock=false --no-audit` in `examples/vite-basic`: pass; 90 packages installed.
+- `npm run build` in `examples/vite-basic`: pass; TypeScript check and Vite production build completed.
+- `npm run typecheck`: pass.
+- `npm run audit:docs`: pass; 30 exported components documented.
+- `git diff --check`: pass.
+- Browser verification at `http://127.0.0.1:5175/`: page title loaded as `crystal-menu-ui Vite Example`.
+- Browser accessibility snapshot: confirmed `Transit Ring`, `Party`, `Commands`, `Loadout`, and `Limit` regions/content render.
+- Browser console review after favicon fix: only React DevTools informational message remained.
+- Screenshot review: `eval/screenshots/vite-basic-example.png` shows the rendered tactical menu composition.
+
+### Outputs
+
+- Example README: `examples/vite-basic/README.md`
+- Example entry: `examples/vite-basic/src/App.tsx`
+- Evidence screenshot: `eval/screenshots/vite-basic-example.png`
+- Evidence report: `eval/evidence-report.md`
+
+### Failures
+
+- Initial dev-server start attempt failed because PowerShell cannot redirect stdout and stderr to the same file.
+- Second dev-server start attempt failed because Windows requires `npm.cmd` for `Start-Process`.
+- First browser pass reported `favicon.ico` 404; fixed by adding an inline SVG favicon to `examples/vite-basic/index.html`.
+
+### Human Review
+
+- User should open `http://127.0.0.1:5175/` to judge whether the example is compelling enough for public promotion.
+
+### Baseline Decision
+
+- No existing visual baseline was refreshed.
+- `eval/screenshots/vite-basic-example.png` is evidence for this implementation, not a durable baseline.
+
 ## GitHub Repository Surface Settings - 2026-06-11
 
 Outcome: pass.

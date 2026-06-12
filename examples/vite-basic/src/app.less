@@ -1,0 +1,121 @@
+/* [PROTOCOL]: Change this header when example layout styles change, then check CLAUDE.md.
+ * INPUT: Shared Less tokens and local example composition needs.
+ * OUTPUT: App-shell layout around public crystal-menu-ui components.
+ * POS: Example-only layout styling; component visuals stay in src/components.
+ */
+#root {
+  min-height: 100vh;
+}
+
+.example-shell {
+  min-height: 100vh;
+  padding: clamp(20px, 4vw, 48px);
+  color: @crystal-color-text;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(75, 205, 255, 0.18), transparent 30%),
+    linear-gradient(135deg, #10131a 0%, #17191e 48%, #0f1724 100%);
+}
+
+.example-stage {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.example-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.example-kicker {
+  margin: 0 0 4px;
+  color: @crystal-color-cyan;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.example-header h1 {
+  margin: 0;
+  font-family: @crystal-font-display;
+  font-size: clamp(32px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 0.95;
+  text-shadow: @crystal-shadow-text;
+}
+
+.example-status {
+  border: 1px solid rgba(129, 223, 255, 0.5);
+  border-radius: @crystal-radius-control;
+  padding: 8px 12px;
+  color: @crystal-color-success;
+  background: rgba(0, 249, 251, 0.08);
+  box-shadow: @crystal-shadow-inset;
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(320px, 1.1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.example-loadout {
+  grid-column: span 2;
+}
+
+.example-limit {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+.example-hitline {
+  position: relative;
+  min-height: 104px;
+  margin-top: 24px;
+}
+
+.example-hitline > :first-child {
+  position: absolute;
+  top: 8px;
+  left: 18%;
+}
+
+.example-hitline > :last-child {
+  position: absolute;
+  right: 18%;
+  bottom: 0;
+}
+
+.example-hitline [role='status'] {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 840px) {
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .example-loadout {
+    grid-column: auto;
+  }
+
+  .example-limit {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .example-shell {
+    padding: 16px;
+  }
+
+  .example-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -16,6 +16,7 @@ This directory contains a learning-only blueprint for a JRPG-style UI component 
 - `.github/`: issue templates, PR template, and CI workflow for community conversion plus quality gates.
 - `docs/`: product requirements, source-method mapping, launch materials, and rights boundary.
 - `eval/`: visual contract, work contract, and evidence report.
+- `examples/`: runnable consumer examples for local app integration.
 - `skill/`: local AI-assistant instruction draft.
 - root docs: AI usage, generation prompt, visual design prompt, README, and `llms.txt` AI citation summary.
 - `readme-art.html`: local Vite entry for component-rendered README screenshots.
@@ -36,5 +37,4 @@ When implementation starts, mirror the established library code shape:
 Add L3 headers to new source files when code is introduced.
 
 [PROTOCOL]: 鍙樻洿鏃舵洿鏂版澶撮儴锛岀劧鍚庢鏌?CLAUDE.md
-
 
